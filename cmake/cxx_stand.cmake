@@ -1,0 +1,22 @@
+if (CMAKE_SYSTEM_NAME MATCHES "Windows")
+    set(my_std_pre "/std:")
+else()
+    set(my_std_pre "-std=")
+endif()
+
+
+set(basic_cxx20 "c++20" )
+set(str_cxx20 "${my_std_pre}${basic_cxx20}")
+include(CheckCXXCompilerFlag)
+CHECK_CXX_COMPILER_FLAG("${str_cxx20}" COMPILER_SUPPORTS_CXX20)
+if (COMPILER_SUPPORTS_CXX20)
+    set(CMAKE_CXX_STANDARD 20)
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${str_cxx20}")
+else()
+	message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++20 support.Please use a different C++ compiler.")
+endif()
+if (MSVC)
+	#add_compile_options("/source-charset:utf-8")
+endif()
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DUNICODE /D_UNICODE")

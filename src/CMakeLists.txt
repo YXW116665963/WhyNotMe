@@ -1,0 +1,5 @@
+add_subdirectory(foundation)
+add_subdirectory(ability)
+add_subdirectory(middleware)
+add_subdirectory(app)
+add_subdirectory(sample)
