@@ -195,6 +195,7 @@ namespace why
 		return false;
 	}
 
+	//why 加载数据库中字符串为obj对象的函数
 	bool SetObjectValue(IObjectDataValue* pObjectValue, const std::string& strValue)
 	{
 		if (pObjectValue)
