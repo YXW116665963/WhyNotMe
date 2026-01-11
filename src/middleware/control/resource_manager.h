@@ -9,6 +9,7 @@ namespace why
 {
 	typedef std::unique_ptr<ControlRes> ControlResPtr;
 
+	// 只存放资源的键值对
 	class ResourceMgr : public IResourceMgr
 	{
 	public:

@@ -9,7 +9,7 @@
 #include "rapidjson/document.h"
 #include "rapidjson/writer.h"
 #include "rapidjson/stringbuffer.h"
-
+#include "rapidjson/prettywriter.h" // for stringify JSON
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 
 #define RapidjsonWriteBegin(writer) {writer.StartObject();
@@ -47,7 +47,7 @@ namespace PBLIB
 	namespace RapidJsonHelper
 	{
 		using namespace rapidjson;
-
+		
 		class JsonBase
 		{
 		public:
@@ -59,18 +59,18 @@ namespace PBLIB
 		protected:
 
 			template<typename T>
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, T& val) {
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, T& val) {
 				JsonBase* p = &val;
 				p->ToWrite(writer);
 			}
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, int32_t& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, int64_t& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, uint32_t& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, uint64_t& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, double& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, bool& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, std::string& val);
-			static	void ToWriteEvery(Writer<StringBuffer>& writer, char* val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, int32_t& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, int64_t& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, uint32_t& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, uint64_t& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, double& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, bool& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, std::string& val);
+			static	void ToWriteEvery(PrettyWriter<StringBuffer>& writer, char* val);
 
 
 			template<typename T>
@@ -89,7 +89,7 @@ namespace PBLIB
 			static	void ToParseEvery(const Value& val, std::string& t);
 			static	void ToParseEvery(const Value& val, char t[]);
 		public:
-			virtual void ToWrite(Writer<StringBuffer>& writer);
+			virtual void ToWrite(PrettyWriter<StringBuffer>& writer);
 			virtual void ParseJson(const Value& val);
 		};
 
@@ -103,7 +103,7 @@ namespace PBLIB
 			~JsonArray() {}
 
 		public:
-			virtual void ToWrite(Writer<StringBuffer>& writer)
+			virtual void ToWrite(PrettyWriter<StringBuffer>& writer)
 			{
 				writer.StartArray();
 				for (auto ent : arr)

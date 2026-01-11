@@ -177,18 +177,18 @@ namespace why
 
 	int32_t GenerateRandomNumber(int32_t nMin, int32_t nMax)
 	{
-		static std::random_device rd;  // ÓÃÓÚ»ñµÃÖÖ×Ó
-		static std::mt19937 gen(rd()); // ÒÔËæ»úÉè±¸Éú³ÉÖÖ×Ó³õÊ¼»¯Mersenne TwisterÉú³ÉÆ÷
-		std::uniform_int_distribution<> dis(nMin, nMax); // ¶¨Òå·Ö²¼·¶Î§
-		return dis(gen); // ·µ»ØÒ»¸öÔÚÖ¸¶¨·¶Î§ÄÚµÄËæ»úÊı
+		static std::random_device rd;  // ç”¨äºè·å¾—ç§å­
+		static std::mt19937 gen(rd()); // ä»¥éšæœºè®¾å¤‡ç”Ÿæˆç§å­åˆå§‹åŒ–Mersenne Twisterç”Ÿæˆå™¨
+		std::uniform_int_distribution<> dis(nMin, nMax); // å®šä¹‰åˆ†å¸ƒèŒƒå›´
+		return dis(gen); // è¿”å›ä¸€ä¸ªåœ¨æŒ‡å®šèŒƒå›´å†…çš„éšæœºæ•°
 	}
 
 	float64_t GenerateRandomFloat64(float64_t fMin, float64_t fMax)
 	{
-		static std::random_device rd;  // ÓÃÓÚ»ñµÃÖÖ×Ó
-		static std::mt19937 gen(rd()); // ÒÔËæ»úÉè±¸Éú³ÉÖÖ×Ó³õÊ¼»¯Mersenne TwisterÉú³ÉÆ÷
-		std::uniform_real_distribution<> dis(fMin, fMax); // ¶¨Òå·Ö²¼·¶Î§
-		return dis(gen); // ·µ»ØÒ»¸öÔÚÖ¸¶¨·¶Î§ÄÚµÄËæ»úÊı
+		static std::random_device rd;  // ç”¨äºè·å¾—ç§å­
+		static std::mt19937 gen(rd()); // ä»¥éšæœºè®¾å¤‡ç”Ÿæˆç§å­åˆå§‹åŒ–Mersenne Twisterç”Ÿæˆå™¨
+		std::uniform_real_distribution<> dis(fMin, fMax); // å®šä¹‰åˆ†å¸ƒèŒƒå›´
+		return dis(gen); // è¿”å›ä¸€ä¸ªåœ¨æŒ‡å®šèŒƒå›´å†…çš„éšæœºæ•°
 	}
 	int32_t FormatValue(int32_t nMin, int32_t nMax, int32_t nInc, int32_t nValue)
 	{

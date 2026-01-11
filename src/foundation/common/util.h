@@ -9,56 +9,56 @@
 namespace why
 {
 	/**
-	* @brief µ÷Õû×Ö½ÚË³Ğò
-	* @param data µ÷ÕûÇ°µÄ×Ö½ÚË³Ğò
-	* @return µ÷ÕûºóµÄ×Ö½ÚË³Ğò
+	* @brief è°ƒæ•´å­—èŠ‚é¡ºåº
+	* @param data è°ƒæ•´å‰çš„å­—èŠ‚é¡ºåº
+	* @return è°ƒæ•´åçš„å­—èŠ‚é¡ºåº
 	*/
 	uint16_t ChangeByteOrder(uint16_t data);
 	uint32_t ChangeByteOrder(uint32_t data);
 
 	/**
-	* @brief »ñÈ¡µ±Ç°ËùÔÚµÄÊ±Çø
-	* @return µ±Ç°Ê±Çø
+	* @brief è·å–å½“å‰æ‰€åœ¨çš„æ—¶åŒº
+	* @return å½“å‰æ—¶åŒº
 	*/
 	int32_t GetIZone32();
 
 	/**
-	* @brief »ñÈ¡µ±Ç°Ê±¼ä´Á£¨µ¥Î»£ºÃë£©
-	* @return µ±Ç°Ê±¼ä´Á
+	* @brief è·å–å½“å‰æ—¶é—´æˆ³ï¼ˆå•ä½ï¼šç§’ï¼‰
+	* @return å½“å‰æ—¶é—´æˆ³
 	*/
 	uint32_t GetTimeStamp32();
 
 	/**
-	* @brief »ñÈ¡µ±Ç°Ê±¼ä´Á£¨µ¥Î»£ººÁÃë£©
-	* @return µ±Ç°Ê±¼ä´Á
+	* @brief è·å–å½“å‰æ—¶é—´æˆ³ï¼ˆå•ä½ï¼šæ¯«ç§’ï¼‰
+	* @return å½“å‰æ—¶é—´æˆ³
 	*/
 	uint64_t GetTimeStamp64();
 
 	/**
-	* @brief »ñÈ¡µ±µ±Ç°Ìì¿ªÊ¼Ê±µÄÊ±¼ä´Á£¨µ¥Î»£ºÃë£©
-	* @return µ±Ç°Ìì¿ªÊ¼Ê±µÄÊ±¼ä´Á
+	* @brief è·å–å½“å½“å‰å¤©å¼€å§‹æ—¶çš„æ—¶é—´æˆ³ï¼ˆå•ä½ï¼šç§’ï¼‰
+	* @return å½“å‰å¤©å¼€å§‹æ—¶çš„æ—¶é—´æˆ³
 	*/
 	uint32_t GetStartTime();
 
 	/**
-	* @brief »ñÈ¡µ±µ±Ç°Ìì½áÊøÊ±µÄÊ±¼ä´Á£¨µ¥Î»£ºÃë£©
-	* @return µ±Ç°Ìì½áÊøÊ±µÄÊ±¼ä´Á
+	* @brief è·å–å½“å½“å‰å¤©ç»“æŸæ—¶çš„æ—¶é—´æˆ³ï¼ˆå•ä½ï¼šç§’ï¼‰
+	* @return å½“å‰å¤©ç»“æŸæ—¶çš„æ—¶é—´æˆ³
 	*/
 	uint32_t GetEndTime();
 
 	/**
-	* @brief °´±¶Êı¶ÔÆëÊı¾İ
-	* @param ´ı¶ÔÆëµÄÊı¾İ
-	* @param ´ı¶ÔÆëµÄ±¶Êı
-	* @return ¶ÔÆëºóµÄÊı¾İ
-	* @example countÎª12£¬ basedÎª5£¬¶ÔÆëºóµÄÊı¾İÎª15
+	* @brief æŒ‰å€æ•°å¯¹é½æ•°æ®
+	* @param å¾…å¯¹é½çš„æ•°æ®
+	* @param å¾…å¯¹é½çš„å€æ•°
+	* @return å¯¹é½åçš„æ•°æ®
+	* @example countä¸º12ï¼Œ basedä¸º5ï¼Œå¯¹é½åçš„æ•°æ®ä¸º15
 	*/
 	uint32_t ByteAligned(uint32_t count, uint32_t based);
 
 	/**
-	* @brief ½«ÎŞ·ûºÅÊı×ª»»Îª16½øÖÆ±íÊ¾µÄ×Ö·û´®
-	* @param data ÎŞ·ûºÅÊı
-	* @return 16½øÖÆ±íÊ¾µÄ×Ö·û´®
+	* @brief å°†æ— ç¬¦å·æ•°è½¬æ¢ä¸º16è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
+	* @param data æ— ç¬¦å·æ•°
+	* @return 16è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
 	*/
 	template <class T>
 	inline std::string ToHex(T data)
@@ -70,35 +70,35 @@ namespace why
 	}
 
 	/**
-	* @brief ½«¶ş½øÖÆÊı¾İ×Ö½ÚÁ÷×ªÎª16½øÖÆ±íÊ¾µÄ×Ö·û´®
-	* @param pBuf ¶ş½øÖÆÊı¾İ×Ö½ÚÁ÷µÄÊ×µØÖ·
-	* @param uBufLen »º³åÇøpBufµÄ³¤¶È
-	* @param buf ¶ş½øÖÆÊı¾İ×Ö½ÚÁ÷»º³åÇø
-	* @return 16½øÖÆ±íÊ¾µÄ×Ö·û´®
+	* @brief å°†äºŒè¿›åˆ¶æ•°æ®å­—èŠ‚æµè½¬ä¸º16è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
+	* @param pBuf äºŒè¿›åˆ¶æ•°æ®å­—èŠ‚æµçš„é¦–åœ°å€
+	* @param uBufLen ç¼“å†²åŒºpBufçš„é•¿åº¦
+	* @param buf äºŒè¿›åˆ¶æ•°æ®å­—èŠ‚æµç¼“å†²åŒº
+	* @return 16è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
 	*/
 	std::string ToHex(const uint8_t* pBuf, uint32_t uBufLen);
 	std::string ToHex(const std::vector<uint8_t> &buf);
 
 	/**
-	* @brief Éú³ÉÒ»¸öºÍÊ±¼äÏà¹ØµÄÃû³Æ
-	* @param pPrefix Ãû³ÆµÄÇ°×º
-	* @param pSuffix Ãû³ÆµÄºó×º
-	* @return Éú³ÉµÄÃû³Æ
+	* @brief ç”Ÿæˆä¸€ä¸ªå’Œæ—¶é—´ç›¸å…³çš„åç§°
+	* @param pPrefix åç§°çš„å‰ç¼€
+	* @param pSuffix åç§°çš„åç¼€
+	* @return ç”Ÿæˆçš„åç§°
 	*/
 	std::string GenerateNameByTime(const char *pPrefix, const char *pSuffix);
 
 	/**
-	* @brief »ñÈ¡µ±ÈÕÆÚºÍÊ±¼äµÄ×Ö·û´®
-	* @return µ±Ç°ÈÕÆÚºÍÊ±¼äµÄ×Ö·û´®
+	* @brief è·å–å½“æ—¥æœŸå’Œæ—¶é—´çš„å­—ç¬¦ä¸²
+	* @return å½“å‰æ—¥æœŸå’Œæ—¶é—´çš„å­—ç¬¦ä¸²
 	*/
 	std::string GetDataAndTime();
 
 	/**
-	* @brief Í¨ÓÃµÄ½«Êı×éĞòÁĞ»¯µ½×Ö·û´®µÄ·½·¨
-	* @param out ĞòÁĞ»¯Êä³ö×Ö·û´®Ê¹ÓÃµÄÊä³öÁ÷¶ÔÏó
-	* @param vectorValue µÈ´ıĞòÁĞ»¯µÄÊı×é
-	* @return out °üº¬ĞòÁĞ»¯ºóÄÚÈİµÄÊä³öÁ÷¶ÔÏó
-	* @warning Èç¹ûTÊÇ×Ô¶¨ÒåÀàĞÍ£¬Õâ¸ÃÀàĞÍ±ØĞëÓĞ¶Ô²Ù×÷·û"<<"ÖØÔØ
+	* @brief é€šç”¨çš„å°†æ•°ç»„åºåˆ—åŒ–åˆ°å­—ç¬¦ä¸²çš„æ–¹æ³•
+	* @param out åºåˆ—åŒ–è¾“å‡ºå­—ç¬¦ä¸²ä½¿ç”¨çš„è¾“å‡ºæµå¯¹è±¡
+	* @param vectorValue ç­‰å¾…åºåˆ—åŒ–çš„æ•°ç»„
+	* @return out åŒ…å«åºåˆ—åŒ–åå†…å®¹çš„è¾“å‡ºæµå¯¹è±¡
+	* @warning å¦‚æœTæ˜¯è‡ªå®šä¹‰ç±»å‹ï¼Œè¿™è¯¥ç±»å‹å¿…é¡»æœ‰å¯¹æ“ä½œç¬¦"<<"é‡è½½
 	*/
 	template <class T>
 	inline std::ostream& operator << (std::ostream& out, const std::vector<T>& vectorValue)
@@ -111,9 +111,9 @@ namespace why
 	}
 
 	/**
-	* @brief Í¨ÓÃµÄ½Ó¿ÚÉ¾³ı·Âº¯Êı
-	* @param DerivedT ĞèÒªÊÍ·ÅµÄÅÉÉúÀà
-	* @param BasedT ĞèÒªÊÍ·ÅÅÉÉúÀàµÄ»ùÀà
+	* @brief é€šç”¨çš„æ¥å£åˆ é™¤ä»¿å‡½æ•°
+	* @param DerivedT éœ€è¦é‡Šæ”¾çš„æ´¾ç”Ÿç±»
+	* @param BasedT éœ€è¦é‡Šæ”¾æ´¾ç”Ÿç±»çš„åŸºç±»
 	*/
 	template <class DerivedT, class BasedT>
 	class InterfaceDeleter
@@ -129,41 +129,41 @@ namespace why
 	};
 
 	/**
-	* @brief »ñÈ¡Ö¸¶¨·¶Î§µÄËæ»úÊı
-	* @nMin Ëæ»úÊıµÄ×îĞ¡Öµ
-	* @nMax Ëæ»úÊıµÄ×î´óÖµ
-	* @return ·µ»Ø»ñÈ¡µ½µÄËæ»úÊı
+	* @brief è·å–æŒ‡å®šèŒƒå›´çš„éšæœºæ•°
+	* @nMin éšæœºæ•°çš„æœ€å°å€¼
+	* @nMax éšæœºæ•°çš„æœ€å¤§å€¼
+	* @return è¿”å›è·å–åˆ°çš„éšæœºæ•°
 	* @warning 
-	* - ÕûÊıÎª±ÕÇø¼ä[nMin, nMax]
-	* - ¸¡µãÊıÎª°ë±ÕÇø¼ä[fMin, fMax)
+	* - æ•´æ•°ä¸ºé—­åŒºé—´[nMin, nMax]
+	* - æµ®ç‚¹æ•°ä¸ºåŠé—­åŒºé—´[fMin, fMax)
 	*/
 	int32_t GenerateRandomNumber(int32_t nMin, int32_t nMax);
 	float64_t GenerateRandomFloat64(float64_t fMin, float64_t fMax);
 	/**
-	* @brief ¸ñÊ½»¯Êı¾İµÄÖµ
-	* @param nMin ×îĞ¡Öµ
-	* @param nMax ×î´óÖµ
-	* @param nInc Êı¾İµÄ¶ÔÆëÖµ£¬¼´Êı¾İ±ØĞëÄÜ±»nIncÕû³ı
-	* @param nValue Êı¾İµÄµ±Ç°Öµ
-	* @return ¸ñÊ½»¯ºóµÄÊı¾İ
+	* @brief æ ¼å¼åŒ–æ•°æ®çš„å€¼
+	* @param nMin æœ€å°å€¼
+	* @param nMax æœ€å¤§å€¼
+	* @param nInc æ•°æ®çš„å¯¹é½å€¼ï¼Œå³æ•°æ®å¿…é¡»èƒ½è¢«nIncæ•´é™¤
+	* @param nValue æ•°æ®çš„å½“å‰å€¼
+	* @return æ ¼å¼åŒ–åçš„æ•°æ®
 	*/
 	int32_t FormatValue(int32_t nMin, int32_t nMax, int32_t nInc, int32_t nValue);
 	
 	/**
-	* @brief ±È½Ï¸¡µãÊıÏàµÈ
-	* @a Öµa
-	* @b Öµb
-	* @epsilon ×îĞ¡ÖµµÄ¾«¶È
+	* @brief æ¯”è¾ƒæµ®ç‚¹æ•°ç›¸ç­‰
+	* @a å€¼a
+	* @b å€¼b
+	* @epsilon æœ€å°å€¼çš„ç²¾åº¦
 	* @return bool
 	*/
 	bool AreEqual(const float64_t& fA, const float64_t& fB, const float64_t& fEpsilon = 1e-9);
 
 	/**
-	* @brief ±È½Ï¸¡µãÊı±È½Ï´óĞ¡
-	* @a Öµa
-	* @b Öµb
-	* @epsilon ×îĞ¡ÖµµÄ¾«¶È
-	* @return ·µ»Ø 0 :a=b£¬1 :a>b ,-1 :a<b
+	* @brief æ¯”è¾ƒæµ®ç‚¹æ•°æ¯”è¾ƒå¤§å°
+	* @a å€¼a
+	* @b å€¼b
+	* @epsilon æœ€å°å€¼çš„ç²¾åº¦
+	* @return è¿”å› 0 :a=bï¼Œ1 :a>b ,-1 :a<b
 	*/
 	int32_t CompareFloats(const float64_t& fA, const float64_t& fB, const float64_t& fEpsilon = 1e-9);
 
@@ -179,7 +179,7 @@ namespace why
 
 	std::string TimeString(uint64_t uTime);
 
-	// ·´×ª×Ö½ÚĞò
+	// åè½¬å­—èŠ‚åº
 	template<typename T>
 	T SwapEndian(const T &u) {
 		static_assert(CHAR_BIT == 8, "CHAR_BIT != 8");

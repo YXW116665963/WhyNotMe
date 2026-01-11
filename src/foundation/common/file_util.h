@@ -10,184 +10,184 @@
 namespace why
 {
 	/**
-	* @brief ´ÓUTF8±àÂëµÄÎÄ¼şÃû»ñÈ¡ÎÄ¼şÂ·¾¶¶ÔÏó
-	* @param strUTF8 ÎÄ¼şµÄÈ«Â·¾¶Ãû(UTF-8±àÂë)
-	* @return ·µ»ØÂ·¾¶¶ÔÏó
+	* @brief ä»UTF8ç¼–ç çš„æ–‡ä»¶åè·å–æ–‡ä»¶è·¯å¾„å¯¹è±¡
+	* @param strUTF8 æ–‡ä»¶çš„å…¨è·¯å¾„å(UTF-8ç¼–ç )
+	* @return è¿”å›è·¯å¾„å¯¹è±¡
 	*/
 	std::filesystem::path UTF8ToPath(const std::string& strUTF8);
 
 	/**
-	* @brief ´ÓÎÄ¼ş¶ÔÏó»ñÈ¡UTF-8±àÂëµÄÎÄ¼şÃû³Æ
-	* @param strUTF8 ÎÄ¼şµÄÈ«Â·¾¶Ãû(UTF-8±àÂë)
-	* @return ·µ»ØÂ·¾¶¶ÔÏó
+	* @brief ä»æ–‡ä»¶å¯¹è±¡è·å–UTF-8ç¼–ç çš„æ–‡ä»¶åç§°
+	* @param strUTF8 æ–‡ä»¶çš„å…¨è·¯å¾„å(UTF-8ç¼–ç )
+	* @return è¿”å›è·¯å¾„å¯¹è±¡
 	*/
 	std::string PathToUTF8(const std::filesystem::path& filePath);
 
 	/**
-	* @brief ½«UTF-8±àÂëµÄÎÄ¼şÃû³Æ×ª±äÎª±¾µØ±àÂëµÄÎÄ¼şÃû
-	* @param strUTF8 ÎÄ¼şµÄÈ«Â·¾¶Ãû(UTF-8±àÂë)
-	* @return ·µ»Ø±¾µØ±àÂëµÄÎÄ¼şÃû³Æ
+	* @brief å°†UTF-8ç¼–ç çš„æ–‡ä»¶åç§°è½¬å˜ä¸ºæœ¬åœ°ç¼–ç çš„æ–‡ä»¶å
+	* @param strUTF8 æ–‡ä»¶çš„å…¨è·¯å¾„å(UTF-8ç¼–ç )
+	* @return è¿”å›æœ¬åœ°ç¼–ç çš„æ–‡ä»¶åç§°
 	*/
 	std::string UTF8ToLocal(const std::string& strUTF8);
 
 	/**
-	* @brief ½«±¾µØ±àÂëµÄÎÄ¼şÃû³Æ×ª±äÎªUTF-8±àÂëµÄÎÄ¼şÃû³Æ
-	* @param strLocal ±¾µØ±àÂëµÄÎÄ¼şÃû³Æ
-	* @return ·µ»ØÎÄ¼şµÄÈ«Â·¾¶Ãû(UTF-8±àÂë)
+	* @brief å°†æœ¬åœ°ç¼–ç çš„æ–‡ä»¶åç§°è½¬å˜ä¸ºUTF-8ç¼–ç çš„æ–‡ä»¶åç§°
+	* @param strLocal æœ¬åœ°ç¼–ç çš„æ–‡ä»¶åç§°
+	* @return è¿”å›æ–‡ä»¶çš„å…¨è·¯å¾„å(UTF-8ç¼–ç )
 	*/
 	std::string LocalToUTF8(const std::string& strLocal);
 
     /**
-    * @brief ´´½¨Ä¿Â¼
-    * @param dir ´ı´´½¨µÃÄ¿Â¼Ãû³Æ
+    * @brief åˆ›å»ºç›®å½•
+    * @param dir å¾…åˆ›å»ºå¾—ç›®å½•åç§°
     * @return
-    * @ - 0 ´´½¨³É¹¦
-    * @ - ÆäËû ´´½¨Ê§°Ü
+    * @ - 0 åˆ›å»ºæˆåŠŸ
+    * @ - å…¶ä»– åˆ›å»ºå¤±è´¥
     * @warning
-    * ÔÚwindowsÆ½Ì¨ÉÏ£¬Ê¹ÓÃGB2312±àÂë
-    * ÔÚ·ÇwindwosÆ½Ì¨ÉÏ£¬Ê¹ÓÃUTF-8±àÂë
+    * åœ¨windowså¹³å°ä¸Šï¼Œä½¿ç”¨GB2312ç¼–ç 
+    * åœ¨éwindwoså¹³å°ä¸Šï¼Œä½¿ç”¨UTF-8ç¼–ç 
     */
     bool CreateDirectories(const std::string& dir);
 
     /**
-    * @brief Ö¸¶¨µÃÂ·¾¶ÊÇ·ñÎªÒ»¸öÄ¿Â¼
-    * @param dir ´ı¼ì²âµÃÂ·¾¶
+    * @brief æŒ‡å®šå¾—è·¯å¾„æ˜¯å¦ä¸ºä¸€ä¸ªç›®å½•
+    * @param dir å¾…æ£€æµ‹å¾—è·¯å¾„
     * @return
-    * @ - true ÊÇÄ¿Â¼
-    * @ - false ·ÇÄ¿Â¼
+    * @ - true æ˜¯ç›®å½•
+    * @ - false éç›®å½•
     * @warning
-    * ÔÚwindowsÆ½Ì¨ÉÏ£¬Ê¹ÓÃGB2312±àÂë
-    * ÔÚ·ÇwindwosÆ½Ì¨ÉÏ£¬Ê¹ÓÃUTF-8±àÂë
+    * åœ¨windowså¹³å°ä¸Šï¼Œä½¿ç”¨GB2312ç¼–ç 
+    * åœ¨éwindwoså¹³å°ä¸Šï¼Œä½¿ç”¨UTF-8ç¼–ç 
     */
     bool IsFolder(const std::string& dir);
 
 	/**
-	* @brief ÊÇ·ñÊ±ÎÄ¼ş
-	* @param filePath ÎÄ¼ş¾ø¶ÔÂ·¾¶
+	* @brief æ˜¯å¦æ—¶æ–‡ä»¶
+	* @param filePath æ–‡ä»¶ç»å¯¹è·¯å¾„
 	* @return
-	* @ - true ÊÇÎÄ¼ş
-	* @ - false ·ÇÎÄ¼ş
+	* @ - true æ˜¯æ–‡ä»¶
+	* @ - false éæ–‡ä»¶
 	* @warning
-	* ÔÚwindowsÆ½Ì¨ÉÏ£¬Ê¹ÓÃGB2312±àÂë
-	* ÔÚ·ÇwindwosÆ½Ì¨ÉÏ£¬Ê¹ÓÃUTF-8±àÂë
+	* åœ¨windowså¹³å°ä¸Šï¼Œä½¿ç”¨GB2312ç¼–ç 
+	* åœ¨éwindwoså¹³å°ä¸Šï¼Œä½¿ç”¨UTF-8ç¼–ç 
 	*/
 	bool IsFile(const std::string& filePath);
 
     /**
-    * @brief ¼ÓÔØÎÄ±¾ÎÄ¼ş(*.txt)
-    * @param strFileName ´ı¼ÓÔØµÃÎÄ¼şÃû³Æ
-    * @parame lineList ÎÄ±¾ÎÄ¼şµÃÄÚÈİ£¬ÏòÁ¿µÃÃ¿Ò»¸ö³ÉÔ±ÎªÎÄ¼şµÃÒ»ĞĞÄÚÈİ
+    * @brief åŠ è½½æ–‡æœ¬æ–‡ä»¶(*.txt)
+    * @param strFileName å¾…åŠ è½½å¾—æ–‡ä»¶åç§°
+    * @parame lineList æ–‡æœ¬æ–‡ä»¶å¾—å†…å®¹ï¼Œå‘é‡å¾—æ¯ä¸€ä¸ªæˆå‘˜ä¸ºæ–‡ä»¶å¾—ä¸€è¡Œå†…å®¹
     * @return
-    * @ - true ¼ÓÔØ³É¹¦
-    * @ - false ¼ÓÔØÊ§°Ü
+    * @ - true åŠ è½½æˆåŠŸ
+    * @ - false åŠ è½½å¤±è´¥
     */
     bool LoadTextFile(const std::string &strFileName, std::vector<std::string>& lineList);
 	bool SaveTextTile(const std::string& strFileName, const std::vector<std::string>& lineList);
 
-	//<! »ñÈ¡ËùÓĞµÄĞĞ£¬°üº¬¿ÕĞĞ
+	//<! è·å–æ‰€æœ‰çš„è¡Œï¼ŒåŒ…å«ç©ºè¡Œ
 	bool LoadTextFileAllLine(const std::string& strFileName, std::vector<std::string>& lineList);
 
 	/**
-	* @brief ¼ÓÔØÎÄ±¾ÎÄ¼ş(*.txt)£¬Èô¶ÔÔ­Ê¼Êı¾İĞŞ¸ÄÓÃlist
-	* @param strFileName ´ı¼ÓÔØµÃÎÄ¼şÃû³Æ
-	* @parame lineList ÎÄ±¾ÎÄ¼şµÃÄÚÈİ£¬ÏòÁ¿µÃÃ¿Ò»¸ö³ÉÔ±ÎªÎÄ¼şµÃÒ»ĞĞÄÚÈİ
+	* @brief åŠ è½½æ–‡æœ¬æ–‡ä»¶(*.txt)ï¼Œè‹¥å¯¹åŸå§‹æ•°æ®ä¿®æ”¹ç”¨list
+	* @param strFileName å¾…åŠ è½½å¾—æ–‡ä»¶åç§°
+	* @parame lineList æ–‡æœ¬æ–‡ä»¶å¾—å†…å®¹ï¼Œå‘é‡å¾—æ¯ä¸€ä¸ªæˆå‘˜ä¸ºæ–‡ä»¶å¾—ä¸€è¡Œå†…å®¹
 	* @return
-	* @ - true ¼ÓÔØ³É¹¦
-	* @ - false ¼ÓÔØÊ§°Ü
+	* @ - true åŠ è½½æˆåŠŸ
+	* @ - false åŠ è½½å¤±è´¥
 	*/
 	bool LoadTextFile(const std::string &strFileName, std::list<std::string>& lineList);
 	bool SaveTextTile(const std::string& strFileName, const std::list<std::string>& lineList);
 
     /**
-    * @brief ¼ÓÔØ¶ººÅÎÄ¼ş(*.csv)
-    * @param strFileName ´ı¼ÓÔØµÃÎÄ¼şÃû³Æ
-    * @param dataList ¶ººÅÎÄ¼şµÃÄÚÈİ£¬µÚÒ»¸öÏòÁ¿±íÊ¾Ò»ĞĞµÃĞÅÏ¢£¬µÚ¶ş¸öÏòÁ¿±êÊ¶Ò»ĞĞÖĞÒÔ¶ººÅ·Ö¸îµÃÄÚÈİ
+    * @brief åŠ è½½é€—å·æ–‡ä»¶(*.csv)
+    * @param strFileName å¾…åŠ è½½å¾—æ–‡ä»¶åç§°
+    * @param dataList é€—å·æ–‡ä»¶å¾—å†…å®¹ï¼Œç¬¬ä¸€ä¸ªå‘é‡è¡¨ç¤ºä¸€è¡Œå¾—ä¿¡æ¯ï¼Œç¬¬äºŒä¸ªå‘é‡æ ‡è¯†ä¸€è¡Œä¸­ä»¥é€—å·åˆ†å‰²å¾—å†…å®¹
     * @return
-    * @ - true ¼ÓÔØ³É¹¦
-    * @ - false ¼ÓÔØÊ§°Ü
+    * @ - true åŠ è½½æˆåŠŸ
+    * @ - false åŠ è½½å¤±è´¥
     */
     bool LoadCSVFile(const std::string &strFileName, std::vector<std::vector<std::string>>& dataList);
 	
 	/**
-   * @brief Ğ´ÈëcsvÎÄ¼ş
-   * @param dataList ¶ººÅÎÄ¼şµÃÄÚÈİ£¬µÚÒ»¸öÏòÁ¿±íÊ¾Ò»ĞĞµÃĞÅÏ¢£¬µÚ¶ş¸öÏòÁ¿±êÊ¶Ò»ĞĞÖĞÒÔ¶ººÅ·Ö¸îµÃÄÚÈİ
-   * @param strFileName ´ı¼ÓÔØµÃÎÄ¼şÃû³Æ
+   * @brief å†™å…¥csvæ–‡ä»¶
+   * @param dataList é€—å·æ–‡ä»¶å¾—å†…å®¹ï¼Œç¬¬ä¸€ä¸ªå‘é‡è¡¨ç¤ºä¸€è¡Œå¾—ä¿¡æ¯ï¼Œç¬¬äºŒä¸ªå‘é‡æ ‡è¯†ä¸€è¡Œä¸­ä»¥é€—å·åˆ†å‰²å¾—å†…å®¹
+   * @param strFileName å¾…åŠ è½½å¾—æ–‡ä»¶åç§°
    * @return
-   * @ - true ¼ÓÔØ³É¹¦
-   * @ - false ¼ÓÔØÊ§°Ü
+   * @ - true åŠ è½½æˆåŠŸ
+   * @ - false åŠ è½½å¤±è´¥
    */
 	bool WriteCSVFile(std::vector<std::vector<std::string>>& dataList, const std::string& strFileName);
 	bool WriteCSVFile(std::list<std::vector<std::string>>& dataList, const std::string& strFileName);
 	bool WriteCSVFile(std::list<std::string>& dataList, const std::string& strFileName);
 
 	/**
-   * @brief »ñÈ¡Ä¿Â¼ÖĞËùÓĞ×ÓÎÄ¼ş¼Ğ£¬ÓÉÓÚÊÇµİ¹éº¯Êı£¬ÇëÈ·±£´«ÈëµÄsubsÊÇ¿ÕµÄ
-   * @param dir ¾ø¶ÔÂ·¾¶
-   * @param subs ×ÓÎÄ¼ş¼ĞÂ·¾¶£¬map key£º¸¸ÎÄ¼ş¼ĞÂ·¾¶£¨Ä¿Â¼ÏÂÎŞ×ÓÎÄ¼ş¼ĞÔò²»ÔÚkeyÖĞ£©£¬list±íÊ¾×ÓÎÄ¼ş¼ĞÃû³ÆºÍ¾ø¶ÔÂ·¾¶
+   * @brief è·å–ç›®å½•ä¸­æ‰€æœ‰å­æ–‡ä»¶å¤¹ï¼Œç”±äºæ˜¯é€’å½’å‡½æ•°ï¼Œè¯·ç¡®ä¿ä¼ å…¥çš„subsæ˜¯ç©ºçš„
+   * @param dir ç»å¯¹è·¯å¾„
+   * @param subs å­æ–‡ä»¶å¤¹è·¯å¾„ï¼Œmap keyï¼šçˆ¶æ–‡ä»¶å¤¹è·¯å¾„ï¼ˆç›®å½•ä¸‹æ— å­æ–‡ä»¶å¤¹åˆ™ä¸åœ¨keyä¸­ï¼‰ï¼Œlistè¡¨ç¤ºå­æ–‡ä»¶å¤¹åç§°å’Œç»å¯¹è·¯å¾„
    * @return
-   * @ - true ³É¹¦
-   * @ - false Ê§°Ü
+   * @ - true æˆåŠŸ
+   * @ - false å¤±è´¥
    */
 	bool GetSubFolders(const std::string &dir, std::map<std::string, std::list<std::pair<std::string, std::string>>> &subs);
 
 	/**
-   * @brief Ö»»ñÈ¡Ò»²ã×ÓÎÄ¼ş¼Ğ
-   * @param dir ¾ø¶ÔÂ·¾¶
-   * @param subs ×ÓÎÄ¼ş¼ĞÂ·¾¶£¬std::pair firstÃû³Æ second¾ø¶ÔÂ·¾¶
+   * @brief åªè·å–ä¸€å±‚å­æ–‡ä»¶å¤¹
+   * @param dir ç»å¯¹è·¯å¾„
+   * @param subs å­æ–‡ä»¶å¤¹è·¯å¾„ï¼Œstd::pair firståç§° secondç»å¯¹è·¯å¾„
    * @return
-   * @ - true ³É¹¦
-   * @ - false Ê§°Ü
+   * @ - true æˆåŠŸ
+   * @ - false å¤±è´¥
    */
 	bool GetOneSubFolders(const std::string &dir, std::list<std::pair<std::string, std::string>> &subs);
 
 	/**
-   * @brief Ö»»ñÈ¡Ò»²ãÎÄ¼ş
-   * @param dir ¾ø¶ÔÂ·¾¶
-   * @param ext ºó×º£¬ÊäÈë""»òÕß".*"±íÊ¾ËùÓĞÎÄ¼ş£¬£¨Àı×Ó.csv£©
-   * @param subs ×ÓÎÄ¼şÂ·¾¶£¬std::pair firstÃû³Æ second¾ø¶ÔÂ·¾¶
+   * @brief åªè·å–ä¸€å±‚æ–‡ä»¶
+   * @param dir ç»å¯¹è·¯å¾„
+   * @param ext åç¼€ï¼Œè¾“å…¥""æˆ–è€…".*"è¡¨ç¤ºæ‰€æœ‰æ–‡ä»¶ï¼Œï¼ˆä¾‹å­.csvï¼‰
+   * @param subs å­æ–‡ä»¶è·¯å¾„ï¼Œstd::pair firståç§° secondç»å¯¹è·¯å¾„
    * @return
-   * @ - true ³É¹¦
-   * @ - false Ê§°Ü
+   * @ - true æˆåŠŸ
+   * @ - false å¤±è´¥
    */
 	bool GetOneSubFiles(const std::string &dir, const std::string &ext, std::list<std::pair<std::string, std::string>> &subs);
 
 	/**
-	* @brief »ñÈ¡µ½ÎÄ¼şÃû»ò×îºóÎÄ¼ş¼ĞÃû(°üÀ¨ºó×º)
-	* @param dir ¾ø¶ÔÂ·¾¶
-	* @return ÎÄ¼şÃû»ò×îºóÎÄ¼ş¼ĞÃû
+	* @brief è·å–åˆ°æ–‡ä»¶åæˆ–æœ€åæ–‡ä»¶å¤¹å(åŒ…æ‹¬åç¼€)
+	* @param dir ç»å¯¹è·¯å¾„
+	* @return æ–‡ä»¶åæˆ–æœ€åæ–‡ä»¶å¤¹å
 	* @note 
-	* - ÊäÈë"C:\\path\\last\\file.name" Êä³ö  "file.name"
-	* - ÊäÈë"C:\\path\\last" Êä³ö "last"
+	* - è¾“å…¥"C:\\path\\last\\file.name" è¾“å‡º  "file.name"
+	* - è¾“å…¥"C:\\path\\last" è¾“å‡º "last"
 	*/
 	std::string GetFolderName(const std::string &dir);
 
 	/**
-	* @brief »ñÈ¡µ½ÎÄ¼şÃû(²»°üÀ¨ºó×º)
-	* @param path ¾ø¶ÔÂ·¾¶
-	* @return ÎÄ¼şÃû
+	* @brief è·å–åˆ°æ–‡ä»¶å(ä¸åŒ…æ‹¬åç¼€)
+	* @param path ç»å¯¹è·¯å¾„
+	* @return æ–‡ä»¶å
 	* @note
-	* - ÊäÈë"C:\\path\\last\\file.name" Êä³ö  "file"
-	* - ÊäÈë"C:\\path\\last" Êä³ö "last"
+	* - è¾“å…¥"C:\\path\\last\\file.name" è¾“å‡º  "file"
+	* - è¾“å…¥"C:\\path\\last" è¾“å‡º "last"
 	*/
 	std::string GetFileName(const std::string &path);
 
 	/**
-	* @brief »ñÈ¡µ½ÉÏÒ»²ã¾ø¶ÔÂ·¾¶
-	* @param path ¾ø¶ÔÂ·¾¶
-	* @return ÎÄ¼şÃû
+	* @brief è·å–åˆ°ä¸Šä¸€å±‚ç»å¯¹è·¯å¾„
+	* @param path ç»å¯¹è·¯å¾„
+	* @return æ–‡ä»¶å
 	* @note
-	* - ÊäÈë"C:\\path\\last\\file.name" Êä³ö  "C:\\path\\last"
-	* - ÊäÈë"C:\\path\\last" Êä³ö "C:\\path"
+	* - è¾“å…¥"C:\\path\\last\\file.name" è¾“å‡º  "C:\\path\\last"
+	* - è¾“å…¥"C:\\path\\last" è¾“å‡º "C:\\path"
 	*/
 	std::string GetDirectory(const std::string &path);
 
 	/**
-	* @brief »ñÈ¡µ½ÎŞºó×ºÃûµÄ³ö¶ÔÂ·¾¶
-	* @param path ¾ø¶ÔÂ·¾¶
-	* @return ÎÄ¼şÃû
+	* @brief è·å–åˆ°æ— åç¼€åçš„å‡ºå¯¹è·¯å¾„
+	* @param path ç»å¯¹è·¯å¾„
+	* @return æ–‡ä»¶å
 	* @note
-	* - ÊäÈë"C:\\path\\last\\file.name" Êä³ö  "C:\\path\\last\\file"
-	* - ÊäÈë"C:\\path\\last" Êä³ö "C:\\path\\last"
+	* - è¾“å…¥"C:\\path\\last\\file.name" è¾“å‡º  "C:\\path\\last\\file"
+	* - è¾“å…¥"C:\\path\\last" è¾“å‡º "C:\\path\\last"
 	*/
 	std::string GetFileNameWithoutExtension(const std::string &path);
 

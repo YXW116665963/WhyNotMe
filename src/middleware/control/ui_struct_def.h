@@ -8,7 +8,6 @@ namespace why
 	{
 		e_empty_ctrl,
 		e_label_ctrl,
-		e_image_ctrl,
 		e_button_ctrl,
 		e_figure_ctrl,
 		e_progress_bar_ctrl

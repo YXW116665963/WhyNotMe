@@ -34,5 +34,8 @@ int main()
 	MyClass::FromJson(&mylclass4, str);//反序列化完成
 
 
+	//const char json[] = " { \"hello\" : \"world\", \"t\" : true , \"f\" : false, \"n\": null, \"i\":123, \"pi\": 3.1416, \"a\":[1, 2, 3, 4] } ";
+	//printf("Original JSON:\n %s\n", json);
+
 	return 0;
 }

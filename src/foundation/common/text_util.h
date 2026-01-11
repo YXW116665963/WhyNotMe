@@ -8,108 +8,111 @@
 namespace why
 {
     /**
-    * @brief ½«µ±Ç°×Ö·û´®×ª»»³ÉUTF-8µÄ¸ñÊ½
-    * @param strInput µÈ´ı×ª»»µÄ×Ö·û´®
-    * @return ·µ»Ø×ªÂëºóµÃ½á¹û
+    * @brief å°†å®½å­—ç¬¦ä¸²è½¬æ¢æˆUTF-8çš„æ ¼å¼
+    * @param strInput ç­‰å¾…è½¬æ¢çš„å­—ç¬¦ä¸²
+    * @return è¿”å›è½¬ç åå¾—ç»“æœ
     */
     std::string UTF8Encode(const std::wstring &strInput);
 
     /**
-    * @brief ½«UTF-8µÄ¸ñÊ½µÄ×Ö·û´®×ª»»³Éµ±Ç°¸ñÊ½
-    * @param strInput µÈ´ı×ª»»µÄ×Ö·û´®
-    * @return ·µ»Ø×ªÂëºóµÃ½á¹û
+    * @brief å°†UTF-8çš„æ ¼å¼çš„å­—ç¬¦ä¸²è½¬æ¢æˆå½“å‰æ ¼å¼
+    * @param strInput ç­‰å¾…è½¬æ¢çš„å­—ç¬¦ä¸²
+    * @return è¿”å›è½¬ç åå¾—ç»“æœ
     */
     std::wstring UTF8Decode(const std::string &strInput);
 
     /**
-    * @brief URL½âÂë
-    * @param strInput µÈ´ı½âÂëµÄ×Ö·û´®
-    * @return ·µ»Ø½âÂëºóµÃ½á¹û
+    * @brief URLè§£ç 
+    * @param strInput ç­‰å¾…è§£ç çš„å­—ç¬¦ä¸²
+    * @return è¿”å›è§£ç åå¾—ç»“æœ
     */
 	std::string URLDecode(const std::string &src);
 
     /**
-    * @brief URL±àÂë
-    * @param strInput µÈ´ı±àÂëµÄ×Ö·û´®
-    * @return ·µ»Ø±àÂëºóµÃ½á¹û
+    * @brief URLç¼–ç 
+    * @param strInput ç­‰å¾…ç¼–ç çš„å­—ç¬¦ä¸²
+    * @return è¿”å›ç¼–ç åå¾—ç»“æœ
     */
 	std::string URLEncode(const std::string &src);
 
     /**
-    * @brief ·Ö¸î×Ö·û´®
-    * @param str µÈ´ı·Ö¸îµÄ×Ö·û´®
-    * @param separator ·Ö¸î×Ö·û
-    * @param strList ±£´æ·Ö¸î³öµÄ×Ó×Ö·û´®µÄÁĞ±í
+    * @brief åˆ†å‰²å­—ç¬¦ä¸²
+    * @param str ç­‰å¾…åˆ†å‰²çš„å­—ç¬¦ä¸²
+    * @param separator åˆ†å‰²å­—ç¬¦
+    * @param strList ä¿å­˜åˆ†å‰²å‡ºçš„å­å­—ç¬¦ä¸²çš„åˆ—è¡¨
     * @return void
     */
     void StringSplit(const std::string &str, std::string::value_type separator, std::vector<std::string> &strList);
     void StringSplit(const std::wstring &str, std::wstring::value_type separator, std::vector<std::wstring> &strList);
 
     /**
-    * @brief ·Ö¸î×Ö·û´®
-    * @param str µÈ´ı·Ö¸îµÄ×Ö·û´®
-    * @param separator ·Ö¸î×Ö·û¼¯£¨¸Ã×Ö·û´®ÖĞËù°üº¬µÄ×Ö·ûµÄÈÎÒâ×éºÏ×÷Îª·Ö¸ô·û£©
-    * @param strList ±£´æ·Ö¸î³öµÄ×Ó×Ö·û´®µÄÁĞ±í
+    * @brief åˆ†å‰²å­—ç¬¦ä¸²
+    * @param str ç­‰å¾…åˆ†å‰²çš„å­—ç¬¦ä¸²
+    * @param separator åˆ†å‰²å­—ç¬¦é›†ï¼ˆè¯¥å­—ç¬¦ä¸²ä¸­æ‰€åŒ…å«çš„å­—ç¬¦çš„ä»»æ„ç»„åˆä½œä¸ºåˆ†éš”ç¬¦ï¼‰
+    * @param strList ä¿å­˜åˆ†å‰²å‡ºçš„å­å­—ç¬¦ä¸²çš„åˆ—è¡¨
     * @return void
     */
     void StringSplit(const std::string &str, const std::string &separator, std::vector<std::string> &strList);
     void StringSplit(const std::wstring &str, const std::wstring &separator, std::vector<std::wstring> &strList);
 
+
+    void StringSplitRegular(const std::string& str, const std::string& separator, std::vector<std::string>& strList);
+
 	/**
-	 * @brief ·Ö¸î×Ö·û´®
-	 * @param str µÈ´ı·Ö¸îµÄ×Ö·û´®
-	 * @param separator ·Ö¸î×Ö·û¼¯(·Ö¸î·ûÍêÈ«Æ¥Åä)
-	 * @param strList ±£´æ·Ö¸î³öµÄ×Ó×Ö·û´®µÄÁĞ±í
+	 * @brief åˆ†å‰²å­—ç¬¦ä¸²
+	 * @param str ç­‰å¾…åˆ†å‰²çš„å­—ç¬¦ä¸²
+	 * @param separator åˆ†å‰²å­—ç¬¦é›†(åˆ†å‰²ç¬¦å®Œå…¨åŒ¹é…)
+	 * @param strList ä¿å­˜åˆ†å‰²å‡ºçš„å­å­—ç¬¦ä¸²çš„åˆ—è¡¨
      * @return void
 	 */
 	void Split(const std::string& s, const std::string& delim, std::vector<std::string>& ret);
 	void Split(const std::wstring& s, const std::wstring& delim, std::vector<std::wstring>& ret);
 
 	/**
-	* @brief ·Ö¸î×Ö·û´®ºóÖ±½Ó×ª»»ÎªÏàÓ¦µÄÊı¾İ¡£
-	* @param str µÈ´ı·Ö¸îµÄ×Ö·û´®
-	* @param separator ·Ö¸î×Ö·û¼¯£¨¸Ã×Ö·û´®ÖĞËù°üº¬µÄ×Ö·ûµÄÈÎÒâ×éºÏ×÷Îª·Ö¸ô·û£©
-	* @param userList ±£´æ·Ö¸î³öµÄ×Ó×Ö·û´®µÄÁĞ±í
+	* @brief åˆ†å‰²å­—ç¬¦ä¸²åç›´æ¥è½¬æ¢ä¸ºç›¸åº”çš„æ•°æ®ã€‚
+	* @param str ç­‰å¾…åˆ†å‰²çš„å­—ç¬¦ä¸²
+	* @param separator åˆ†å‰²å­—ç¬¦é›†ï¼ˆè¯¥å­—ç¬¦ä¸²ä¸­æ‰€åŒ…å«çš„å­—ç¬¦çš„ä»»æ„ç»„åˆä½œä¸ºåˆ†éš”ç¬¦ï¼‰
+	* @param userList ä¿å­˜åˆ†å‰²å‡ºçš„å­å­—ç¬¦ä¸²çš„åˆ—è¡¨
     * @return void
 	*/
 	void StringSplit2DataVec(const std::string &str, const std::string &separator, std::vector<uint32_t> &userList);
 
     /**
-    * @brief »ñÈ¡´Ó×Ö·û´®»ñÈ¡ÓÉÏŞ¶¨×Ö·û¹¹³ÉµÄ×Ó×Ö·û´®
-    * @param str µÈ´ıÊ°È¡µÄ×Ö·û´®
-    * @param strSub ¹¹³É×Ó×Ö·û´®µÄ×Ö·û¼¯
-    * @param strList ±£´æ»ñÈ¡µÄ×Ó×Ö·û´®µÄÁĞ±í
+    * @brief è·å–ä»å­—ç¬¦ä¸²è·å–ç”±é™å®šå­—ç¬¦æ„æˆçš„å­å­—ç¬¦ä¸²
+    * @param str ç­‰å¾…æ‹¾å–çš„å­—ç¬¦ä¸²
+    * @param strSub æ„æˆå­å­—ç¬¦ä¸²çš„å­—ç¬¦é›†
+    * @param strList ä¿å­˜è·å–çš„å­å­—ç¬¦ä¸²çš„åˆ—è¡¨
     * @return void
     */
     void PickupString(const std::string &str, const std::string &strSub, std::vector<std::string> &strList);
     void PickupString(const std::wstring &str, const std::wstring &strSub, std::vector<std::wstring> &strList);
 
     /**
-    * @brief ½«×Ö·û´®ÖĞÖ¸¶¨µÄ×Ó´®Ìæ»»ÎªĞÂµÄ×Ó´®
-    * @param str µÈ´ı²éÕÒÌæ»»µÄ×Ö·û´®
-    * @param strFind ±»Ìæ´úµÄ×Ö´®
-    * @param strReplaced ÓÃÓÚÌæ»»µÄĞÂµÄ×Ó´®
+    * @brief å°†å­—ç¬¦ä¸²ä¸­æŒ‡å®šçš„å­ä¸²æ›¿æ¢ä¸ºæ–°çš„å­ä¸²
+    * @param str ç­‰å¾…æŸ¥æ‰¾æ›¿æ¢çš„å­—ç¬¦ä¸²
+    * @param strFind è¢«æ›¿ä»£çš„å­—ä¸²
+    * @param strReplaced ç”¨äºæ›¿æ¢çš„æ–°çš„å­ä¸²
     * @return void
     */
     void ReplaceString(std::string &str, const std::string &strFind, const std::string &strReplaced);
     void ReplaceString(std::wstring &str, const std::wstring &strFind, const std::wstring &strReplaced);
 
     /**
-    * @brief ´Ó×Ö·û´®ÖĞ»ñÈ¡Ö¸¶¨µÄ×Ó´®
-    * @param strFrom µÈ´ı²éÕÒ×Ö·û´®
-    * @param strSub ±»Ìæ´úµÄ×Ö´®
-    * @param strHeader ×Ó´®µÄ¿ªÍ·×Ö·û£¨±£´æµ½strSubÖĞµÄ×Ó´®²»°üº¬Õâ¸ö¿ªÍ·×Ö·û)
-    * @param strTail ×Ó´®µÄ½áÎ²×Ö·û£¨±£´æµ½strSubÖĞµÄ×Ó´®²»°üº¬Õâ¸ö½áÎ²×Ö·û)
+    * @brief ä»å­—ç¬¦ä¸²ä¸­è·å–æŒ‡å®šçš„å­ä¸²
+    * @param strFrom ç­‰å¾…æŸ¥æ‰¾å­—ç¬¦ä¸²
+    * @param strSub è¢«æ›¿ä»£çš„å­—ä¸²
+    * @param strHeader å­ä¸²çš„å¼€å¤´å­—ç¬¦ï¼ˆä¿å­˜åˆ°strSubä¸­çš„å­ä¸²ä¸åŒ…å«è¿™ä¸ªå¼€å¤´å­—ç¬¦)
+    * @param strTail å­ä¸²çš„ç»“å°¾å­—ç¬¦ï¼ˆä¿å­˜åˆ°strSubä¸­çš„å­ä¸²ä¸åŒ…å«è¿™ä¸ªç»“å°¾å­—ç¬¦)
     * @return void
     */
     void GetSubString(const std::string &str, std::string &strSub, const std::string &strHeader, const std::string &strTail);
     void GetSubString(const std::wstring &str, std::wstring &strSub, const std::wstring &strHeader, const std::wstring &strTail);
 
     /**
-    * @brief ÒÆ³ı×Ö·û´®Í·²¿ËùÓĞÖ¸¶¨×Ö·û
-    * @param strFrom µÈ´ı²éÕÒ×Ö·û´®
-	* @param cHeader ´ıÒÆ³ıµÄ×Ö·û
-    * @param strHeader ´ıÒÆ³ıµÄ×Ö·û
+    * @brief ç§»é™¤å­—ç¬¦ä¸²å¤´éƒ¨æ‰€æœ‰æŒ‡å®šå­—ç¬¦
+    * @param strFrom ç­‰å¾…æŸ¥æ‰¾å­—ç¬¦ä¸²
+	* @param cHeader å¾…ç§»é™¤çš„å­—ç¬¦
+    * @param strHeader å¾…ç§»é™¤çš„å­—ç¬¦
     * @return void
     */
 	void RemoveHeader(std::string &str, char cHeader);
@@ -118,10 +121,10 @@ namespace why
     void RemoveHeader(std::wstring &str, const std::wstring &strHeader);
 
     /**
-    * @brief ÒÆ³ı×Ö·û´®Î²²¿ËùÓĞÖ¸¶¨×Ö·û
-    * @param strFrom µÈ´ı²éÕÒ×Ö·û´®
-	* @param cTail ´ıÒÆ³ıµÄ×Ö·û
-    * @param strTail ´ıÒÆ³ıµÄ×Ö·û
+    * @brief ç§»é™¤å­—ç¬¦ä¸²å°¾éƒ¨æ‰€æœ‰æŒ‡å®šå­—ç¬¦
+    * @param strFrom ç­‰å¾…æŸ¥æ‰¾å­—ç¬¦ä¸²
+	* @param cTail å¾…ç§»é™¤çš„å­—ç¬¦
+    * @param strTail å¾…ç§»é™¤çš„å­—ç¬¦
     * @return void
     */
 	void RemoveTail(std::string &str, char cTail);
@@ -130,41 +133,41 @@ namespace why
     void RemoveTail(std::wstring &str, const std::wstring &strTail);
 
     /**
-    * @brief Ìá¹©Ò»¸ö¸ñÊ½»¯µ½Êä³öµ½ÎÄ±¾µÄ·½·¨
-    * @return ¸ñÊ½»¯Êä³öµÄ½á¹û
+    * @brief æä¾›ä¸€ä¸ªæ ¼å¼åŒ–åˆ°è¾“å‡ºåˆ°æ–‡æœ¬çš„æ–¹æ³•
+    * @return æ ¼å¼åŒ–è¾“å‡ºçš„ç»“æœ
     */
     std::string StringFormat(const char *fmt, ...);
     std::wstring StringFormat(const wchar_t *fmt, ...);
 
     /**
-    * @brief ½«µ±Ç°×Ö·û´®×ª»»³Éunicode-16µÄ¸ñÊ½
-    * @param strInput µÈ´ı×ª»»µÄ×Ö·û´®
-    * @return ×ª»»ºóµÃ½á¹û
+    * @brief å°†å½“å‰å­—ç¬¦ä¸²è½¬æ¢æˆunicode-16çš„æ ¼å¼
+    * @param strInput ç­‰å¾…è½¬æ¢çš„å­—ç¬¦ä¸²
+    * @return è½¬æ¢åå¾—ç»“æœ
     */
 	std::wstring Ascii2Unicode(const std::string& strInput);
 
     /**
-    * @brief ½«µ±Ç°×Ö·û´®×ª»»³ÉAsciiµÄ¸ñÊ½
-    * @param strInput µÈ´ı×ª»»µÄ×Ö·û´®
-    * @return ×ª»»ºóµÃ½á¹û
+    * @brief å°†å½“å‰å­—ç¬¦ä¸²è½¬æ¢æˆAsciiçš„æ ¼å¼
+    * @param strInput ç­‰å¾…è½¬æ¢çš„å­—ç¬¦ä¸²
+    * @return è½¬æ¢åå¾—ç»“æœ
     */
 	std::string Unicode2Ascii(const std::wstring& strInput);
 
     /**
-    * @brief ÅĞ¶ÏÁ½¸ö×Ö·û´®µÃÄÚÈİÊÇ·ñÒ»ÖÂ£¨ºöÂÔ´óĞ¡Ğ´µÃ²îÒì£©
-    * @param str1 ´ı±È½ÏµÃ×Ö·û´®1
-    * @param str2 ´ı±È½ÏµÃ×Ö·û´®2
+    * @brief åˆ¤æ–­ä¸¤ä¸ªå­—ç¬¦ä¸²å¾—å†…å®¹æ˜¯å¦ä¸€è‡´ï¼ˆå¿½ç•¥å¤§å°å†™å¾—å·®å¼‚ï¼‰
+    * @param str1 å¾…æ¯”è¾ƒå¾—å­—ç¬¦ä¸²1
+    * @param str2 å¾…æ¯”è¾ƒå¾—å­—ç¬¦ä¸²2
     * @return
-    * @ - true ÄÚÈİÒ»ÖÂ
-    * @ - false ÄÚÈİ²»Ò»ÖÂ
+    * @ - true å†…å®¹ä¸€è‡´
+    * @ - false å†…å®¹ä¸ä¸€è‡´
     */
     bool ICaseCompare(const std::string& str1, const std::string& str2);
     bool ICaseCompare(const std::wstring& str1, const std::wstring& str2);
 
     /**
-    * @brief ½«×Ö·û´®×ªÎªÈ«Ğ¡Ğ´µÄ×Ö·û´®
-    * @param strInput ´ı×ª»»µÄ×Ö·û´®
-    * @return ×ª»»ºóµÄ×Ö·û´®
+    * @brief å°†å­—ç¬¦ä¸²è½¬ä¸ºå…¨å°å†™çš„å­—ç¬¦ä¸²
+    * @param strInput å¾…è½¬æ¢çš„å­—ç¬¦ä¸²
+    * @return è½¬æ¢åçš„å­—ç¬¦ä¸²
     */
     std::string Lowercase(const std::string& strInput);
     std::wstring Lowercase(const std::wstring& strInput);

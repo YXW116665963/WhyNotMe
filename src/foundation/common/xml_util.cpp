@@ -1,7 +1,7 @@
 #include "xml_util.h"
 #include "text_util.h"
 #include "util.h"
-#include <cstring>  // »ò #include <strings.h> ÔÚÄ³Ğ©ÏµÍ³ÉÏ
+#include <cstring>  // æˆ– #include <strings.h> åœ¨æŸäº›ç³»ç»Ÿä¸Š
 namespace why
 {
 	CXmlNode* QueryXMLNode(const CXmlDocument& doc, const std::string& path)
@@ -85,6 +85,19 @@ namespace why
 
 		return strValue;
 	}
+
+	bool HasAttribute(CXmlNode* pNode, const char* pName)
+	{
+		CXmlAttribute* pAttribute;
+		assert(pNode);
+		assert(pName);
+
+		pAttribute = pNode->first_attribute(pName, 0, false);
+
+
+		return (nullptr != pAttribute);
+	}
+
 
 	bool AttributeAsBool(CXmlNode* pNode, const char* pName, bool bDefault)
 	{
@@ -174,4 +187,5 @@ namespace why
 		strValue = pAttribute->value();
 		return true;
 	}
+
 }

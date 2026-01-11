@@ -15,7 +15,7 @@ public:
 	}
 	~MyClass3() {}
 
-	void ToWrite(Writer<StringBuffer>& writer)
+	void ToWrite(PrettyWriter<StringBuffer>& writer)
 	{
 		RapidjsonWriteBegin(writer);
 		RapidjsonWriteString(text);

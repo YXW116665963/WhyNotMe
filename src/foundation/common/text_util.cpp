@@ -13,12 +13,23 @@ namespace why
 	{
 #if defined(WIN32) || defined(WIN64)
 		std::string strOutput;
+
+		// LPSTR 是 Windows API 中一个非常常见的类型别名（typedef），
+		// 全称是 Long Pointer to String（长指针指向字符串），
+		// 它本质上是一个指向以 NULL 结尾的 ANSI 字符数组（即 C 风格字符串）的指针。
 		LPSTR pstrRes = nullptr;
 		
+
+		//windows下标准的转宽字符为utf-8做法，先获取长度再转化
 		int nLen = ::WideCharToMultiByte(CP_UTF8, 0, strInput.c_str(), strInput.size(), 0, 0, nullptr, nullptr);
 		
 		if (nLen > 0)
 		{
+			// pstrRes 分配内存时写 nLen + 1 而不是 nLen，最根本的原因是为了容纳字符串的结束符 \0（NULL 终止符）。
+			// C/C++ 中处理以 null 结尾的字符串（null-terminated string）时最重要、最容易犯错的规则之一。
+			// 
+			// 无论字符串本身有多长，只要你想把它当成 C 风格字符串（能被 strlen、strcpy、printf 等函数安全使用），
+			// 就必须额外留出 1 个字节存放 \0。
 			pstrRes = new CHAR[nLen + 1];
 			memset(pstrRes, 0, nLen + 1);
 		}
@@ -217,6 +228,33 @@ namespace why
 				nPos = str.find_first_not_of(separator, nFind);
 			}
 		}
+	}
+
+	void StringSplitRegular(const std::string& str, const std::string& separator, std::vector<std::string>& strList)
+	{
+		std::string::size_type nPos, nFind;
+		std::string temp;
+
+		strList.clear();
+
+		nPos = str.find_first_not_of(separator);//找到第一个不属于传入字符串中任意字符的字符位置
+		while (std::string::npos != nPos)
+		{
+			nFind = str.find_first_of(separator, nPos);
+			if (nFind == std::string::npos)
+			{
+				temp = str.substr(nPos, str.size() - nPos);
+				strList.push_back(temp);
+				break;
+			}
+			else
+			{
+				temp = str.substr(nPos, nFind - nPos);
+				strList.push_back(temp);
+				nPos = str.find_first_not_of(separator, nFind);
+			}
+		}
+
 	}
 
 	void Split(const std::string& s, const std::string& delim, std::vector<std::string>& ret) 

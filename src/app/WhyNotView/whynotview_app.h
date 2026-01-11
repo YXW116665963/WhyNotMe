@@ -12,7 +12,7 @@ public:
     int OnExit() wxOVERRIDE;
 
 private:
-    bool LoadJcaBladeData();//test
+    bool LoadwhyBladeData();//test
 private:
     void InitAppFilePath();
     bool InitAppFile();

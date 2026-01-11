@@ -42,7 +42,7 @@ if (CMAKE_SYSTEM_NAME MATCHES "Windows")
 	if(MSVC)
 		set_property(GLOBAL PROPERTY USE_FOLDERS ON)# 使项目中的源文件按 CMake 中定义的目录结构在 IDE 中分组显示
 		add_compile_options(/MP)# 开启多处理器编译
-		# add_compile_options("/source-charset:utf-8") #告警字符偏移？
+		add_compile_options("/source-charset:utf-8") #告警字符偏移？
 	endif()
 endif()
 

@@ -1,7 +1,7 @@
 #include "rapidxml.hpp"  
 #include "rapidxml_utils.hpp"  
 #include "rapidxml_print.hpp" 
-#include "rapidxml_ext.hpp"  //Ö»¶àÁËÕâÒ»ĞĞ
+#include "rapidxml_ext.hpp"  //åªå¤šäº†è¿™ä¸€è¡Œ
 #include "standard.h"
 
 typedef rapidxml::xml_attribute<char> CXmlAttribute;
@@ -11,76 +11,85 @@ typedef rapidxml::xml_document<char> CXmlDocument;
 namespace why
 {
 	/**
-* @brief ÒÀ¾İÂ·¾¶²éÕÒxml½Úµã
-* @param doc ±£´æ¼ÓÔØ½âÎöºÃµÃxmlÎÄ¼şµÃÄÚÈİ
-* @param path xml½ÚµãµÃÂ·¾¶(½ÚµãËùÓĞ¸¸½Úµãº¬×ÔÉíµÃÃû³ÆÒÔ'/'Á´½Ó¶ø³É)
+* @brief ä¾æ®è·¯å¾„æŸ¥æ‰¾xmlèŠ‚ç‚¹
+* @param doc ä¿å­˜åŠ è½½è§£æå¥½å¾—xmlæ–‡ä»¶å¾—å†…å®¹
+* @param path xmlèŠ‚ç‚¹å¾—è·¯å¾„(èŠ‚ç‚¹æ‰€æœ‰çˆ¶èŠ‚ç‚¹å«è‡ªèº«å¾—åç§°ä»¥'/'é“¾æ¥è€Œæˆ)
 * @return
-* - nullptr Ö¸¶¨µÃ½Úµã²»´æÔÚ
-* - ÆäËû ·µ»Ø¶ÔÓ¦µÃxml½ÚµãµÃ¶ÔÏó
+* - nullptr æŒ‡å®šå¾—èŠ‚ç‚¹ä¸å­˜åœ¨
+* - å…¶ä»– è¿”å›å¯¹åº”å¾—xmlèŠ‚ç‚¹å¾—å¯¹è±¡
 */
 	CXmlNode* QueryXMLNode(const CXmlDocument& doc, const std::string& path);
 
 	/**
-	* @brief ÒÀ¾İÂ·¾¶»ñÈ¡xml½Úµã/ÊôĞÔµÃÖµ
-	* @param doc ±£´æ¼ÓÔØ½âÎöºÃµÃxmlÎÄ¼şµÃÄÚÈİ
-	* @param path xml½Úµã/ÊôĞÔµÃÂ·¾¶(½ÚµãËùÓĞ¸¸½Úµãº¬×ÔÉíµÃÃû³ÆÒÔ'/'Á´½Ó¶ø³É)
+	* @brief ä¾æ®è·¯å¾„è·å–xmlèŠ‚ç‚¹/å±æ€§å¾—å€¼
+	* @param doc ä¿å­˜åŠ è½½è§£æå¥½å¾—xmlæ–‡ä»¶å¾—å†…å®¹
+	* @param path xmlèŠ‚ç‚¹/å±æ€§å¾—è·¯å¾„(èŠ‚ç‚¹æ‰€æœ‰çˆ¶èŠ‚ç‚¹å«è‡ªèº«å¾—åç§°ä»¥'/'é“¾æ¥è€Œæˆ)
 	* @return
-	* - ¿Õ×Ö·û£¬¶ÔÓ¦µÃ½Úµã»òÊôĞÔÎ´ÕÒµ½
-	* - ¶ÔÓ¦½Úµã»òÊôĞÔµÃÖµ(ÎÄ±¾ÀàĞÍ)
+	* - ç©ºå­—ç¬¦ï¼Œå¯¹åº”å¾—èŠ‚ç‚¹æˆ–å±æ€§æœªæ‰¾åˆ°
+	* - å¯¹åº”èŠ‚ç‚¹æˆ–å±æ€§å¾—å€¼(æ–‡æœ¬ç±»å‹)
 	* @waring
-	* - ÓĞÇÒÖ»ÓĞÂ·¾¶µÃ×îºóÒ»¸ö·ÖÁ¿¿ÉÒÔÎªÊôĞÔÃû³Æ¡£
-	* - ¶ÔÓÚ×îºóÒ»¸ö·ÖÁ¿£¬×ÜÊÇÏÈ³¢ÊÔÕÒ½Úµã£¬Ö»ÓĞµ±½Úµã²»´æÔÚµÃÇé¿öÏÂ£¬ÔÚ³¢ÊÔ²éÕÒÊôĞÔ
+	* - æœ‰ä¸”åªæœ‰è·¯å¾„å¾—æœ€åä¸€ä¸ªåˆ†é‡å¯ä»¥ä¸ºå±æ€§åç§°ã€‚
+	* - å¯¹äºæœ€åä¸€ä¸ªåˆ†é‡ï¼Œæ€»æ˜¯å…ˆå°è¯•æ‰¾èŠ‚ç‚¹ï¼Œåªæœ‰å½“èŠ‚ç‚¹ä¸å­˜åœ¨å¾—æƒ…å†µä¸‹ï¼Œåœ¨å°è¯•æŸ¥æ‰¾å±æ€§
 	*/
 	std::string QueryXMLValue(const CXmlDocument& doc, const std::string& path);
 
 	/**
-	* @brief »ñÈ¡¶ÔÓ¦µÃ½ÚµãµÃÊôĞÔÖµ(²¼¶ûĞÍ)
-	* @param pNode ½Úµã¶ÔÏó
-	* @param pName ÊôĞÔÃû³Æ
-	* @param bDefault ÊôĞÔ²»´æÔÚÊ±µÃÄ¬ÈÏÖµ
-	* @return ÊôĞÔµÃÖµ
+	* @brief è·å–å¯¹åº”å¾—èŠ‚ç‚¹å¾—å±æ€§å€¼(å¸ƒå°”å‹)
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @param bDefault å±æ€§ä¸å­˜åœ¨æ—¶å¾—é»˜è®¤å€¼
+	* @return å±æ€§å¾—å€¼
 	*/
 	bool AttributeAsBool(CXmlNode* pNode, const char* pName, bool bDefault);
 
 	/**
-	* @brief »ñÈ¡¶ÔÓ¦µÃ½ÚµãµÃÊôĞÔÖµ(ÓĞ·ûºÅÕûÊı)
-	* @param pNode ½Úµã¶ÔÏó
-	* @param pName ÊôĞÔÃû³Æ
-	* @param nDefault ÊôĞÔ²»´æÔÚÊ±µÃÄ¬ÈÏÖµ
-	* @return ÊôĞÔµÃÖµ
+	* @brief è·å–å¯¹åº”å¾—èŠ‚ç‚¹å¾—å±æ€§å€¼(æœ‰ç¬¦å·æ•´æ•°)
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @param nDefault å±æ€§ä¸å­˜åœ¨æ—¶å¾—é»˜è®¤å€¼
+	* @return å±æ€§å¾—å€¼
 	*/
 	int32_t AttributeAsInt(CXmlNode* pNode, const char* pName, int32_t nDefault);
 
 	/**
-	* @brief »ñÈ¡¶ÔÓ¦µÃ½ÚµãµÃÊôĞÔÖµ(ÎŞ·ûºÅÕûÊı)
-	* @param pNode ½Úµã¶ÔÏó
-	* @param pName ÊôĞÔÃû³Æ
-	* @param uDefault ÊôĞÔ²»´æÔÚÊ±µÃÄ¬ÈÏÖµ
-	* @return ÊôĞÔµÃÖµ
+	* @brief è·å–å¯¹åº”å¾—èŠ‚ç‚¹å¾—å±æ€§å€¼(æ— ç¬¦å·æ•´æ•°)
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @param uDefault å±æ€§ä¸å­˜åœ¨æ—¶å¾—é»˜è®¤å€¼
+	* @return å±æ€§å¾—å€¼
 	*/
 	uint32_t AttributeAsUInt(CXmlNode* pNode, const char* pName, uint32_t uDefault);
 
 	/**
-	* @brief »ñÈ¡¶ÔÓ¦µÃ½ÚµãµÃÊôĞÔÖµ(¸¡µãÊı)
-	* @param pNode ½Úµã¶ÔÏó
-	* @param pName ÊôĞÔÃû³Æ
-	* @param fDefault ÊôĞÔ²»´æÔÚÊ±µÃÄ¬ÈÏÖµ
-	* @return ÊôĞÔµÃÖµ
+	* @brief è·å–å¯¹åº”å¾—èŠ‚ç‚¹å¾—å±æ€§å€¼(æµ®ç‚¹æ•°)
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @param fDefault å±æ€§ä¸å­˜åœ¨æ—¶å¾—é»˜è®¤å€¼
+	* @return å±æ€§å¾—å€¼
 	*/
 	float32_t AttributeAsFloat(CXmlNode* pNode, const char* pName, float fDefault);
 
 	/**
-	* @brief »ñÈ¡¶ÔÓ¦µÃ½ÚµãµÃÊôĞÔÖµ(ÎÄ±¾ĞÍ)
-	* @param pNode ½Úµã¶ÔÏó
-	* @param pName ÊôĞÔÃû³Æ
-	* @param strValue ÓÃÓÚ±£´æ»ñÈ¡µÃÊôĞÔÖµ
+	* @brief è·å–å¯¹åº”å¾—èŠ‚ç‚¹å¾—å±æ€§å€¼(æ–‡æœ¬å‹)
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @param strValue ç”¨äºä¿å­˜è·å–å¾—å±æ€§å€¼
 	* @return
-	* - true ´ËÊ±strValueÖĞ±£´æµÃ¾ÍÊÇÊôĞÔÖµ
-	* - flase ´ËÊ±ÊôĞÔÎ´ÕÒµ½
+	* - true æ­¤æ—¶strValueä¸­ä¿å­˜å¾—å°±æ˜¯å±æ€§å€¼
+	* - flase æ­¤æ—¶å±æ€§æœªæ‰¾åˆ°
 	*/
 	bool GetAttributeText(CXmlNode* pNode, const char* pName, std::string& strValue);
 
+	
 
-
+	/**
+	* @brief æŒ‡å®šçš„å±æ€§æ˜¯å¦å­˜åœ¨
+	* @param pNode èŠ‚ç‚¹å¯¹è±¡
+	* @param pName å±æ€§åç§°
+	* @return
+	* - true å­˜åœ¨
+	* - flase ä¸å­˜åœ¨
+	*/
+	bool HasAttribute(CXmlNode* pNode, const char* pName);
 }
 

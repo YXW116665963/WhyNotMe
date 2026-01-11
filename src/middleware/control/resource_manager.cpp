@@ -5,7 +5,7 @@ namespace why
 {
 	namespace
 	{
-		auto				g_backgroundDeleter = [](IBackground *pPicture) { if (pPicture) pPicture->Destroy(); };
+		auto g_backgroundDeleter = [](IBackground *pPicture) { if (pPicture) pPicture->Destroy(); };
 	}
 
 	ResourceMgr::ResourceMgr()

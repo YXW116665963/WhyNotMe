@@ -27,7 +27,7 @@ int WhyNotViewApp::OnExit()
     return 0;
 }
 
-bool WhyNotViewApp::LoadJcaBladeData()
+bool WhyNotViewApp::LoadwhyBladeData()
 {
     std::string sBldFilePath = m_strUserData_dirPath;
     sBldFilePath += std::filesystem::path::preferred_separator;
@@ -54,7 +54,7 @@ bool WhyNotViewApp::OnInit()
     why::SetMainThread();
 
     StartTimerThread();
-    LoadJcaBladeData();
+    LoadwhyBladeData();
     
 
     return true;

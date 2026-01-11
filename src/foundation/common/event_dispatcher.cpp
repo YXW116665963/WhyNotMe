@@ -69,7 +69,7 @@ namespace why
 
 				m_waitQueue.push_back(privateEvent);
 			}
-			// Í¬²½Ö´ÐÐµ±Ç°µÈ´ý¶ÓÁÐm_waitQueueµÄËùÓÐÈÎÎñ
+			// åŒæ­¥æ‰§è¡Œå½“å‰ç­‰å¾…é˜Ÿåˆ—m_waitQueueçš„æ‰€æœ‰ä»»åŠ¡
 			m_pProcedureCall->CallSynchronously(0);
 		}
 	}
@@ -132,7 +132,7 @@ namespace why
 				std::lock_guard<std::mutex>		guard(m_lockWait);
 				m_waitQueue.push_back(privateEvent);
 			}
-			// Òì²½Ö´ÐÐµ±Ç°µÈ´ý¶ÓÁÐm_waitQueueµÄËùÓÐÈÎÎñ
+			// å¼‚æ­¥æ‰§è¡Œå½“å‰ç­‰å¾…é˜Ÿåˆ—m_waitQueueçš„æ‰€æœ‰ä»»åŠ¡
 			m_pProcedureCall->CallAsynchronous(0);
 		}
 

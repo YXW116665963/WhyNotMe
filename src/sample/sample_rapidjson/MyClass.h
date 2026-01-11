@@ -18,7 +18,7 @@ public:
 	JsonArray<int> lst;
 	JsonArray<MyClass3> lst2;
 
-	void ToWrite(Writer<StringBuffer>& writer)
+	void ToWrite(PrettyWriter<StringBuffer>& writer)
 	{
 		RapidjsonWriteBegin(writer);
 		RapidjsonWriteString(text);

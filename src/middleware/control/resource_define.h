@@ -1,8 +1,8 @@
 #pragma once
 
-#include "gui_import.h"
-#include "background_interface.h"
-#include "picture.h"
+#include "gui_import.h"//
+#include "background_interface.h"//
+#include "picture.h"//
 
 namespace why
 {

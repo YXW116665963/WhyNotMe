@@ -12,35 +12,35 @@ namespace PBLIB
 
 
 
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, int32_t& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, int32_t& val)
 		{
 			writer.Int(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, int64_t& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, int64_t& val)
 		{
 			writer.Int64(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, uint32_t& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, uint32_t& val)
 		{
 			writer.Uint(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, uint64_t& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, uint64_t& val)
 		{
 			writer.Uint64(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, double& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, double& val)
 		{
 			writer.Double(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, bool& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, bool& val)
 		{
 			writer.Bool(val);
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, std::string& val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, std::string& val)
 		{
 			writer.String(val.data());
 		}
-		void JsonBase::ToWriteEvery(Writer<StringBuffer>& writer, char* val)
+		void JsonBase::ToWriteEvery(PrettyWriter<StringBuffer>& writer, char* val)
 		{
 			writer.String(val, strlen(val));
 		}
@@ -90,7 +90,7 @@ namespace PBLIB
 
 		std::string JsonBase::ToJson() {
 			StringBuffer s;
-			Writer<StringBuffer> writer(s);
+			PrettyWriter<StringBuffer> writer(s);
 			this->ToWrite(writer);
 			return s.GetString();
 		}
@@ -103,7 +103,7 @@ namespace PBLIB
 		}
 
 
-		void	JsonBase::ToWrite(Writer<StringBuffer>& writer)
+		void	JsonBase::ToWrite(PrettyWriter<StringBuffer>& writer)
 		{
 
 		}
