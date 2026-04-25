@@ -196,4 +196,20 @@ namespace why
 	bool CopyFile(const std::string &src, const std::string &dst);
 
 	bool IsExistFileInDir(const std::string &dir, const std::string &name);
+
+	/** 
+	* @brief 链式编程为源路径添加子路径
+	*/
+	class PathAppender
+	{
+	public:
+		void Clear() { m_strPath = ""; };
+		std::string GetPath() { return m_strPath; };
+		PathAppender& AppendChildPath(const std::string& strChildPath);
+		PathAppender& SetSourcePath(const std::string& strSourcePath);
+		
+	private:
+		std::string m_strPath;
+	};
+
 }

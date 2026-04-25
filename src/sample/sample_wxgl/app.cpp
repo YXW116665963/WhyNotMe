@@ -38,8 +38,6 @@ TestGLContext::TestGLContext(wxGLCanvas* canvas, wxGLContextAttrs* cxtAttrs)
 {
     //- 指定画布的当前上下文
     bool flag = SetCurrent(*canvas);
-
-    char* procAddress;
     //- 加载gl函数指针
     gladLoadGL();
 
@@ -71,18 +69,17 @@ bool MyApp::OnInit()
 
 int MyApp::OnExit()
 {
-    delete m_glContext;
+    //delete m_glContext;
 
     return wxApp::OnExit();
 }
 
 TestGLContext& MyApp::GetContext(wxGLCanvas* canvas)
 {
-    TestGLContext* glContext;
-
     if (!m_glContext)
     {        
-        //- 类似于glfw的初始化并指定版本等函数，为啥要放在窗口框架层来做？
+        //- 类似于glfw的初始化并指定版本等函数
+        wxGLContextAttrs cxtAttrs;
         cxtAttrs.CoreProfile()
             .OGLVersion(4, 5)
             .Robust()
@@ -91,11 +88,9 @@ TestGLContext& MyApp::GetContext(wxGLCanvas* canvas)
         cxtAttrs.SetNeedsARB();
         m_glContext = new TestGLContext(canvas, &cxtAttrs);
     }
-    glContext = m_glContext;
+    m_glContext->SetCurrent(*canvas);
 
-    glContext->SetCurrent(*canvas);
-
-    return *glContext;
+    return *m_glContext;
 }
 
 // ----------------------------------------------------------------------------
@@ -168,6 +163,7 @@ wxEND_EVENT_TABLE()
 MyFrame::MyFrame()
     : wxFrame(nullptr, wxID_ANY, "wxWidgets OpenGL Cube Sample")
 {
+    //gl入口
     new TestGLCanvas(this);
 
     // Make a menubar

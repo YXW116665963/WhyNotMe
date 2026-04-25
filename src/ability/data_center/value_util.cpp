@@ -7,7 +7,7 @@
 #include "list_value.h"
 #include "text_util.h"
 #include "object_value.h"
-
+#include <iostream>
 
 namespace why
 {
@@ -182,7 +182,7 @@ namespace why
 	{
 		if (pObjectValue)
 		{
-			//why ¶ÔÏóÀàĞÍÊµ¼Ê´æ´¢Öµ
+			//why å¯¹è±¡ç±»å‹å®é™…å­˜å‚¨å€¼
 			auto			pValue = dynamic_cast<const ObjectValue*>(pObjectValue);
 
 			if (pValue)
@@ -195,7 +195,7 @@ namespace why
 		return false;
 	}
 
-	//why ¼ÓÔØÊı¾İ¿âÖĞ×Ö·û´®Îªobj¶ÔÏóµÄº¯Êı
+	//why åŠ è½½æ•°æ®åº“ä¸­å­—ç¬¦ä¸²ä¸ºobjå¯¹è±¡çš„å‡½æ•°
 	bool SetObjectValue(IObjectDataValue* pObjectValue, const std::string& strValue)
 	{
 		if (pObjectValue)

@@ -25,7 +25,7 @@ namespace why
 		if ((0 == ret) && (ERROR_CLASS_ALREADY_EXISTS != ::GetLastError()))
 			return;
 
-		// ´°¿Ú¹ý³Ì£¨why£©£º´«µÝthisÖ¸Õë£¨LPVOIDÀàÐÍ£©¸ø´°¿Ú¹ý³Ìº¯ÊýÖÐµÄLPARAM lParam²ÎÊý
+		// çª—å£è¿‡ç¨‹ï¼ˆwhyï¼‰ï¼šä¼ é€’thisæŒ‡é’ˆï¼ˆLPVOIDç±»åž‹ï¼‰ç»™çª—å£è¿‡ç¨‹å‡½æ•°ä¸­çš„LPARAM lParamå‚æ•°
 		m_hWnd = ::CreateWindowEx(0, _T("Data Pump"), _T("Data Mgr"), WS_POPUP, 0, 0, 1, 1, nullptr, nullptr, nullptr, this);
 		if (nullptr == m_hWnd)
 			return;
@@ -55,15 +55,15 @@ namespace why
 			pThis->m_hWnd = hWnd;
 			
 #pragma warning(disable: 4244)
-			// ´°¿Ú¹ý³Ì£¨why£©£º::CreateWindowExº¯Êý»á´«µÝWM_CREATEÏûÏ¢	
-			// ::CreateWindowExµÄ²ÎÊýÁÐ±íÖÐµÄLPVOID lpParam´«µÝ¸ø´°¿Ú¹ý³Ìº¯Êý£¨Ò²¾ÍÊÇµ±Ç°º¯Êý£©ÖÐµÄLPARAM lParam²ÎÊý
+			// çª—å£è¿‡ç¨‹ï¼ˆwhyï¼‰ï¼š::CreateWindowExå‡½æ•°ä¼šä¼ é€’WM_CREATEæ¶ˆæ¯	
+			// ::CreateWindowExçš„å‚æ•°åˆ—è¡¨ä¸­çš„LPVOID lpParamä¼ é€’ç»™çª—å£è¿‡ç¨‹å‡½æ•°ï¼ˆä¹Ÿå°±æ˜¯å½“å‰å‡½æ•°ï¼‰ä¸­çš„LPARAM lParamå‚æ•°
 			::SetWindowLongPtr(hWnd, GWLP_USERDATA, reinterpret_cast<LPARAM>(pThis));
 #pragma warning(default: 4244)
 		}
 		else
 		{
 #pragma warning(disable: 4312)
-			// ´°¿Ú¹ý³Ì£¨why£©£ºÈç¹ûÊÇÆäËûÏûÏ¢£¬»ñÈ¡´¦ÀíWM_CREATEÏûÏ¢Ê±´æ´¢µÄÖ¸Õë£¨µ¥ÁÐÊµÀýProcedureCall£©
+			// çª—å£è¿‡ç¨‹ï¼ˆwhyï¼‰ï¼šå¦‚æžœæ˜¯å…¶ä»–æ¶ˆæ¯ï¼ŒèŽ·å–å¤„ç†WM_CREATEæ¶ˆæ¯æ—¶å­˜å‚¨çš„æŒ‡é’ˆï¼ˆå•åˆ—å®žä¾‹ProcedureCallï¼‰
 			pThis = reinterpret_cast<ProcedureCall*>(::GetWindowLongPtr(hWnd, GWLP_USERDATA));
 #pragma warning(default: 4312)
 
@@ -80,7 +80,7 @@ namespace why
 			LRESULT			hResult;
 			BOOL			bHandled = FALSE;
 
-			// ´°¿Ú¹ý³Ì£¨why£©£º»ù±¾¶¼ÊÇÔÚÏìÓ¦WM_CALL_PROCEÏûÏ¢
+			// çª—å£è¿‡ç¨‹ï¼ˆwhyï¼‰ï¼šåŸºæœ¬éƒ½æ˜¯åœ¨å“åº”WM_CALL_PROCEæ¶ˆæ¯
 			hResult = pThis->WindowProc(uMsg, wParam, lParam, bHandled);
 			if (bHandled)
 				return hResult;
@@ -96,17 +96,17 @@ namespace why
 
 	void ProcedureCall::CallSynchronously(uint32_t uParam)
 	{
-		// Èç¹ûÔÚÍ¬Ò»Ïß³Ì£¬Ö±½Óµ÷ÓÃº¯Êý£»·ñÔò·¢ËÍÏûÏ¢½ÐÀ´Ö÷Ïß³Ì´¦Àí¡£
+		// å¦‚æžœåœ¨åŒä¸€çº¿ç¨‹ï¼Œç›´æŽ¥è°ƒç”¨å‡½æ•°ï¼›å¦åˆ™å‘é€æ¶ˆæ¯å«æ¥ä¸»çº¿ç¨‹å¤„ç†ã€‚
 		if (IsSameThread())
 			m_callProce(uParam);
 		else
-			//Í¬²½º¯Êý£¬·¢ËÍÏûÏ¢ºó»áµÈ´ý½ÓÊÕ´°¿Ú´¦ÀíÍêÏûÏ¢ºó²Å·µ»Ø£¬ÊÊÓÃÓÚÐèÒªÁ¢¼´µÃµ½´¦Àí½á¹ûµÄ³¡¾°¡£
+			//åŒæ­¥å‡½æ•°ï¼Œå‘é€æ¶ˆæ¯åŽä¼šç­‰å¾…æŽ¥æ”¶çª—å£å¤„ç†å®Œæ¶ˆæ¯åŽæ‰è¿”å›žï¼Œé€‚ç”¨äºŽéœ€è¦ç«‹å³å¾—åˆ°å¤„ç†ç»“æžœçš„åœºæ™¯ã€‚
 			::SendMessage(m_hWnd, WM_CALL_PROCE, uParam, 0);
 	}
 
 	void ProcedureCall::CallAsynchronous(uint32_t uParam)
 	{
-		//Òì²½º¯Êý£¬·¢ËÍÏûÏ¢ºó»áÁ¢¼´·µ»Ø£¬ÏûÏ¢»á±»¼ÓÈë½ÓÊÕ´°¿ÚµÄÏûÏ¢¶ÓÁÐ£¬ÊÊÓÃÓÚ²»ÐèÒªÁ¢¼´´¦Àí½á¹ûµÄ³¡¾°¡£
+		//å¼‚æ­¥å‡½æ•°ï¼Œå‘é€æ¶ˆæ¯åŽä¼šç«‹å³è¿”å›žï¼Œæ¶ˆæ¯ä¼šè¢«åŠ å…¥æŽ¥æ”¶çª—å£çš„æ¶ˆæ¯é˜Ÿåˆ—ï¼Œé€‚ç”¨äºŽä¸éœ€è¦ç«‹å³å¤„ç†ç»“æžœçš„åœºæ™¯ã€‚
 		::PostMessage(m_hWnd, WM_CALL_PROCE, uParam, 0);
 	}
 

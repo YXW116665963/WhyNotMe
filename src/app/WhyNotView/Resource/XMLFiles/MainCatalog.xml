@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WHYUI origin="0,114">
+	<Graphic>
+        <Background name ="pure_grey" x="0" y="114" width="1072" height="700"/>
+		<Background name ="group_box" x="8" y="126" width="1056" height="681"/>
+		<Picture name="blue_flag" x="32" y="142" width="16" height="28"/>
+		<Text name="Yahei_26_700" text="主菜单 (0.0)" color="#000000" x="64" y="138" width="130" height="35"/>
+		<Background name ="edit_bk" x="545" y="539" width="385" height="48"/>
+		<Background name ="left_label" x="545" y="539" width="119" height="48"/>
+		<Text name="Yahei_20_400" text="目录名" color="#FFFFFF" x="574" y="549" width="62" height="26"/>
+		<Background name ="edit_bk" x="545" y="602" width="385" height="48"/>
+		<Background name ="left_label" x="545" y="602" width="119" height="48"/>
+		<Text name="Yahei_20_400" text="型号名" color="#FFFFFF" x="574" y="612" width="62" height="26"/>		
+    </Graphic>
+    <ImageButton name="auto" x="32" y="225" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F1" x="9" y="5" width="19" height="24"/>
+            <Icon icon="main_automatic" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="全自动" x="53" y="156" width="74" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="manual" x="237" y="225" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F2" x="9" y="5" width="19" height="24"/>
+            <Icon icon="manual" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="手动操作" x="42" y="156" width="98" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="cut_param" x="442" y="225" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F3" x="9" y="5" width="19" height="24"/>
+            <Icon icon="model_param" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="切割参数" x="42" y="156" width="98" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="blade-maint" x="647" y="225" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F4" x="9" y="5" width="19" height="24"/>
+            <Icon icon="blade_param" x="45" y="35" width="91" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="刀片参数维护" x="17" y="156" width="147" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="operator-maint" x="852" y="225" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F5" x="9" y="5" width="19" height="24"/>
+            <Icon icon="function_param" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="一般效能" x="41" y="139" width="98" height="35"/>
+			<Text font="Yahei_24_400" color="#000000" text="参数维护" x="41" y="174" width="98" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="device-maint" x="32" y="479" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F6" x="9" y="5" width="19" height="24"/>
+            <Icon icon="effect_param" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="机器效能" x="41" y="139" width="98" height="35"/>
+			<Text font="Yahei_24_400" color="#000000" text="参数维护" x="41" y="174" width="98" height="35"/>
+        </Childs>
+    </ImageButton>
+	<ImageButton name="manufacturer-maint" x="237" y="479" width="180" height="230">
+        <GeneralRes name="status_button_grey"/>
+        <Childs>
+			<Text font="Yahei_16_400" color="#000000" text="F7" x="9" y="5" width="19" height="24"/>
+            <Icon icon="tech_param" x="45" y="35" width="90" height="90"/>
+            <Text font="Yahei_24_400" color="#000000" text="功能技术维护" x="17" y="160" width="147" height="35"/>
+        </Childs>
+    </ImageButton>
+	<!--目录名-->
+	<Label name="select_folder" x="677" y="549" width="240" height="30" style="no_auto_resize,ellip_end,none_background" background="#FFFFFF">
+		<Font name="Arial_20_400" color="0,0,0"/>
+		<Bind Domain="EnvVar" Name="CutFolder"/>
+	</Label>
+	
+	<!--型号名-->
+	<Label name="select_file" x="677" y="612" width="240" height="30" style="no_auto_resize,ellip_end,none_background" background="#FFFFFF">
+		<Font name="Arial_20_400" color="0,0,0"/>
+		<Bind Domain="EnvVar" Name="CutFileName"/>
+	</Label>
+</JCAUI>

@@ -17,9 +17,9 @@ namespace why
 
 	public:
 		bool IsSameThread();
-		// Êı¾İ¶©ÔÄ£ºÒÆ½»µ½´°¿ÚÏß³Ì£¬Í¬²½Ö´ĞĞ»Øµ÷¡£
+		// æ•°æ®è®¢é˜…ï¼šç§»äº¤åˆ°çª—å£çº¿ç¨‹ï¼ŒåŒæ­¥æ‰§è¡Œå›è°ƒã€‚
 		void CallSynchronously(uint32_t uParam);
-		// Êı¾İ¶©ÔÄ£ºÒÆ½»µ½´°¿ÚÏß³Ì£¬Òì²½Ö´ĞĞ»Øµ÷¡£
+		// æ•°æ®è®¢é˜…ï¼šç§»äº¤åˆ°çª—å£çº¿ç¨‹ï¼Œå¼‚æ­¥æ‰§è¡Œå›è°ƒã€‚
 		void CallAsynchronous(uint32_t uParam);
 		void Destory() { delete this; }
 
@@ -29,7 +29,7 @@ namespace why
 	private:
 		static LRESULT CALLBACK _WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-		// Êı¾İ¶©ÔÄ£ºWM_CALL_PROCEÏûÏ¢´¦Àíº¯Êı
+		// æ•°æ®è®¢é˜…ï¼šWM_CALL_PROCEæ¶ˆæ¯å¤„ç†å‡½æ•°
 		LRESULT WindowProc(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled);
 
 	private:

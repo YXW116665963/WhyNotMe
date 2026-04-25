@@ -1,3 +1,5 @@
+#include "env_var_data_def.h"
+#include "data_center_value_util.h"
 #include "ui_loader.h"
 #include "text_util.h"
 #include "file_util.h"
@@ -16,9 +18,12 @@ namespace why
 {
 	namespace
 	{
-		std::string							g_strConfigPath;
-		std::string							g_strPicturePath;
+		std::string							g_strConfigPath;		
 		std::string							g_strConfigTargetPath;
+
+
+		std::string	g_strPicturePath;
+		std::string g_strXmlPath;
 	}
 
 	void TransformPoint(wxPoint& ptPos, const WndCoordinate& wndCoordinate)
@@ -306,13 +311,7 @@ namespace why
 
 	bool LoadPanel(wxWindow* pParent, DataExchange* pDataExchange, const std::string& strFileName, PanelGraphic* pPanelGraphic)
 	{
-		std::string					strFullFileName;
-
-		if (!SearchResourceFullPath(g_strConfigPath, strFileName, strFullFileName))
-		{
-			LOG_ERROR << "SearchResourceFullPath not find:" << g_strConfigPath << "strFileName:" << strFileName;
-			return false;
-		}
+		std::string	strFullFileName = GetStringValue(envVar::g_Domain, envVar::strUIXml_dirPath) + strFileName;
 
 		{
 			std::string						strXMLFileName = UTF8ToLocal(strFullFileName);
@@ -386,15 +385,9 @@ namespace why
 
 	bool LoadVirtualWnd(VirtualWndOwner* pOwner, const std::string& strFileName)
 	{
-		std::string					strFullFileName;
-		assert(nullptr != pOwner);
+		assert(nullptr != pOwner);	
+		std::string	strFullFileName = GetStringValue(envVar::g_Domain, envVar::strUIXml_dirPath) + strFileName;
 
-		if (!SearchResourceFullPath(g_strConfigPath, strFileName, strFullFileName))
-		{
-			LOG_ERROR << "SearchResourceFullPath not find:" << g_strConfigPath << "strFileName:" << strFileName;
-			return false;
-		}
-		
 		{
 			std::string						strXMLFileName = UTF8ToLocal(strFullFileName);
 			rapidxml::file<char>			fdoc(strXMLFileName.c_str());

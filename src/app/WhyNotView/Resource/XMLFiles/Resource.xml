@@ -1,0 +1,1727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JCAUI>
+	<Resource>
+		<Global>
+			<Font name="Arial_10_400" face="Arial" height="10" weight="400"/>
+			<Font name="Arial_10_700" face="Arial" height="10" weight="400"/>
+			<Font name="Arial_11_400" face="Arial" height="11" weight="400"/>
+			<Font name="Arial_11_700" face="Arial" height="11" weight="700"/>
+			<Font name="Arial_12_400" face="Arial" height="12" weight="400"/>
+			<Font name="Arial_12_700" face="Arial" height="12" weight="700"/>
+			<Font name="Arial_13_400" face="Arial" height="13" weight="400"/>
+			<Font name="Arial_13_700" face="Arial" height="13" weight="700"/>
+			<Font name="Arial_14_400" face="Arial" height="14" weight="400"/>
+			<Font name="Arial_14_700" face="Arial" height="14" weight="700"/>
+			<Font name="Arial_15_700" face="Arial" height="15" weight="700"/>
+			<Font name="Arial_16_400" face="Arial" height="16" weight="400"/>
+			<Font name="Arial_16_600" face="Arial" height="16" weight="600"/>
+			<Font name="Arial_16_700" face="Arial" height="16" weight="700"/>
+			<Font name="Arial_16_900" face="Arial" height="16" weight="900"/>
+			<Font name="Arial_17_400" face="Arial" height="17" weight="400"/>
+			<Font name="Arial_17_500" face="Arial" height="17" weight="500"/>
+			<Font name="Arial_17_700" face="Arial" height="17" weight="700"/>
+			<Font name="Arial_17_900" face="Arial" height="17" weight="900"/>
+			<Font name="Arial_18_400" face="Arial" height="18" weight="400"/>
+			<Font name="Arial_18_700" face="Arial" height="18" weight="700"/>
+			<Font name="Arial_18_900" face="Arial" height="18" weight="900"/>
+			<Font name="Arial_19_400" face="Arial" height="19" weight="400"/>
+			<Font name="Arial_19_700" face="Arial" height="19" weight="700"/>
+			<Font name="Arial_20_400" face="Arial" height="20" weight="400"/>
+			<Font name="Arial_20_700" face="Arial" height="20" weight="700"/>
+			<Font name="Arial_20_900" face="Arial" height="20" weight="900"/>
+			<Font name="Arial_22_700" face="Arial" height="22" weight="700"/>
+			<Font name="Arial_22_900" face="Arial" height="22" weight="900"/>
+			<Font name="Arial_24_700" face="Arial" height="24" weight="700"/>
+			<Font name="Arial_24_900" face="Arial" height="24" weight="900"/>
+			<Font name="Arial_26_900" face="Arial" height="26" weight="900"/>
+			<Font name="Arial_28_700" face="Arial" height="28" weight="700"/>
+			<Font name="Arial_28_900" face="Arial" height="28" weight="900"/>
+			<Font name="Arial_30_700" face="Arial" height="30" weight="700"/>
+			<Font name="Arial_30_900" face="Arial" height="30" weight="900"/>
+			<Font name="Arial_32_700" face="Arial" height="32" weight="700"/>
+			<Font name="Arial_32_900" face="Arial" height="32" weight="900"/>
+			<Font name="Arial_34_900" face="Arial" height="34" weight="900"/>
+			<Font name="Arial_36_700" face="Arial" height="36" weight="700"/>
+			<Font name="Arial_36_900" face="Arial" height="36" weight="900"/>
+			<Font name="Arial_40_900" face="Arial" height="40" weight="900"/>
+
+			<Font name="Yahei_10_400" face="微软雅黑" height="10" weight="400"/>
+			<Font name="Yahei_10_700" face="微软雅黑" height="10" weight="700"/>
+			<Font name="Yahei_11_400" face="微软雅黑" height="11" weight="400"/>
+			<Font name="Yahei_11_700" face="微软雅黑" height="11" weight="700"/>
+			<Font name="Yahei_12_400" face="微软雅黑" height="12" weight="400"/>
+			<Font name="Yahei_12_700" face="微软雅黑" height="12" weight="700"/>
+			<Font name="Yahei_13_400" face="微软雅黑" height="13" weight="400"/>
+			<Font name="Yahei_14_400" face="微软雅黑" height="14" weight="400"/>
+			<Font name="Yahei_14_700" face="微软雅黑" height="14" weight="700"/>
+			<Font name="Yahei_16_400" face="微软雅黑" height="16" weight="400"/>
+			<Font name="Yahei_16_700" face="微软雅黑" height="16" weight="700"/>
+			<Font name="Yahei_17_400" face="微软雅黑" height="17" weight="400"/>
+			<Font name="Yahei_18_400" face="微软雅黑" height="18" weight="400"/>
+			<Font name="Yahei_18_700" face="微软雅黑" height="18" weight="700"/>
+			<Font name="Yahei_19_400" face="微软雅黑" height="19" weight="400"/>
+			<Font name="Yahei_20_400" face="微软雅黑" height="20" weight="400"/>
+			<Font name="Yahei_20_700" face="微软雅黑" height="20" weight="700"/>
+			<Font name="Yahei_22_400" face="微软雅黑" height="22" weight="400"/>
+			<Font name="Yahei_24_400" face="微软雅黑" height="24" weight="400"/>
+			<Font name="Yahei_24_700" face="微软雅黑" height="24" weight="700"/>
+			<Font name="Yahei_26_700" face="微软雅黑" height="26" weight="700"/>
+			<Font name="Yahei_36_300" face="微软雅黑" height="36" weight="300"/>
+			<Font name="Yahei_36_700" face="微软雅黑" height="36" weight="700"/>
+
+            <!--line-->
+			<Pen name="split_line" width="1" color="149,157,172"/>
+			<Pen name="green_line" width="1" color="31,171,31"/>
+			<Pen name="split_line1" width="1.5" color="180,188,204"/>
+			<Pen name="green_solid_line" width="1" color="31,171,31"/>
+			<Pen name="green_dashed_line" width="1" color="31,171,31" style="dash"/>
+			<Pen name="blue_solid_line" width="1" color="#1E94D1"/>
+			<Pen name="blue_dashed_line" width="1" color="#1E94D1" style="dash"/>
+			<Pen name="yellow_solid_line" width="1" color="#FF8800"/>
+			<Pen name="yellow_dashed_line" width="1" color="#FF8800" style="dash"/>
+			<Pen name="red_line" width="2" color="255,49,49"/>
+			<Pen name="pink_line" width="2" color="255,0,255"/>
+			<Pen name="red_line_1" width="1" color="255,49,49"/>
+			<Pen name="red_dashed_line_1" width="1" color="255,49,49" style="dash"/>
+			<Pen name="pink_line_1" width="1" color="255,0,255"/>
+			<Pen name="green2_line" width="1" color="0,255,0"/>
+			<Pen name="grey_line" width="1" color="92,92,92"/>
+			<Pen name="white_line" width="1" color="255,255,255"/>
+			<Pen name="split_line_dot" style="dot" width="1" color="149,157,172"/>
+			<Pen name="orange_line" width="1" color="#FF7F27"/>
+			<Pen name="blue_line" width="2" color="#2282FC"/>
+			<Pen name="gold_line" width="2" color="#FFEC00"/>
+		
+			<!--CommonControl-->
+			<Picture name="readonly_edit" file="CommonControl\readonly_edit.png"/>
+			<Picture name="edit_bk" file="CommonControl\edit_bk.png"/>
+			<Picture name="edit_bk_green" file="CommonControl\edit_bk_green.png"/>
+			<Picture name="groupbox_greyback" file="CommonControl\groupbox_greyback.png"/>
+			<Picture name="groupbox_greyback_noborder" file="CommonControl\groupbox_greyback_noborder.png"/>
+			<Picture name="groupbox_greyback_darkgreyborder" file="CommonControl\groupbox_greyback_darkgreyborder.png"/>
+			<Picture name="group_box" file="CommonControl\group_box.png"/>
+			<Picture name="label" file="CommonControl\label.png"/>
+			<Picture name="left_label" file="CommonControl\left_label.png"/>
+			<Picture name="left_label_darkgrey" file="CommonControl\left_label_darkgrey.png"/>
+			<Picture name="left_label_green" file="CommonControl\left_label_green.png"/>
+			<Picture name="top_label" file="CommonControl\top_label.png"/>	
+			<Picture name="top_label_green" file="CommonControl\top_label_green.png"/>
+			<Picture name="rectangle_green" file="CommonControl\rectangle_green.png"/>	
+			<Picture name="rectangle_red" file="CommonControl\rectangle_red.png"/>
+			<Picture name="rectangle_greyback_darkborder" file="CommonControl\rectangle_greyback_darkborder.png"/>
+			<Picture name="rectangle_green_roundedcorners" file="CommonControl\rectangle_green_roundedcorners.png"/>
+			<Picture name="rect_green" file="CommonControl\rect_green.png"/>
+			<Picture name="rect_lightblack" file="CommonControl\rect_lightblack.png"/>
+			<Picture name="rect_darkblack" file="CommonControl\rect_darkblack.png"/>
+			<Picture name="rect_lightgreen" file="CommonControl\rect_lightgreen.png"/>
+			<Picture name="rect_orange" file="CommonControl\rect_orange.png"/>
+			<Picture name="rect_pink" file="CommonControl\rect_pink.png"/>
+			<Picture name="rect_red" file="CommonControl\rect_red.png"/>
+			<Picture name="rect_darkgrey" file="CommonControl\rect_darkgrey.png"/>
+			<Picture name="back" file="CommonControl\back.png"/>
+			<Picture name="stop" file="CommonControl\stop.png"/>
+			<Picture name="start" file="CommonControl\start.png"/>
+			<Picture name="right_edit" file="CommonControl\right_edit.png"/>
+			<Picture name="right_edit_readonly" file="CommonControl\right_edit_readonly.png"/>
+			<Picture name="progress_bar" file="CommonControl\progress_bar.png"/>
+			<Picture name="green_group_box" file="CommonControl\green_group_box.png"/>
+			<Picture name="top_green_label" file="CommonControl\top_green_label.png"/>
+			<Picture name="top_red_label" file="CommonControl\top_red_label.png"/>
+			<Picture name="back_light_green" file="CommonControl\back_light_green.png"/>
+			<Picture name="back_light_grey" file="CommonControl\back_light_grey.png"/>
+			<Picture name="triangle_down_green" file="CommonControl\triangle_down_green.png"/>
+			<Picture name="triangle_down_grey" file="CommonControl\triangle_down_grey.png"/>
+			<Picture name="black" file="CommonControl\black.png"/>
+			<Picture name="grey_back_push_button_off" file="CommonControl\grey_back_push_button_off.png"/>
+			<Picture name="grey_back_push_button_on" file="CommonControl\grey_back_push_button_on.png"/>
+			<Picture name="white_back_push_button_off" file="CommonControl\white_back_push_button_off.png"/>
+			<Picture name="white_back_push_button_on" file="CommonControl\white_back_push_button_on.png"/>
+			<Picture name="dark_grey_back_push_button_off" file="CommonControl\dark_grey_back_push_button_off.png"/>
+			<Picture name="dark_grey_back_push_button_on" file="CommonControl\dark_grey_back_push_button_on.png"/>
+			
+			<!--PushedButton-->
+			<Picture name="red_normal" file="PushedButton\red\normal.png"/>
+			<Picture name="red_hover" file="PushedButton\red\hover.png"/>
+			<Picture name="red_pushed" file="PushedButton\red\pushed.png"/>			
+			<Picture name="grey_normal" file="PushedButton\grey\normal.png"/>
+			<Picture name="grey_hover" file="PushedButton\grey\hover.png"/>
+			<Picture name="grey_pushed" file="PushedButton\grey\pushed.png"/>		
+			<Picture name="orange_normal" file="PushedButton\orange\normal.png"/>
+			<Picture name="orange_hover" file="PushedButton\orange\hover.png"/>
+			<Picture name="orange_pushed" file="PushedButton\orange\pushed.png"/>
+			<Picture name="blue_normal" file="PushedButton\blue\normal.png"/>
+			<Picture name="blue_hover" file="PushedButton\blue\hover.png"/>
+			<Picture name="blue_pushed" file="PushedButton\blue\pushed.png"/>
+			<Picture name="green_normal" file="PushedButton\green\normal.png"/>
+			<Picture name="green_hover" file="PushedButton\green\hover.png"/>
+			<Picture name="green_pushed" file="PushedButton\green\pushed.png"/>
+			
+			<!--ConfirmAndReturn-->
+			<Picture name="confirm" file="ConfirmAndReturn\Confirm.png"/>
+			<Picture name="return" file="ConfirmAndReturn\Return.png"/>
+			<Picture name="save" file="ConfirmAndReturn\Save.png"/>
+			<Picture name="display_only" file="ConfirmAndReturn\display_only.png"/>
+			
+			<!--log-->
+			<Picture name="query" file="Log\query.png"/>
+			<Picture name="line_chart" file="Log\line_chart.png"/>
+			<Picture name="forefront_page" file="Log\forefront_page.png"/>
+			<Picture name="final_page" file="Log\final_page.png"/>
+			<Picture name="upward" file="Log\upward.png"/>
+			<Picture name="downward" file="Log\downward.png"/>
+			<Picture name="log_extracte" file="Log\log_extracte.png"/>
+			<Picture name="help" file="Log\help.png"/>
+			<Picture name="page_up" file="Log\page_up.png"/>
+			<Picture name="page_down" file="Log\page_down.png"/>
+
+			<!--main -->
+			<Picture name="logo" file="MainStatus\logo.png"/>
+			<Picture name="z_em" file="MainStatus\z_em.png"/>	
+			<Picture name="terminal" file="MainStatus\terminal.png"/>
+			<Picture name="sensor" file="MainStatus\sensor.png"/>
+			<Picture name="alarm" file="MainStatus\alarm.png"/>			
+			<Picture name="main_status_gray" file="MainStatus\status_gray.png"/>
+			<Picture name="main_status_blue" file="MainStatus\status_blue.png"/>
+			<Picture name="main_status_red" file="MainStatus\status_red.png"/>
+			<Picture name="water_leak_normal" file="MainStatus\water_leak_normal.png"/>
+			<Picture name="water_leak_warning" file="MainStatus\water_leak_warning.png"/>
+			<Picture name="segm_normal" file="MainStatus\segm_normal.png"/>
+			<Picture name="segm_warning" file="MainStatus\segm_warning.png"/>
+			<Picture name="segm_break" file="MainStatus\segm_break.png"/>
+			<Picture name="para_maint_identity" file="MainStatus\para_maint_identity.png"/>
+			<Picture name="func_maint_identity" file="MainStatus\func_maint_identity.png"/>
+			<Picture name="device_maint_identity" file="MainStatus\device_maint_identity.png"/>
+			<Picture name="engineer_identity" file="MainStatus\engineer_identity.png"/>
+			<Picture name="screenshot_save" file="MainStatus\screenshot_save.png"/>
+			
+			
+			<Picture name="analyse" file="MainTool\Analyse.png"/>
+			<Picture name="blade_setup" file="MainTool\BladeHeight.png"/>
+			<Picture name="copy" file="MainTool\Copy.png"/>
+			<Picture name="main_cut_water" file="MainTool\CutWater.png"/>
+			<Picture name="main_cut_water_open" file="MainTool\CutWaterOpen.png"/>
+			<Picture name="main_motor" file="MainTool\MainMotor.png"/>
+			<Picture name="measure" file="MainTool\Measure.png"/>
+			<Picture name="model_param" file="MainTool\ModelParam.png"/>
+			<Picture name="recorder" file="MainTool\Recorder.png"/>
+			<Picture name="system_init" file="MainTool\SystemInit.png"/>
+			<Picture name="system_init_open" file="MainTool\SystemInitOpen.png"/>
+			<Picture name="ct_vacuum" file="MainTool\CTVacuum.png"/>
+			<Picture name="ct_vacuum_open" file="MainTool\CTVacuumOpen.png"/>
+			<Picture name="st_vacuum" file="MainTool\STVacuum.png"/>
+			<Picture name="st_vacuum_open" file="MainTool\STVacuumOpen.png"/>
+			<Picture name="light" file="MainTool\Light.png"/>
+			<Picture name="light_open" file="MainTool\LightOpen.png"/>
+			<Picture name="spindle_one" file="MainTool\SpindleOne.png"/>
+			<Picture name="spindle_one_open" file="MainTool\SpindleOneOpen.png"/>
+			<Picture name="spindle_two" file="MainTool\SpindleTwo.png"/>
+			<Picture name="spindle_two_open" file="MainTool\SpindleTwoOpen.png"/>
+			<Picture name="cassette_update" file="MainTool\CassetteUpdate.png"/>
+			
+			<!--cassette status-->
+			<Picture name="clamping" file="CommonPicture\CassetteStatus\clamping.png"/>
+			<Picture name="completed" file="CommonPicture\CassetteStatus\completed.png"/>
+			<Picture name="frame_ready" file="CommonPicture\CassetteStatus\frame_ready.png"/>
+			<Picture name="in_alignment" file="CommonPicture\CassetteStatus\in_alignment.png"/>
+			<Picture name="in_cleaning" file="CommonPicture\CassetteStatus\in_cleaning.png"/>
+			<Picture name="in_cutting" file="CommonPicture\CassetteStatus\in_cutting.png"/>
+			<Picture name="in_loading" file="CommonPicture\CassetteStatus\in_loading.png"/>
+			<Picture name="in_unloading" file="CommonPicture\CassetteStatus\in_unloading.png"/>
+			<Picture name="no_frame" file="CommonPicture\CassetteStatus\no_frame.png"/>
+			<Picture name="sensing" file="CommonPicture\CassetteStatus\sensing.png"/>
+			<Picture name="wafer_to_clean" file="CommonPicture\CassetteStatus\wafer_to_clean.png"/>
+			
+			<!--common picture-->
+			<Picture name="blue_flag" file="CommonPicture\blue_flag.png"/>
+			<Picture name="red_flag" file="CommonPicture\red_flag.png"/>
+			<Picture name="yellow_flag" file="CommonPicture\yellow_flag.png"/>
+			<Picture name="green_flag" file="CommonPicture\green_flag.png"/>
+			<Picture name="lock" file="CommonPicture\lock.png"/>
+		
+			<Picture name="main_automatic" file="MainCatalog\Automatic.png"/>
+			<Picture name="blade_param" file="MainCatalog\BladeParam.png"/>
+			<Picture name="effect_param" file="MainCatalog\EffectParam.png"/>
+			<Picture name="function_param" file="MainCatalog\FunctionParam.png"/>
+			<Picture name="manual" file="MainCatalog\Manual.png"/>
+			<Picture name="model_catalog" file="MainCatalog\ModelCatalog.png"/>
+			<Picture name="tech_param" file="MainCatalog\TechParam.png"/>
+			<Picture name="arrow" file="MainTray\Arrow.png"/>
+			<Picture name="arrow_on" file="MainTray\Arrow_On.png"/>
+			<Picture name="direct" file="MainTray\Direct.png"/>
+			<Picture name="direct_on" file="MainTray\Direct_On.png"/>
+			<Picture name="number" file="MainTray\Number.png"/>
+			<Picture name="text" file="MainTray\Text.png"/>
+			<Picture name="help_wizard" file="MainTray\help_wizard.png"/>
+			<Picture name="operation_records" file="MainTray\operation_records.png"/>
+			
+			<!--AxisControlMudule-->
+			<Picture name="scan" file="MainTray\Scan.png"/>
+			<Picture name="cassette_up" file="MainTray\cassette_up.png"/>
+			<Picture name="cassette_down" file="MainTray\cassette_down.png"/>
+			<Picture name="axis_T_high_speed_anticlockwise" file="MainTray\T_high_speed_anticlockwise.png"/>
+			<Picture name="axis_T_high_speed_clockwise" file="MainTray\T_high_speed_clockwise.png"/>
+			<Picture name="axis_high_speed_down" file="MainTray\high_speed_down.png"/>
+			<Picture name="axis_high_speed_left" file="MainTray\high_speed_left.png"/>
+			<Picture name="axis_high_speed_right" file="MainTray\high_speed_right.png"/>
+			<Picture name="axis_high_speed_up" file="MainTray\high_speed_up.png"/>
+			<Picture name="IDX" file="MainTray\IDX.png"/>
+			<Picture name="SCR" file="MainTray\SCR.png"/>
+			<Picture name="T_IDX_anticlockwise" file="MainTray\T_IDX_anticlockwise.png"/>
+			<Picture name="T_IDX_clockwise" file="MainTray\T_IDX_clockwise.png"/>
+			<Picture name="IDX_right" file="MainTray\IDX_right.png"/>
+			<Picture name="IDX_left" file="MainTray\IDX_left.png"/>
+			<Picture name="IDX_up" file="MainTray\IDX_up.png"/>
+			<Picture name="IDX_down" file="MainTray\IDX_down.png"/>
+			<Picture name="T_SCR_anticlockwise" file="MainTray\T_SCR_anticlockwise.png"/>
+			<Picture name="T_SCR_clockwise" file="MainTray\T_SCR_clockwise.png"/>
+			<Picture name="SCR_left" file="MainTray\SCR_left.png"/>
+			<Picture name="SCR_right" file="MainTray\SCR_right.png"/>
+			<Picture name="SCR_up" file="MainTray\SCR_up.png"/>
+			<Picture name="SCR_down" file="MainTray\SCR_down.png"/>
+			<Picture name="z_move_down" file="MainTray\z_move_down.png"/>
+			<Picture name="z_move_up" file="MainTray\z_move_up.png"/>
+			<Picture name="T_anticlockwise_normal" file="PushedButton\btn_anticlockwise\normal.png"/>
+			<Picture name="T_anticlockwise_hover" file="PushedButton\btn_anticlockwise\hover.png"/>
+			<Picture name="T_anticlockwise_pushed" file="PushedButton\btn_anticlockwise\pushed.png"/>
+			<Picture name="T_clockwise_normal" file="PushedButton\btn_clockwise\normal.png"/>
+			<Picture name="T_clockwise_hover" file="PushedButton\btn_clockwise\hover.png"/>
+			<Picture name="T_clockwise_pushed" file="PushedButton\btn_clockwise\pushed.png"/>
+			<Picture name="down_normal" file="PushedButton\btn_down\normal.png"/>
+			<Picture name="down_hover" file="PushedButton\btn_down\hover.png"/>
+			<Picture name="down_pushed" file="PushedButton\btn_down\pushed.png"/>
+			<Picture name="up_normal" file="PushedButton\btn_up\normal.png"/>
+			<Picture name="up_hover" file="PushedButton\btn_up\hover.png"/>
+			<Picture name="up_pushed" file="PushedButton\btn_up\pushed.png"/>
+			<Picture name="right_normal" file="PushedButton\btn_right\normal.png"/>
+			<Picture name="right_hover" file="PushedButton\btn_right\hover.png"/>
+			<Picture name="right_pushed" file="PushedButton\btn_right\pushed.png"/>
+			<Picture name="left_normal" file="PushedButton\btn_left\normal.png"/>
+			<Picture name="left_hover" file="PushedButton\btn_left\hover.png"/>
+			<Picture name="left_pushed" file="PushedButton\btn_left\pushed.png"/>
+
+			<!--VideoPanel-->
+			<Picture name="low_speed_left_normal" file="VideoPanel\arrow\low_speed\normal\left.png"/>
+			<Picture name="low_speed_top_normal" file="VideoPanel\arrow\low_speed\normal\top.png"/>
+			<Picture name="low_speed_right_normal" file="VideoPanel\arrow\low_speed\normal\right.png"/>
+			<Picture name="low_speed_bottom_normal" file="VideoPanel\arrow\low_speed\normal\bottom.png"/>
+			<Picture name="low_speed_left_selected" file="VideoPanel\arrow\low_speed\selected\left.png"/>
+			<Picture name="low_speed_top_selected" file="VideoPanel\arrow\low_speed\selected\top.png"/>
+			<Picture name="low_speed_right_selected" file="VideoPanel\arrow\low_speed\selected\right.png"/>
+			<Picture name="low_speed_bottom_selected" file="VideoPanel\arrow\low_speed\selected\bottom.png"/>		
+			<Picture name="high_speed_left_normal" file="VideoPanel\arrow\high_speed\normal\left.png"/>
+			<Picture name="high_speed_top_normal" file="VideoPanel\arrow\high_speed\normal\top.png"/>
+			<Picture name="high_speed_right_normal" file="VideoPanel\arrow\high_speed\normal\right.png"/>
+			<Picture name="high_speed_bottom_normal" file="VideoPanel\arrow\high_speed\normal\bottom.png"/>
+			<Picture name="high_speed_left_selected" file="VideoPanel\arrow\high_speed\selected\left.png"/>
+			<Picture name="high_speed_top_selected" file="VideoPanel\arrow\high_speed\selected\top.png"/>
+			<Picture name="high_speed_right_selected" file="VideoPanel\arrow\high_speed\selected\right.png"/>
+			<Picture name="high_speed_bottom_selected" file="VideoPanel\arrow\high_speed\selected\bottom.png"/>
+			<Picture name="step_move_left_normal" file="VideoPanel\arrow\step_move\normal\left.png"/>
+			<Picture name="step_move_top_normal" file="VideoPanel\arrow\step_move\normal\top.png"/>
+			<Picture name="step_move_right_normal" file="VideoPanel\arrow\step_move\normal\right.png"/>
+			<Picture name="step_move_bottom_normal" file="VideoPanel\arrow\step_move\normal\bottom.png"/>
+			<Picture name="step_move_left_selected" file="VideoPanel\arrow\step_move\selected\left.png"/>
+			<Picture name="step_move_top_selected" file="VideoPanel\arrow\step_move\selected\top.png"/>
+			<Picture name="step_move_right_selected" file="VideoPanel\arrow\step_move\selected\right.png"/>
+			<Picture name="step_move_bottom_selected" file="VideoPanel\arrow\step_move\selected\bottom.png"/>		
+			<Picture name="square_normal" file="VideoPanel\button\square\normal.png"/>
+			<Picture name="square_hover" file="VideoPanel\button\square\hover.png"/>
+			<Picture name="square_pushed" file="VideoPanel\button\square\pushed.png"/>
+			<Picture name="square_selected" file="VideoPanel\button\square\selected.png"/>
+			<Picture name="circular_normal" file="VideoPanel\button\circular\normal.png"/>
+			<Picture name="circular_hover" file="VideoPanel\button\circular\hover.png"/>
+			<Picture name="circular_pushed" file="VideoPanel\button\circular\pushed.png"/>
+			<Picture name="circular_selected" file="VideoPanel\button\circular\selected.png"/>			
+			<Picture name="rounded_rect_normal" file="VideoPanel\button\rounded_rect\normal.png"/>
+			<Picture name="rounded_rect_hover" file="VideoPanel\button\rounded_rect\hover.png"/>
+			<Picture name="rounded_rect_pushed" file="VideoPanel\button\rounded_rect\pushed.png"/>
+			<Picture name="rounded_rect_selected" file="VideoPanel\button\rounded_rect\selected.png"/>
+			<Picture name="video_frame_left_top" file="VideoPanel\frame\left_top.png"/>
+			<Picture name="video_frame_right_top" file="VideoPanel\frame\right_top.png"/>
+			<Picture name="video_frame_left_bottom" file="VideoPanel\frame\left_bottom.png"/>
+			<Picture name="video_frame_right_bottom" file="VideoPanel\frame\right_bottom.png"/>				
+			<Picture name="video_clip" file="VideoPanel\icon\chip.png"/>
+			<Picture name="video_focus_normal" file="VideoPanel\icon\focus_normal.png"/>
+			<Picture name="video_focus_selected" file="VideoPanel\icon\focus_selected.png"/>			
+			<Picture name="video_map_normal" file="VideoPanel\icon\map_normal.png"/>
+			<Picture name="video_map_selected" file="VideoPanel\icon\map_selected.png"/>
+			<Picture name="video_zoom_normal" file="VideoPanel\icon\zoom_normal.png"/>
+			<Picture name="video_zoom_selected" file="VideoPanel\icon\zoom_selected.png"/>			
+			<Picture name="progress_bar_normal" file="ProgressBar\normal.png"/>
+			<Picture name="progress_bar_selected" file="ProgressBar\selected.png"/>
+			<Picture name="progress_bar_slider" file="ProgressBar\slider.png"/>
+
+			<!--fullauto-->
+			<Picture name="casssete_status" file="fullauto\casssete_status.png"/>
+			<Picture name="casssete_update" file="fullauto\casssete_update.png"/>
+			<Picture name="cut_setting" file="fullauto\cut_setting.png"/>
+			<Picture name="height_adjust" file="fullauto\height_adjust.png"/>
+			<Picture name="maintenance_act" file="fullauto\maintenance_act.png"/>
+			<Picture name="multiple" file="fullauto\multiple.png"/>
+			<Picture name="precut_on" file="fullauto\precut_on.png"/>
+			<Picture name="speed_change" file="fullauto\speed_change.png"/>
+			<Picture name="alignment_result" file="fullauto\alignment_result.png"/>
+			<Picture name="auto_align" file="fullauto\auto_align.png"/>
+			<Picture name="bld_info" file="fullauto\bld_info.png"/>
+			<Picture name="check" file="fullauto\check.png"/>
+			<Picture name="device_list" file="fullauto\device_list.png"/>
+			<Picture name="error_handle" file="fullauto\error_handle.png"/>
+			<Picture name="exit_fullauto" file="fullauto\exit_fullauto.png"/>
+			<Picture name="force_exit_fullauto" file="fullauto\force_exit_fullauto.png"/>
+			<Picture name="restart" file="fullauto\restart.png"/>
+			<Picture name="stop_loadwafer" file="fullauto\stop_loadwafer.png"/>
+			<Picture name="uv_fact" file="fullauto\uv_fact.png"/>
+			<picture name="retry_align" file="fullauto\retry_align.png"/>
+			<picture name="retry_process_table" file="fullauto\retry_process_table.png"/>
+			<picture name="cut_parameter_change" file="fullauto\cut_parameter_change.png"/>
+			<picture name="target_recognition" file="fullauto\target_recognition.png"/>
+			<picture name="bright_change" file="fullauto\bright_change.png"/>
+			<picture name="skip_cur_process_material" file="fullauto\skip_cur_process_material.png"/>
+			<picture name="manual_align_current_blade" file="fullauto\manual_align_current_blade.png"/>
+			<picture name="start_point_confirm" file="fullauto\start_point_confirm.png"/>
+			<picture name="direct_return_material_box" file="fullauto\direct_return_material_box.png"/>
+			<picture name="cur_piece_check" file="fullauto\cur_piece_check.png"/>
+			<picture name="auto_continue" file="fullauto\auto_continue.png"/>
+			<picture name="elevator_move_detection_pos" file="fullauto\elevator_move_detection_pos.png"/>
+			<picture name="detect_remove_porcessed" file="fullauto\detect_remove_porcessed.png"/>
+			<picture name="cut_pos_correct" file="fullauto\cut_pos_correct.png"/>
+			<picture name="skip_this_section_cut" file="fullauto\skip_this_section_cut.png"/>
+			<picture name="stop_fatigue_test" file="fullauto\stop_fatigue_test.png"/>
+			<picture name="fullauto_status" file="fullauto\fullauto_status.png"/>
+			<picture name="x_expan" file="fullauto\x_expan.png"/>
+			<picture name="x_shrink" file="fullauto\x_shrink.png"/>
+			<picture name="y_expan" file="fullauto\y_expan.png"/>
+			<picture name="y_shrink" file="fullauto\y_shrink.png"/>
+			<picture name="special_parameter" file="fullauto\special_parameter.png"/>
+			<picture name="knife_mark_detection_run" file="fullauto\knife_mark_detection_run.png"/>
+			<picture name="twice_cut_execute" file="fullauto\twice_cut_execute.png"/>
+			<picture name="reposition" file="fullauto\reposition.png"/>
+			<picture name="cur_location_detection" file="fullauto\cur_location_detection.png"/>
+			<picture name="teach_template_diagram" file="fullauto\teach_template_diagram.png"/>
+			<picture name="kerf_star" file="fullauto\kerf_star.png"/>
+
+			<!--manual-->
+			<Picture name="confirm_adjust" file="manual\confirm_adjust.png"/>
+			<Picture name="load_wafer" file="manual\load_wafer.png"/>
+			<Picture name="teach_" file="manual\teach_.png"/>
+			<Picture name="auto_cut" file="manual\auto_cut.png"/>
+			<Picture name="semi_cut" file="manual\semi_cut.png"/>
+			<Picture name="move_wafer" file="manual\move_wafer.png"/>
+			<Picture name="clean_" file="manual\clean_.png"/>
+			<Picture name="unload_wafer" file="manual\unload_wafer.png"/>
+			<Picture name="unload_all" file="manual\unload_all.png"/>
+			<Picture name="process_execute_table" file="manual\process_execute_table.png"/>
+			<Picture name="arrow_up" file="manual\arrow_up.png"/>
+			<Picture name="arrow_down" file="manual\arrow_down.png"/>
+			<Picture name="auto_focus" file="manual\auto_focus.png"/>
+			<Picture name="auto_focus_open" file="manual\auto_focus_open.png"/>
+			<Picture name="magn_switch" file="manual\magn_switch.png"/>
+			<Picture name="error_handle" file="manual\error_handle.png"/>
+			<Picture name="ambient_light" file="manual\ambient_light.png"/>
+			<Picture name="direct_light" file="manual\direct_light.png"/>
+			<Picture name="align_preview" file="manual\align_preview.png"/>
+			<Picture name="contiune_cut" file="manual\contiune_cut.png"/>
+			<Picture name="align_preview" file="manual\align_preview.png"/>
+			<Picture name="alignment" file="manual\alignment.png"/>
+			<Picture name="bld" file="manual\bld.png"/>
+			<Picture name="circular_down" file="manual\circular_down.png"/>
+			<Picture name="circular_up" file="manual\circular_up.png"/>
+			<Picture name="contiune_cut_on" file="manual\contiune_cut_on.png"/>
+			<Picture name="step_align" file="manual\step_align.png"/>
+			<Picture name="check_mark" file="manual\check_mark.png"/>
+			<Picture name="check_mark_open" file="manual\check_mark_open.png"/>
+			<Picture name="device" file="manual\device.png"/>
+			<Picture name="device_open" file="manual\device_open.png"/>
+			<Picture name="cut_water" file="manual\cut_water.png"/>
+			<Picture name="manual_align" file="manual\manual_align.png"/>
+			<Picture name="manual_align_open" file="manual\manual_align_open.png"/>
+			<Picture name="autocut_bld" file="manual\autocut_bld.png"/>
+			<Picture name="autocut_bld_open" file="manual\autocut_bld_open.png"/>
+			<Picture name="align_over" file="manual\align_over.png"/>
+			<Picture name="cut_param" file="manual\cut_param.png"/>
+			<Picture name="base_line_adjust" file="manual\base_line_adjust.png"/>
+			<Picture name="base_line_expand" file="manual\base_line_expand.png"/>
+			<Picture name="base_line_reduce" file="manual\base_line_reduce.png"/>
+			<Picture name="bbd_error_handle" file="manual\bbd_error_handle.png"/>
+			<Picture name="bld_check_teach" file="manual\bld_check_teach.png"/>
+			<Picture name="cut_pos_adjust" file="manual\cut_pos_adjust.png"/>
+			<Picture name="exchange_axis" file="manual\exchange_axis.png"/>
+			<!--<Picture name="pre_cut" file="manual\pre_cut.png"/>-->
+			<Picture name="stop_adjust_2" file="manual\stop_adjust_2.png"/>
+			<Picture name="stop_cut" file="manual\stop_cut.png"/>
+			<Picture name="T_direct_adjust" file="manual\T_direct_adjust.png"/>
+			<Picture name="remain_bld_continue_cut" file="manual\remain_bld_continue_cut.png"/>
+			<Picture name="retry_start" file="manual\retry_start.png"/>
+			<Picture name="y_direction_t_level" file="manual\y_direction_t_level.png"/>
+			<Picture name="qr_code_tech" file="manual\qr_code_tech.png"/>
+			<Picture name="save_screen" file="manual\save_screen.png"/>
+			<Picture name="auto_focus_after0" file="manual\auto_focus_after0.png"/>
+			<Picture name="auto_focus_by_data" file="manual\auto_focus_by_data.png"/>
+			<Picture name="autofocus" file="manual\autofocus.png"/>
+			<Picture name="large_stoke" file="manual\large_stoke.png"/>
+			<Picture name="small_stroke" file="manual\small_stroke.png"/>
+			<Picture name="cassette_to_uv" file="manual\cassette_to_uv.png"/>
+			<Picture name="uv_to_cassette" file="manual\uv_to_cassette.png"/>
+			<Picture name="location_parameter_setting" file="manual\location_parameter_setting.png"/>
+			
+			<!--blade_maintenance-->
+			<Picture name="bbd_adjustment" file="blade_maintenance\bbd_adjustment.png"/>
+			<Picture name="blade_replacement" file="blade_maintenance\blade_replacement.png"/>
+			<Picture name="blade_height" file="blade_maintenance\blade_height.png"/>
+			<Picture name="bld_info" file="blade_maintenance\bld_info.png"/>
+			<Picture name="bld_setup_data" file="blade_maintenance\bld_setup_data.png"/>
+			<Picture name="dress" file="blade_maintenance\dress.png"/>
+			<Picture name="hairline_alignment" file="blade_maintenance\hairline_alignment.png"/>
+			<Picture name="ncs_cleaning" file="blade_maintenance\ncs_cleaning.png"/>
+			<Picture name="online_sharpening" file="blade_maintenance\online_sharpening.png"/>
+			<Picture name="st_vacuum" file="blade_maintenance\st_vacuum.png"/>
+			<Picture name="ncs" file="blade_maintenance\ncs.png"/>
+			<Picture name="ncs_correction" file="blade_maintenance\ncs_correction.png"/>
+			<Picture name="file_copy" file="blade_maintenance\copy.png"/>
+			<Picture name="file_delete" file="blade_maintenance\delete.png"/>
+			<Picture name="file_rename" file="blade_maintenance\rename.png"/>
+			<Picture name="axis_zero" file="blade_maintenance\axis_zero.png"/>
+			<Picture name="tablesetting_circular" file="blade_maintenance\tablesetting_circular.png"/>
+			<Picture name="tablesetting_square" file="blade_maintenance\tablesetting_square.png"/>
+			<Picture name="axis_data" file="blade_maintenance\axis_data.png"/>
+			<Picture name="axis_offline" file="blade_maintenance\axis_offline.png"/>
+			<Picture name="bld_replace" file="blade_maintenance\bld_replace.png"/>
+			<Picture name="wheel_cover_black" file="blade_maintenance\wheel_cover_black.png"/>
+			<Picture name="wheel_cover_white" file="blade_maintenance\wheel_cover_white.png"/>
+			<Picture name="ncs_z1" file="blade_maintenance\ncs_z1.png"/>
+			<Picture name="ncs_z2" file="blade_maintenance\ncs_z2.png"/>
+			<Picture name="ncs_z1z2" file="blade_maintenance\ncs_z1z2.png"/>
+			<Picture name="bld_sharpen_align" file="blade_maintenance\bld_sharpen_align.png"/>
+			<Picture name="file_save" file="blade_maintenance\file_save.png"/>
+			<Picture name="circular_add" file="blade_maintenance\circular_add.png"/>
+			<Picture name="circular_minus" file="blade_maintenance\circular_minus.png"/>
+			<Picture name="stop_bld" file="blade_maintenance\stop_bld.png"/>
+			<Picture name="reboot_1713" file="blade_maintenance\reboot_1713.png"/>
+			<Picture name="warning" file="blade_maintenance\warning.png"/>
+			
+			<!--Alignment-->
+			<Picture name="low_speed_left" file="Alignment\arrow\low_speed\left.png"/>
+			<Picture name="low_speed_top" file="Alignment\arrow\low_speed\top.png"/>
+			<Picture name="low_speed_right" file="Alignment\arrow\low_speed\right.png"/>
+			<Picture name="low_speed_bottom" file="Alignment\arrow\low_speed\bottom.png"/>
+			<Picture name="high_speed_left" file="Alignment\arrow\high_speed\left.png"/>
+			<Picture name="high_speed_top" file="Alignment\arrow\high_speed\top.png"/>
+			<Picture name="high_speed_right" file="Alignment\arrow\high_speed\right.png"/>
+			<Picture name="high_speed_bottom" file="Alignment\arrow\high_speed\bottom.png"/>
+			<Picture name="step_move_left" file="Alignment\arrow\step_move\left.png"/>
+			<Picture name="step_move_top" file="Alignment\arrow\step_move\top.png"/>
+			<Picture name="step_move_right" file="Alignment\arrow\step_move\right.png"/>
+			<Picture name="step_move_bottom" file="Alignment\arrow\step_move\bottom.png"/>
+			<Picture name="left_right" file="Alignment\arrow\left_right.png"/>
+			<Picture name="up_down" file="Alignment\arrow\up_down.png"/>
+			<Picture name="confirm_modify" file="Alignment\confirm.png"/>
+			<Picture name="focus" file="Alignment\focus.png"/>
+			<Picture name="lens_switch" file="Alignment\lens_switch.png"/>
+			<Picture name="light" file="Alignment\light.png"/>
+			<Picture name="reset_temple" file="Alignment\reset_temple.png"/>
+			<Picture name="theta_changed" file="Alignment\theta_changed.png"/>
+			<Picture name="zoom_in" file="Alignment\zoom_in.png"/>
+			<Picture name="zoom_out" file="Alignment\zoom_out.png"/>
+			<!-- <Picture name="blue_zoom_in" file="Alignment\blue_zoom_in.png"/> -->
+			<!-- <Picture name="blue_zoom_out" file="Alignment\blue_zoom_out.png"/> -->
+			<Picture name="yellow_zoom_in" file="Alignment\yellow_zoom_in.png"/>
+			<Picture name="yellow_zoom_out" file="Alignment\yellow_zoom_out.png"/>
+			<Picture name="green_zoom_in" file="Alignment\green_zoom_in.png"/>
+			<Picture name="green_zoom_out" file="Alignment\green_zoom_out.png"/>
+			
+			<!--cut_setting-->
+			<Picture name="ID_arrage" file="CutSetting\IDArrage.png"/>
+			<Picture name="move" file="CutSetting\Move.png"/>
+			<Picture name="rename" file="CutSetting\Rename.png"/>
+			<Picture name="delete" file="CutSetting\Delete.png"/>
+			<!-- <Picture name="upload_to_host" file="CutSetting\UploadToHost.png"/> -->
+			<!-- <Picture name="download_from_host" file="CutSetting\DownloadFromHost.png"/> -->
+			<Picture name="catalog_compilation" file="CutSetting\CatalogCompilation.png"/>
+			<Picture name="catalog_delete" file="CutSetting\CatalogDelete.png"/>
+			<Picture name="parameter_determine" file="CutSetting\ParameterDetermine.png"/>
+			<Picture name="cut_setting" file="CutSetting\CutSetting.png"/>
+			<Picture name="automatic" file="CutSetting\Automatic.png"/>
+			<Picture name="manual_operation" file="CutSetting\ManualOperation.png"/>
+			<Picture name="blade_maintenance" file="CutSetting\BladeMaintenance.png"/>
+			<Picture name="maintenance_carried_out" file="CutSetting\MaintenanceCarriedOut.png"/>
+			<Picture name="auto_height_measurement" file="CutSetting\AutoHeightMeasurement.png"/>
+			<Picture name="cut_parameter" file="CutSetting\CutParameter.png"/>
+			<Picture name="align_parameter" file="CutSetting\AlignParameter.png"/>
+			<Picture name="clean_hand_parameter" file="CutSetting\CleanHandParameter.png"/>
+			<Picture name="auxiliary_step" file="CutSetting\AuxiliaryStep.png"/>
+			<Picture name="complex_cutting" file="CutSetting\ComplexCutting.png"/>
+			<Picture name="process_table" file="CutSetting\ProcessTable.png"/>
+			<Picture name="pre_cut_pattern" file="CutSetting\PreCutPattern.png"/>
+			<Picture name="knife_mark_detection" file="CutSetting\KnifeMarkDetection.png"/>
+			<Picture name="knife_mark_detection2" file="CutSetting\KnifeMarkDetection2.png"/>
+			<Picture name="special_style" file="CutSetting\SpecialStyle.png"/>
+			<Picture name="measure" file="CutSetting\Measure.png"/>
+			<Picture name="uv_parameter" file="CutSetting\UVParameter.png"/>
+			<Picture name="online_sharpen_parameter" file="CutSetting\OnlineSharpenParameter.png"/>
+			<Picture name="special_clean_parameter" file="CutSetting\SpecialCleanParameter.png"/> 
+			<Picture name="special_parameter" file="CutSetting\AlignSpecialParameter.png"/>
+			<Picture name="template_display" file="CutSetting\TemplateDisplay.png"/> 	
+			<Picture name="save_parameter" file="CutSetting\SaveParameter.png"/>
+			<Picture name="setting_ch1ch2" file="CutSetting\SettingCH1CH2.png"/>
+			<Picture name="setting_ch3ch4" file="CutSetting\SettingCH3CH4.png"/>
+			<Picture name="ch1_sq" file="CutSetting\CH1SQ.png"/>
+			<Picture name="ch2_sq" file="CutSetting\CH2SQ.png"/>
+			<Picture name="ch3_sq" file="CutSetting\CH3SQ.png"/>
+			<Picture name="ch4_sq" file="CutSetting\CH4SQ.png"/>
+			<Picture name="cut_preview" file="CutSetting\CutPreview.png"/>
+			<Picture name="channel_cut_order" file="CutSetting\ChannelCutOrder.png"/>
+			<Picture name="functional_selection" file="CutSetting\FunctionalSelection.png"/>
+			<Picture name="wafer_diagram" file="CutSetting\WaferDiagram.png"/>
+			<Picture name="square_diagram" file="CutSetting\SquareDiagram.png"/>
+			<Picture name="cut_diagram" file="CutSetting\CutDiagram.png"/>
+			<Picture name="CSP_data" file="CutSetting\CSPData.png"/>
+			<Picture name="multiplication_data" file="CutSetting\MultiplicationData.png"/>
+			<Picture name="focus_parameter" file="CutSetting\FocusParameter.png"/>
+			<Picture name="align_observation" file="CutSetting\AlignObservation.png"/>
+			<Picture name="select" file="CutSetting\Select.png"/>
+			<Picture name="un_select" file="CutSetting\UnSelect.png"/>
+			<Picture name="cutPreBk" file="CutSetting\CutPreBk.png"/>
+			<Picture name="copy_from_usb" file="CutSetting\CopyFromUSB.png"/>
+			<Picture name="copy_to_usb" file="CutSetting\CopyToUSB.png"/>
+			<Picture name="move_to_pos" file="CutSetting\move_to_pos.png"/>
+			<Picture name="align_auxiliary_parameter" file="CutSetting\AlignAuxiliaryParameter.png"/>
+			
+			<!--operator maintenance-->
+			<Picture name="action_parameter_maintenance" file="OperatorMaintenance\ActionParameterMaintenance.png"/> 	
+			<Picture name="signal_lamp_parameter_maintenance" file="OperatorMaintenance\SignalLampParameterMaintenance.png"/> 	
+			<Picture name="frame_size_login" file="OperatorMaintenance\FrameSizeLogin.png"/> 	
+			<Picture name="alignment_parameter_maintanance" file="OperatorMaintenance\AlignmentParameterMaintanance.png"/> 	
+			<Picture name="water_supply_parameter_maintenance" file="OperatorMaintenance\WaterSupplyParameterMaintenance.png"/> 	
+			<Picture name="clean_parameter_maintenance" file="OperatorMaintenance\CleanParameterMaintenance.png"/> 
+			<Picture name="functional_parameter_maintenance" file="OperatorMaintenance\FunctionalParameterMaintenance.png"/>
+			<Picture name="external_storage" file="OperatorMaintenance\ExternalStorage.png"/>
+			<Picture name="pre_cut" file="OperatorMaintenance\PreCut.png"/>
+			<Picture name="pre_cut_open" file="OperatorMaintenance\PreCutOpen.png"/>
+			<Picture name="cut_file_load" file="OperatorMaintenance\CutFileLoad.png"/>
+			<Picture name="cut_file_save" file="OperatorMaintenance\CutFileSave.png"/>
+			<Picture name="machine_data_back_up" file="OperatorMaintenance\MachineDataBackUp.png"/>
+			<Picture name="machine_data_restore" file="OperatorMaintenance\MachineDataRestore.png"/>
+			<Picture name="run_batch_file" file="OperatorMaintenance\RunBatchFile.png"/>
+			<Picture name="pre_cut_file_load" file="OperatorMaintenance\PreCutFileLoad.png"/>
+			<Picture name="pre_cut_file_save" file="OperatorMaintenance\PreCutFileSave.png"/>
+			<Picture name="special_clean_parameter_maintenance" file="OperatorMaintenance\SpecialCleanParameterMaintenance.png"/>
+			<Picture name="frame_size_login_two" file="OperatorMaintenance\FrameSizeLoginTwo.png"/>
+			<Picture name="pre_cutting_parameter_selection" file="OperatorMaintenance\PreCuttingParameterSelection.png"/>
+			<!--<Picture name="cut_parameter_maintenance" file="OperatorMaintenance\CutParameterMaintenance.png"/>-->
+			<Picture name="catalog_measure" file="OperatorMaintenance\Measure.png"/>
+			<Picture name="step_measure" file="OperatorMaintenance\StepMeasure.png"/>
+			<Picture name="teach" file="OperatorMaintenance\Teach.png"/>
+			<Picture name="to_zero" file="OperatorMaintenance\ToZero.png"/>
+			<Picture name="auto_correction" file="OperatorMaintenance\AutoCorrection.png"/>
+			<Picture name="parameter_setting" file="OperatorMaintenance\ParameterSetting.png"/>
+			<Picture name="high_low_magnification_switch" file="OperatorMaintenance\HighLowMagnificationSwitch.png"/>
+			<Picture name="processing_parameter_maintenance" file="OperatorMaintenance\ProcessingParameterMaintenance.png"/>
+			<Picture name="pre_cutting_blade" file="OperatorMaintenance\PreCuttingBlade.png"/>
+			
+			<!--device maintenance-->
+			<Picture name="frame_size_change" file="DeviceMaintenance\FrameSizeChange.png"/> 	
+			<Picture name="adjust_ccd_center" file="DeviceMaintenance\AdjustCCDCenter.png"/> 	
+			<Picture name="pixel_measurement" file="DeviceMaintenance\PixelMeasurement.png"/> 	
+			<Picture name="focus_maintenance" file="DeviceMaintenance\FocusMaintenance.png"/> 	
+			<Picture name="warm_up_setting" file="DeviceMaintenance\WarmUpSetting.png"/> 	
+			<Picture name="knife_rest" file="DeviceMaintenance\KnifeRest.png"/> 	
+			<Picture name="adjust_uv_sensor" file="DeviceMaintenance\AdjustUVSensor.png"/> 
+			<Picture name="analog_sensor" file="DeviceMaintenance\AnalogSensor.png"/>
+			<Picture name="exchange_axis" file="DeviceMaintenance\ExchangeAxis.png"/>
+			<Picture name="T_direction_adjust" file="DeviceMaintenance\T_DirectionAdjust.png"/>
+			<Picture name="180_degree_rotate" file="DeviceMaintenance\180DegreeRotate.png"/>
+			<Picture name="save_current_pos" file="DeviceMaintenance\SaveCurrentPos.png"/>
+			<Picture name="z_up" file="DeviceMaintenance\Z_Up.png"/>
+			<Picture name="z_down" file="DeviceMaintenance\Z_Down.png"/>
+			<Picture name="work_table_vacuum" file="DeviceMaintenance\WorkTableVacuum.png"/>
+			<Picture name="work_table_vacuum_open" file="DeviceMaintenance\WorkTableVacuumOpen.png"/>
+			
+			<!--manufacturer maintenance-->
+			<Picture name="axis_control" file="ManufacturerMaintenance\AxisControl.png"/>
+			<Picture name="IO_check" file="ManufacturerMaintenance\IO_Check.png"/>
+			<Picture name="user_parameter_setting" file="ManufacturerMaintenance\UserParameterSetting.png"/>
+			<Picture name="initial_point_setting" file="ManufacturerMaintenance\InitialPointSetting.png"/>
+			<Picture name="cut_parameter_maintenance" file="ManufacturerMaintenance\CutParameterMaintenance.png"/>
+			<Picture name="maintenance_schedule" file="ManufacturerMaintenance\MaintenanceSchedule.png"/>
+			<Picture name="system_parameter" file="ManufacturerMaintenance\SystemParameter.png"/>
+			<Picture name="copy_file" file="ManufacturerMaintenance\CopyFile.png"/>
+			<Picture name="move_file" file="ManufacturerMaintenance\MoveFile.png"/>
+			<Picture name="rename_file" file="ManufacturerMaintenance\RenameFile.png"/>
+			<Picture name="delete_file" file="ManufacturerMaintenance\DeleteFile.png"/>
+			<Picture name="new_folder" file="ManufacturerMaintenance\NewFolder.png"/>
+			<Picture name="delete_folder" file="ManufacturerMaintenance\DeleteFolder.png"/>
+			<Picture name="copy_to_USB" file="ManufacturerMaintenance\CopyToUSB.png"/>
+			<Picture name="copy_from_USB" file="ManufacturerMaintenance\CopyFromUSB.png"/>
+			<Picture name="parameter_upload" file="ManufacturerMaintenance\ParameterUpload.png"/>
+			<Picture name="system_parameter1" file="ManufacturerMaintenance\SystemParameter1.png"/>
+			<Picture name="system_parameter2" file="ManufacturerMaintenance\SystemParameter2.png"/>
+			<Picture name="system_parameter3" file="ManufacturerMaintenance\SystemParameter3.png"/>
+			<Picture name="system_parameter4" file="ManufacturerMaintenance\SystemParameter4.png"/>
+			<Picture name="system_parameter5" file="ManufacturerMaintenance\SystemParameter5.png"/>
+			<Picture name="One_click_restore" file="ManufacturerMaintenance\OneClickRestore.png"/>
+			<Picture name="ID_number_less_than" file="ManufacturerMaintenance\ID_NumberLessThan.png"/>
+			<Picture name="last_page" file="ManufacturerMaintenance\LastPage.png"/>
+			<Picture name="next_page" file="ManufacturerMaintenance\NextPage.png"/>
+			<Picture name="DI" file="ManufacturerMaintenance\DI.png"/>
+			<Picture name="DO" file="ManufacturerMaintenance\DO.png"/>
+			<Picture name="device_parameter_management" file="ManufacturerMaintenance\device_parameter_management.png"/>
+			<Picture name="event_management" file="ManufacturerMaintenance\event_management.png"/>
+			<Picture name="state_variable_management" file="ManufacturerMaintenance\state_variable_management.png"/>
+			<Picture name="alarm_management" file="ManufacturerMaintenance\alarm_management.png"/>
+			<Picture name="recipe_management" file="ManufacturerMaintenance\recipe_management.png"/>
+			<Picture name="clear_record" file="ManufacturerMaintenance\clear_record.png"/>
+			<Picture name="simulation_software" file="ManufacturerMaintenance\simulation_software.png"/>
+			<Picture name="exit_program" file="ManufacturerMaintenance\exit_program.png"/>
+			
+			<!--Sensor-->
+			<Picture name="sensor_bk" file="Sensor\sensor_bk.png"/>
+			<Picture name="sensor_body" file="Sensor\sensor_body.png"/>
+			<Picture name="sensor_green" file="Sensor\sensor_green.png"/>
+			<Picture name="sensor_red" file="Sensor\sensor_red.png"/>
+			<Picture name="sensor_scale_bk" file="Sensor\sensor_scale_bk.png"/>
+			<Picture name="sensor_scale_1" file="Sensor\sensor_scale_1.png"/>
+			<Picture name="sensor_scale_100" file="Sensor\sensor_scale_100.png"/>
+			<Picture name="sensor_hand" file="Sensor\sensor_hand.png"/>
+			
+			<!--<Picture name="combobox_background" file="ComboBox\ComboboxBK.png"/>-->
+			<Picture name="combobox_icon_bk" file="ComboBox\ComboboxIconBK.png"/>
+			<Picture name="combobox_icon" file="ComboBox\ComboboxIcon.png"/>
+			<Picture name="right_combobox_normal" file="ComboBox\Right\normal.png"/>
+			<Picture name="right_combobox_hover" file="ComboBox\Right\hover.png"/>
+			<Picture name="right_combobox_pushed" file="ComboBox\Right\pushed.png"/>			
+			<Picture name="right_top_combobox_normal" file="ComboBox\RightTop\normal.png"/>
+			<Picture name="right_top_combobox_hover" file="ComboBox\RightTop\hover.png"/>
+			<Picture name="right_top_combobox_pushed" file="ComboBox\RightTop\pushed.png"/>
+			<Picture name="right_bottom_combobox_normal" file="ComboBox\RightBottom\normal.png"/>
+			<Picture name="right_bottom_combobox_hover" file="ComboBox\RightBottom\hover.png"/>
+			<Picture name="right_bottom_combobox_pushed" file="ComboBox\RightBottom\pushed.png"/>
+			<Picture name="right_solid_combobox_normal" file="ComboBox\RightSolid\normal.png"/>
+			<Picture name="right_solid_combobox_hover" file="ComboBox\RightSolid\hover.png"/>
+			<Picture name="right_solid_combobox_pushed" file="ComboBox\RightSolid\pushed.png"/>
+			
+			<!--tool management-->
+			<Picture name="tool_ok" file="Tool_Management\tool_ok.png"/>
+			<Picture name="loop_detection" file="Tool_Management\loop_detection.png"/>
+			<Picture name="pre_cut_on" file="Tool_Management\pre_cut_on.png"/>
+			<Picture name="pre_cut_off" file="Tool_Management\pre_cut_off.png"/>
+			<!-- Tool_Alignment -->
+			<Picture name="tool_alignment_result" file="Tool_Management\Tool_Alignment\tool_alignment_result.png"/>
+			<Picture name="tool_auto_recognition" file="Tool_Management\Tool_Alignment\tool_auto_recognition.png"/>
+			<Picture name="tool_foclen_measurement" file="Tool_Management\Tool_Alignment\tool_foclen_measurement.png"/>
+			<Picture name="tool_manual_alignment" file="Tool_Management\Tool_Alignment\tool_manual_alignment.png"/>
+			<Picture name="tool_micro_center" file="Tool_Management\Tool_Alignment\tool_micro_center.png"/>
+			<Picture name="tool_oneway_alignment" file="Tool_Management\Tool_Alignment\tool_oneway_alignment.png"/>
+			<Picture name="tool_pixel_measurement" file="Tool_Management\Tool_Alignment\tool_pixel_measurement.png"/>
+			<Picture name="tool_target_recognition" file="Tool_Management\Tool_Alignment\tool_target_recognition.png"/>
+			<Picture name="tool_vacuum_switch" file="Tool_Management\Tool_Alignment\tool_vacuum_switch.png"/>
+			
+			<!--switch button-->
+			<Picture name="open_normal" file="switch_button\open\normal.png"/>
+			<Picture name="open_hover" file="switch_button\open\hover.png"/>
+			<Picture name="open_pushed" file="switch_button\open\pushed.png"/>
+			<Picture name="close_normal" file="switch_button\close\normal.png"/>
+			<Picture name="close_hover" file="switch_button\close\hover.png"/>
+			<Picture name="close_pushed" file="switch_button\close\pushed.png"/>
+		
+			<Background name="edit_readonly_bk">
+				<Image used="readonly_edit">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="40" height="20"/>
+						<Size width="50" height="18"/>
+						<Size width="72" height="20"/>
+						<Size width="73" height="16"/>
+						<Size width="78" height="14"/>
+						<Size width="78" height="15"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="edit_bk">
+				<Image used="edit_bk">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="60" height="14"/>
+						<Size width="40" height="22"/>
+						<Size width="50" height="31"/>
+						<Size width="55" height="22"/>
+						<Size width="66" height="31"/>
+						<Size width="80" height="22"/>
+						<Size width="88" height="25"/>
+						<Size width="93" height="23"/>
+						<Size width="100" height="22"/>
+						<Size width="110" height="31"/>
+						<Size width="102" height="22"/>
+						<Size width="105" height="23"/>
+						<Size width="120" height="22"/>
+						<Size width="125" height="25"/>
+						<Size width="130" height="26"/>
+						<Size width="130" height="35"/>
+						<Size width="153" height="31"/>
+						<Size width="172" height="22"/>
+						<Size width="196" height="28"/>
+						<Size width="196" height="70"/>
+						<Size width="385" height="48"/>
+						<Size width="102" height="396"/>
+						<Size width="247" height="334"/>	
+						<Size width="266" height="31"/>						
+						<Size width="276" height="396"/>
+						<Size width="299" height="31"/>
+						<Size width="394" height="396"/>
+						<Size width="364" height="196"/>
+						<Size width="587" height="327"/>
+						<Size width="588" height="106"/>
+						<Size width="1056" height="196"/>
+						<Size width="1008" height="600"/>
+						<Size width="1008" height="605"/>
+					</Cache>
+				</Image>
+			</Background>	
+			<Background name="edit_bk_green">
+				<Image used="edit_bk_green">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="top_label_green">
+				<Image used="top_label_green">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="groupbox_greyback">
+				<Image used="groupbox_greyback">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="644" height="161"/>
+						<Size width="1008" height="429"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="groupbox_greyback_noborder">
+				<Image used="groupbox_greyback_noborder">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="90" height="28"/>
+						<Size width="264" height="28"/>
+						<Size width="382" height="28"/>
+						<Size width="943" height="36"/>
+						<Size width="943" height="51"/>
+						<Size width="970" height="45"/>
+					</Cache>
+				</Image>
+			</Background>	
+			
+			<Background name="grey_on_white">
+				<Image used="groupbox_greyback_noborder">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#FFFFFF">
+						<Size width="976" height="37"/>
+					</Cache>
+				</Image>
+			</Background>
+			
+			<Background name="groupbox_greyback_darkgreyborder">
+				<Image used="groupbox_greyback_darkgreyborder">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="48" height="25"/>
+						<Size width="190" height="115"/>
+						<Size width="190" height="209"/>
+						<Size width="192" height="98"/>
+						<Size width="246" height="98"/>
+						<Size width="297" height="411"/>
+						<Size width="644" height="411"/>
+					</Cache>
+				</Image>
+			</Background>	
+			<Background name="rightlabel_whiteback">
+				<Image used="rightlabel_whiteback">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="rect_green">
+				<Image used="rect_green">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="rect_lightblack">
+				<Image used="rect_lightblack">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="rect_darkblack">
+				<Image used="rect_darkblack">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="rect_lightgreen">
+				<Image used="rect_lightgreen">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="rect_orange">
+				<Image used="rect_orange">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="rect_pink">
+				<Image used="rect_pink">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="rect_red">
+				<Image used="rect_red">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="rect_darkgrey">
+				<Image used="rect_darkgrey">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+
+			<Background name="btn_red_normal">
+				<Image used="red_normal"/>
+			</Background>
+			<Background name="btn_red_hover">
+				<Image used="red_hover"/>
+			</Background>
+			<Background name="btn_red_pushed">
+				<Image used="red_pushed"/>
+			</Background>
+			<Background name="btn_grey_white_bk_normal">
+				<Image used="grey_normal">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#FFFFFF">
+						<Size width="65" height="42"/>
+						<Size width="60" height="42"/>
+						<Size width="70" height="42"/>
+						<Size width="103" height="42"/>
+						<Size width="125" height="42"/>
+						<Size width="137" height="42"/>
+						<Size width="141" height="42"/>
+						<Size width="477" height="42"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_grey_normal">
+				<Image used="grey_normal">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="41" height="35"/>
+						<Size width="43" height="43"/>
+						<Size width="65" height="35"/>
+						<Size width="85" height="28"/>
+						<Size width="90" height="90"/>
+						<Size width="91" height="28"/>
+						<Size width="94" height="35"/>
+						<Size width="94" height="58"/>
+						<Size width="95" height="95"/>
+						<Size width="96" height="28"/>
+						<Size width="130" height="35"/>
+						<Size width="134" height="92"/>
+						<Size width="144" height="92"/>
+						<Size width="158" height="58"/>
+						<Size width="169" height="95"/>
+						<Size width="196" height="72"/>
+						<Size width="200" height="93"/>
+						<Size width="180" height="230"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_grey_hover">
+				<Image used="grey_hover">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="90" height="90"/>
+						<Size width="95" height="95"/>
+						<Size width="134" height="92"/>
+						<Size width="144" height="92"/>
+						<Size width="169" height="95"/>
+						<Size width="200" height="93"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_grey_pushed">
+				<Image used="grey_pushed">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3"/>
+				</Image>
+			</Background>
+			
+			<Background name="btn_T_anticlockwise_grey_normal">
+				<Image used="T_anticlockwise_normal"/>
+			</Background>
+			<Background name="btn_T_anticlockwise_grey_hover">
+				<Image used="T_anticlockwise_hover"/>
+			</Background>
+			<Background name="btn_T_anticlockwise_grey_pushed">
+				<Image used="T_anticlockwise_pushed"/>
+			</Background>
+			<Background name="btn_T_clockwise_grey_normal">
+				<Image used="T_clockwise_normal"/>
+			</Background>
+			<Background name="btn_T_clockwise_grey_hover">
+				<Image used="T_clockwise_hover"/>
+			</Background>
+			<Background name="btn_T_clockwise_grey_pushed">
+				<Image used="T_clockwise_pushed"/>
+			</Background>
+			<Background name="btn_down_normal">
+				<Image used="down_normal"/>
+			</Background>
+			<Background name="btn_down_hover">
+				<Image used="down_hover"/>
+			</Background>
+			<Background name="btn_down_pushed">
+				<Image used="down_pushed"/>
+			</Background>
+			<Background name="btn_up_normal">
+				<Image used="up_normal"/>
+			</Background>
+			<Background name="btn_up_hover">
+				<Image used="up_hover"/>
+			</Background>
+			<Background name="btn_up_pushed">
+				<Image used="up_pushed"/>
+			</Background>
+			<Background name="btn_right_normal">
+				<Image used="right_normal"/>
+			</Background>
+			<Background name="btn_right_hover">
+				<Image used="right_hover"/>
+			</Background>
+			<Background name="btn_right_pushed">
+				<Image used="right_pushed"/>
+			</Background>
+			<Background name="btn_left_normal">
+				<Image used="left_normal"/>
+			</Background>
+			<Background name="btn_left_hover">
+				<Image used="left_hover"/>
+			</Background>
+			<Background name="btn_left_pushed">
+				<Image used="left_pushed"/>
+			</Background>
+			
+			<Background name="btn_orange_normal">
+				<Image used="orange_normal">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="90" height="90"/>
+						<Size width="196" height="81"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_orange_hover">
+				<Image used="orange_hover">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="90" height="90"/>
+						<Size width="196" height="81"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_orange_pushed">
+				<Image used="orange_pushed">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="90" height="90"/>
+						<Size width="196" height="81"/>
+					</Cache>
+				</Image>
+			</Background>
+
+			<Background name="rectangle_greyback_darkborder">
+				<Image used="rectangle_greyback_darkborder">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="right_edit">
+				<Image used="right_edit">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3"/>
+				</Image>
+			</Background>
+			<Background name="right_edit_readonly">
+				<Image used="right_edit_readonly">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="306" height="31"/>
+						<Size width="306" height="61"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="progress_bar">
+				<Image used="progress_bar">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="btn_green_normal">
+				<Image used="green_normal">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="196" height="81"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_green_hover">
+				<Image used="green_hover">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="196" height="81"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_green_pushed">
+				<Image used="green_pushed">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="btn_blue_normal">
+				<Image used="blue_normal">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="69" height="28"/>
+						<Size width="95" height="95"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="btn_blue_hover">
+				<Image used="blue_hover">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="btn_blue_pushed">
+				<Image used="blue_pushed">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>	
+			<Background name="group_box">
+				<Image used="group_box">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="94" height="28"/>
+						<Size width="196" height="28"/>
+						<Size width="196" height="70"/>
+						<Size width="218" height="167"/>
+						<Size width="350" height="61"/>
+						<Size width="503" height="167"/>
+						<Size width="1056" height="681"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="left_label">
+				<Image used="left_label">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="89" height="31"/>
+						<Size width="97" height="31"/>
+						<Size width="119" height="48"/>
+						<Size width="140" height="31"/>
+						<Size width="140" height="61"/>						
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="left_label_darkgrey">
+				<Image used="left_label_darkgrey">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="37" height="117"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="left_label_green">
+				<Image used="left_label_green">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="label">
+				<Image used="label">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="top_label">
+				<Image used="top_label">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="196" height="35"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="rectangle_green_roundedcorners">
+				<Image used="rectangle_green_roundedcorners">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="37" height="117"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="triangle_down_green">
+				<Image used="triangle_down_green"/>
+			</Background>
+			<Background name="triangle_down_grey">
+				<Image used="triangle_down_grey"/>
+			</Background>
+			<Background name="back_light_green">
+				<Image used="back_light_green">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="1034" height="117"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="back_light_grey">
+				<Image used="back_light_grey">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="1034" height="117"/>
+					</Cache>
+				</Image>
+			</Background>
+
+			<Background name="menu_button_normal">
+				<Solid fill="#FFFFFF" border="#5789E9" borderwidth="1"/>
+			</Background>
+			<Background name="menu_button_normal">
+				<Solid fill="#FFFFFF" border="#5789E9" borderwidth="1"/>
+			</Background>			
+			<Background name="pure_white">
+				<Solid fill="#FFFFFF"/>
+			</Background>
+			<Background name="pure_black">
+				<Solid fill="#000000"/>
+			</Background>
+			<Background name="pure_light_grey">
+				<Solid fill="#ECEEF2"/>
+			</Background>
+			<Background name="pure_grey">
+				<Solid fill="#F3F3F3"/>
+			</Background>		
+			<Background name="green_group_box">
+				<Image used="green_group_box">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="top_green_label">
+				<Image used="top_green_label">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="main_status_gray">
+				<Image used="main_status_gray">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="177" height="43"/>
+						<Size width="565" height="43"/>
+						<Size width="746" height="43"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="main_status_blue">
+				<Image used="main_status_blue">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+				</Image>
+			</Background>
+			<Background name="main_status_red">
+				<Image used="main_status_red">
+					<Stretch left="5" top="5" right="5" bottom="5"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="565" height="43"/>
+					</Cache>
+				</Image>
+			</Background>
+			
+			<Background name="combobox">
+				<Image used="combobox">
+					<Solid fill="#000000"/>
+				</Image>
+			</Background>	
+			
+			<Background name="square_normal">
+				<Image used="square_normal">
+					<!--<Stretch left="8" top="8" right="8" bottom="8"/>-->
+				</Image>
+			</Background>
+			<Background name="square_hover">
+				<Image used="square_hover">
+					<!--<Stretch left="8" top="8" right="8" bottom="8"/>-->
+				</Image>
+			</Background>
+			<Background name="square_pushed">
+				<Image used="square_pushed">
+					<!--<Stretch left="8" top="8" right="8" bottom="8"/>-->
+				</Image>
+			</Background>
+			<Background name="square_selected">
+				<Image used="square_selected">
+					<!--<Stretch left="8" top="8" right="8" bottom="8"/>-->
+				</Image>
+			</Background>
+			<Background name="circular_normal">
+				<Image used="circular_normal"/>
+			</Background>
+			<Background name="circular_hover">
+				<Image used="circular_hover"/>
+			</Background>
+			<Background name="circular_pushed">
+				<Image used="circular_pushed"/>
+			</Background>
+			<Background name="circular_selected">
+				<Image used="circular_selected"/>
+			</Background>		
+			<Background name="rounded_rect_normal">
+				<Image used="rounded_rect_normal">
+					<Stretch left="8" top="8" right="8" bottom="8"/>
+				</Image>
+			</Background>
+			<Background name="rounded_rect_hover">
+				<Image used="rounded_rect_hover">
+					<Stretch left="8" top="8" right="8" bottom="8"/>
+				</Image>
+			</Background>
+			<Background name="rounded_rect_pushed">
+				<Image used="rounded_rect_pushed">
+					<Stretch left="8" top="8" right="8" bottom="8"/>
+				</Image>
+			</Background>
+			<Background name="rounded_rect_selected">
+				<Image used="rounded_rect_selected">
+					<Stretch left="8" top="8" right="8" bottom="8"/>
+				</Image>
+			</Background>
+			<Background name="progress_bar_normal">
+				<Image used="progress_bar_normal">
+					<Stretch left="2" top="2" right="2" bottom="2"/>
+				</Image>
+			</Background>
+			<Background name="progress_bar_selected">
+				<Image used="progress_bar_selected">
+					<Stretch left="2" top="2" right="2" bottom="2"/>
+				</Image>
+			</Background>
+			<Background name="charcoal_black">
+				<Solid fill="52, 60, 63"/>
+			</Background>
+
+			<Background name="menu_button_normal">
+				<Solid fill="#FFFFFF" border="#5789E9" borderwidth="1"/>
+			</Background>
+			<Background name="menu_button_hover">
+				<Solid fill="#6297FE"/>
+			</Background>
+			<Background name="menu_button_pushed">
+				<Solid fill="#5789E9"/>
+			</Background>
+			<Background name="menu_button_disable">
+				<Solid fill="#FFFFFF" border="#B2B2B2" borderwidth="1"/>
+			</Background>
+			<Background name="menu_button_normal">
+				<Solid fill="#FFFFFF" border="#5789E9" borderwidth="1"/>
+			</Background>
+			<Background name="menu_button_hover">
+				<Solid fill="#6297FE"/>
+			</Background>
+			<Background name="menu_button_pushed">
+				<Solid fill="#5789E9"/>
+			</Background>
+			<Background name="menu_button_disable">
+				<Solid fill="#FFFFFF" border="#B2B2B2" borderwidth="1"/>
+			</Background>
+			<Background name="pure_orange">
+				<Solid fill="#FFAD00"/>
+			</Background>
+			<Background name="pure_red">
+				<Solid fill="#FF0000"/>
+			</Background>
+			<Background name="pure_grey_border">
+				<Solid fill="#C0C0C0" border="#3282F6" borderwidth="1"/>
+			</Background>
+			<Background name="pure_orange_border">
+				<Solid fill="#FFAD00" border="#3282F6" borderwidth="1"/>
+			</Background>
+			<Background name="pure_red_border">
+				<Solid fill="#FF0000" border="#3282F6" borderwidth="1"/>
+			</Background>
+			<Background name="right_combobox_normal">
+				<Image used="right_combobox_normal">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+					<Cache blend_color="#F3F3F3">
+						<Size width="16" height="31"/>
+						<Size width="20" height="23"/>
+						<Size width="20" height="31"/>
+						<Size width="21" height="25"/>
+						<Size width="21" height="26"/>
+						<Size width="31" height="38"/>
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="right_combobox_hover">
+				<Image used="right_combobox_hover">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>
+			<Background name="right_combobox_pushed">
+				<Image used="right_combobox_pushed">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>			
+			<Background name="right_top_combobox_normal">
+				<Image used="right_top_combobox_normal">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+					<Cache blend_color="#F3F3F3">
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="right_top_combobox_hover">
+				<Image used="right_top_combobox_hover">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>
+			<Background name="right_top_combobox_pushed">
+				<Image used="right_top_combobox_pushed">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>			
+			<Background name="right_bottom_combobox_normal">
+				<Image used="right_bottom_combobox_normal">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+					<Cache blend_color="#F3F3F3">
+					</Cache>
+				</Image>
+			</Background>
+			<Background name="right_bottom_combobox_hover">
+				<Image used="right_bottom_combobox_hover">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>
+			<Background name="right_bottom_combobox_pushed">
+				<Image used="right_bottom_combobox_pushed">
+					<Stretch left="6" top="6" right="6" bottom="6"/>
+				</Image>
+			</Background>
+			
+			<Background name="right_solid_combobox_normal">
+				<Solid fill="#959DAC"/>
+			</Background>
+			<Background name="right_solid_combobox_hover">
+				<Solid fill="#B4BCCC"/>
+			</Background>
+			<Background name="right_solid_combobox_pushed">
+				<Solid fill="#6D7178"/>
+			</Background>			
+			<Background name="open_normal_bk">
+				<Image used="open_normal"/>
+			</Background>
+			<Background name="open_hover_bk">
+				<Image used="open_hover"/>
+			</Background>
+			<Background name="open_pushed_bk">
+				<Image used="open_pushed"/>
+			</Background>
+			<Background name="close_normal_bk">
+				<Image used="close_normal"/>
+			</Background>
+			<Background name="close_hover_bk">
+				<Image used="close_hover"/>
+			</Background>
+			<Background name="close_pushed_bk">
+				<Image used="close_pushed"/>
+			</Background>
+		</Global>
+		
+		<ControlRes name="status_button_red">
+			<Font>
+				<Normal used="status_button" color="#FFFFFF"/>
+				<Hover used="status_button" color="#FFFFFF"/>
+				<Pushed used="status_button" color="#FFFFFF"/>
+			</Font>
+			<Background>
+				<Normal used="btn_red_normal"/>
+				<Hover used="btn_red_hover"/>
+				<Pushed used="btn_red_pushed"/>
+			</Background>
+		</ControlRes>
+		<ControlRes name="status_button_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_grey_normal"/>
+				<Hover used="btn_grey_hover"/>
+		      	<Pushed used="btn_grey_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="keyboard_button_res">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_grey_white_bk_normal"/>
+				<Hover used="btn_grey_hover"/>
+		      	<Pushed used="btn_grey_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="keyboard_disable_button_res">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_grey_white_bk_normal"/>
+				<Hover used="btn_grey_white_bk_normal"/>
+		      	<Pushed used="btn_grey_white_bk_normal"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="keyboard_selected_button_res">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_blue_normal"/>
+				<Hover used="btn_blue_hover"/>
+		      	<Pushed used="btn_blue_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_T_anticlockwise_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_T_anticlockwise_grey_normal"/>
+				<Hover used="btn_T_anticlockwise_grey_hover"/>
+		      	<Pushed used="btn_T_anticlockwise_grey_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_T_clockwise_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_T_clockwise_grey_normal"/>
+				<Hover used="btn_T_clockwise_grey_hover"/>
+		      	<Pushed used="btn_T_clockwise_grey_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_down_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_down_normal"/>
+				<Hover used="btn_down_hover"/>
+		      	<Pushed used="btn_down_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_up_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_up_normal"/>
+				<Hover used="btn_up_hover"/>
+		      	<Pushed used="btn_up_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_right_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_right_normal"/>
+				<Hover used="btn_right_hover"/>
+		      	<Pushed used="btn_right_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="status_button_left_grey">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_left_normal"/>
+				<Hover used="btn_left_hover"/>
+		      	<Pushed used="btn_left_pushed"/>
+		    </Background>
+	    </ControlRes>
+		
+		<ControlRes name="status_button_orange">
+		    <Font>
+				<Normal used="status_button_min" color="#FFFFFF"/>
+				<Hover used="status_button_min" color="#FFFFFF"/>
+				<Pushed used="status_button_min" color="#FFFFFF"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_orange_normal"/>
+				<Hover used="btn_orange_hover"/>
+		      	<Pushed used="btn_orange_pushed"/>
+		    </Background>
+	    </ControlRes>		
+
+		<ControlRes name="square_button_normal">
+			<Font>
+				<Normal used="Arial_36_700" color="0,255,0"/>
+				<Hover used="Arial_36_700" color="0,255,0"/>
+				<Pushed used="Arial_36_700" color="52,60,63"/>
+			</Font>
+		    <Background>
+		      	<Normal used="square_normal"/>
+		      	<Hover used="square_hover"/>
+		      	<Pushed used="square_pushed"/>
+		    </Background>
+	    </ControlRes>
+		
+		<ControlRes name="status_button_green">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_green_normal"/>
+				<Hover used="btn_green_hover"/>
+		      	<Pushed used="btn_green_pushed"/>
+		    </Background>
+	    </ControlRes>
+
+		<ControlRes name="status_button_blue">
+		    <Font>
+				<Normal used="status_button_min" color="#30373D"/>
+				<Hover used="status_button_min" color="#30373D"/>
+				<Pushed used="status_button_min" color="#30373D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="btn_blue_normal"/>
+				<Hover used="btn_blue_hover"/>
+		      	<Pushed used="btn_blue_pushed"/>
+		    </Background>
+	    </ControlRes>
+
+		<ControlRes name="menu_button">
+		    <Font>
+				<Normal used="common" color="#0A0A0A"/>
+				<Hover used="common" color="#0A0A0A"/>
+				<Pushed used="common" color="#0A0A0A"/>
+				<Disable used="common" color="#7D7D7D"/>
+			</Font>
+		    <Background>
+		      	<Normal used="catalog_normal"/>
+		      	<Hover used="catalog_hover"/>
+		      	<Pushed used="catalog_pushed"/>
+		      	<Disable used="catalog_disable"/>
+		    </Background>
+	    </ControlRes>
+
+		<ControlRes name="square_button_selected">
+			<Font>
+				<Normal used="Arial_36_700" color="52,60,63"/>
+				<Hover used="Arial_36_700" color="0,255,0"/>
+				<Pushed used="Arial_36_700" color="52,60,63"/>
+			</Font>
+		    <Background>
+		      	<Normal used="square_selected"/>
+		      	<Hover used="square_hover"/>		      	
+				<Pushed used="square_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="circular_button_normal">   
+		    <Background>
+		      	<Normal used="circular_normal"/>
+		      	<Hover used="circular_hover"/>
+		      	<Pushed used="circular_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="circular_button_selected">
+		    <Background>
+		      	<Normal used="circular_selected"/>
+		      	<Hover used="circular_hover"/>
+		      	<Pushed used="circular_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="rounded_rect_button_normal">
+		    <Font>
+				<Normal used="Arial_11_700" color="0,255,0"/>
+				<Hover used="Arial_11_700" color="0,255,0"/>
+				<Pushed used="Arial_11_700" color="52,60,63"/>
+			</Font>
+		    <Background>
+		      	<Normal used="rounded_rect_normal"/>
+		      	<Hover used="rounded_rect_hover"/>
+		      	<Pushed used="rounded_rect_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="rounded_rect_button_selected">
+		    <Font>
+				<Normal used="Arial_11_700" color="52,60,63"/>
+				<Hover used="Arial_11_700" color="0,255,0"/>
+				<Pushed used="Arial_11_700" color="52,60,63"/>
+			</Font>
+		    <Background>
+		      	<Normal used="rounded_rect_selected"/>
+		      	<Hover used="rounded_rect_hover"/>
+		      	<Pushed used="rounded_rect_pushed"/>
+		    </Background>
+	    </ControlRes>		
+		<ControlRes name="right_combobox_button">   
+		    <Background>
+		      	<Normal used="right_combobox_normal"/>
+		      	<Hover used="right_combobox_hover"/>
+		      	<Pushed used="right_combobox_pushed"/>
+		    </Background>
+	    </ControlRes>		
+		<ControlRes name="right_top_combobox_button">   
+		    <Background>
+		      	<Normal used="right_top_combobox_normal"/>
+		      	<Hover used="right_top_combobox_hover"/>
+		      	<Pushed used="right_top_combobox_pushed"/>
+		    </Background>
+	    </ControlRes>	
+		<ControlRes name="right_bottom_combobox_button">   
+		    <Background>
+		      	<Normal used="right_bottom_combobox_normal"/>
+		      	<Hover used="right_bottom_combobox_hover"/>
+		      	<Pushed used="right_bottom_combobox_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="right_solid_combobox_button">   
+		    <Background>
+		      	<Normal used="right_solid_combobox_normal"/>
+		      	<Hover used="right_solid_combobox_hover"/>
+		      	<Pushed used="right_solid_combobox_pushed"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="switch_button_open">   
+		    <Background>
+		      	<Normal used="open_normal_bk"/>
+		      	<Hover used="open_hover_bk"/>
+		      	<Pushed used="open_pushed_bk"/>
+		    </Background>
+	    </ControlRes>
+		<ControlRes name="switch_button_close">   
+		    <Background>
+		      	<Normal used="close_normal_bk"/>
+		      	<Hover used="close_hover_bk"/>
+		      	<Pushed used="close_pushed_bk"/>
+		    </Background>
+	    </ControlRes>		
+    </Resource>
+</JCAUI>
+
+
+

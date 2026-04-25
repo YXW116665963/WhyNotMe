@@ -1,10 +1,11 @@
 #pragma once
+
 #include <iostream>
 #include <memory>
 #include <functional>
 #include "logger.h"
 
-
+#include "global_pointer.h"
 #include "data_center_interface.h"
 #include "data_observer_helper.h"
 typedef std::function<void(why::IDataCenter*)> DataCenterDeleter;
@@ -509,8 +510,8 @@ namespace why
 
 	inline bool GetStringValue(const char* pDomain, const char* pName, std::string& strText)
 	{
-		assert(nullptr != m_dataCenterPtr.get());
-		auto pDataValue = m_dataCenterPtr->GetDataValue(pDomain, pName);
+		assert(nullptr != g_globalPointer.m_dataCenterPtr.get());
+		auto pDataValue = g_globalPointer.m_dataCenterPtr->GetDataValue(pDomain, pName);
 		if (nullptr != pDataValue)
 		{
 			int32_t		nLen = pDataValue->GetStringValue(nullptr, 0);

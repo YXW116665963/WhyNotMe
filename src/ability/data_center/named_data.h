@@ -29,12 +29,12 @@ namespace why
 		//IValueWatcher interface
 		void Pause() override;
 		void Resume() override;
-		// ¸÷ÖÖÀàĞÍµÄValueÖµ±ä»¯Ö´ĞĞµÄ»Øµ÷
+		// å„ç§ç±»å‹çš„Valueå€¼å˜åŒ–æ‰§è¡Œçš„å›è°ƒ
 		void OnValueChanged(IDataValue* pDataValue) override;
 
 	public:
-		// Êı¾İ¶©ÔÄ£ºÖµ¸Ä±äµÄ»Øµ÷´«µİ¡£
-		// NamedDataÊµÏÖIValueWatcher½Ó¿Ú£¬È»ºó´´½¨BigIntergerValueÊ±´«ÈëthisÖ¸Õë£¬½ø¶øÊµÏÖValueÀàĞÍµÄIValueWatcher½Ó¿Ú¡£
+		// æ•°æ®è®¢é˜…ï¼šå€¼æ”¹å˜çš„å›è°ƒä¼ é€’ã€‚
+		// NamedDataå®ç°IValueWatcheræ¥å£ï¼Œç„¶ååˆ›å»ºBigIntergerValueæ—¶ä¼ å…¥thisæŒ‡é’ˆï¼Œè¿›è€Œå®ç°Valueç±»å‹çš„IValueWatcheræ¥å£ã€‚
 		bool CreateIntValue(int32_t nDefault);
 		bool CreateUIntValue(uint32_t uDefault);
 		bool CreateBigIntValue(int64_t nDefault);

@@ -589,4 +589,18 @@ namespace why
 
 		return false;
 	}
+
+	PathAppender& PathAppender::AppendChildPath(const std::string& strChildPath)
+	{
+		m_strPath += std::filesystem::path::preferred_separator;
+		m_strPath += strChildPath;		
+		return *this;
+	}
+
+	PathAppender& PathAppender::SetSourcePath(const std::string& strSourcePath)
+	{
+		Clear();
+		m_strPath = strSourcePath;
+		return *this;
+	}
 }

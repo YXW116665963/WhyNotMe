@@ -1,3 +1,5 @@
+#include "env_var_data_def.h"
+#include "data_center_value_util.h"
 #include "resource_loader.h"
 #include "text_util.h"
 #include "file_util.h"
@@ -7,7 +9,7 @@
 #include "logger.h"
 #include "rapidxml.hpp"
 #include <wx/filename.h>
-
+#include "global_var.h"
 namespace why
 {
 	IDataCenter* g_pMiddlewareDataCenter{ nullptr };
@@ -28,23 +30,10 @@ namespace why
 		PicturePtr CreatePictureFromFile(const char *pFileName)
 		{
 			const char				*pFind = nullptr;
-			std::string				strKey = pFileName;
-			std::string				strFullPathFileName;
+			std::string				strKey = pFileName;			
 			PicturePoolIt			itFind = g_picturePool.end();
 
-			pFind = strchr(pFileName, ':');
-			if (nullptr == pFind)
-			{
-				if (!SearchResourceFullPath(g_strPicturePath.ToStdString(), pFileName, strFullPathFileName))
-				{
-					LOG_ERROR << "SearchResourceFullPath not find:" << g_strPicturePath << "strFileName:" << pFileName;
-					return NULL;
-				}
-			}
-			else
-			{
-				strFullPathFileName = pFileName;
-			}
+			std::string	strFullPathFileName = GetStringValue(envVar::g_Domain, envVar::strUIPicture_dirPath) + pFileName;
 
 			itFind = g_picturePool.find(strKey);
 			if (itFind == g_picturePool.end())
@@ -87,25 +76,6 @@ namespace why
 	void SetResourceSearchPath(const std::vector<std::string>& strSearchPath)
 	{
 		g_searchPath.insert(g_searchPath.end(), strSearchPath.begin(), strSearchPath.end());
-	}
-
-	bool SearchResourceFullPath(const std::string& strResourcePath, const std::string& strFileName, std::string& strLoadResourceFullPath)
-	{
-		//搜索机型+语言带文件名全路径
-		for (auto& item : g_searchPath)
-		{
-			//std::string strPath = strResourcePath + item + std::filesystem::path::preferred_separator + strFileName;
-
-			// 使用 std::filesystem::path 来拼接路径，确保平台兼容性
-			std::filesystem::path path = std::filesystem::path(strResourcePath) / item / strFileName;
-			// 检查文件是否存在
-			if (wxFileName::FileExists(wxString::FromUTF8(path.string())))
-			{
-				strLoadResourceFullPath = path.string(); // 获取全路径并返回
-				return true;
-			}
-		}
-		return false;
 	}
 
 	bool GetAttributeColor(CXmlNode* pNode, const char* pName, wxColour& colorValue)
@@ -817,9 +787,7 @@ namespace why
 		{	
 			LOG_ERROR << "invalidate xml file:" << pFileName;
 			throw e;
-		}
-		 
-	
+		}		 
 		pRoot = doc.first_node();
 		if (nullptr == pRoot)
 		{

@@ -1,32 +1,30 @@
 #include "wx/wx.h"
 #include "logger.h"
 
-
-// Ӧ�ó�����
-class WhyNotViewApp : public wxApp
+#include "main_frame.h"
+namespace why
 {
-public:
-    WhyNotViewApp();
-    ~WhyNotViewApp() {};
-    virtual bool OnInit() wxOVERRIDE;
-    int OnExit() wxOVERRIDE;
+    // 应用程序类
+    class WhyNotViewApp : public wxApp
+    {
+    public:
+        WhyNotViewApp();
+        ~WhyNotViewApp() {};
+        virtual bool OnInit() wxOVERRIDE;
+        int OnExit() wxOVERRIDE;
 
-private:
-    bool LoadwhyBladeData();//test
-private:
-    void InitAppFilePath();
-    bool InitAppFile();
+    private:
+        bool LoadwhyBladeData();//test
+    private:        
+        bool LoadUIResource();
+    private:
+        // 初始化顺序，按序调用
+		bool InitLogger();      
+        bool InitDataCenter();  // 初始化app的执行路径和数据路径,初始化数据中心
+        void InitEnvVar();      // 初始化环境变量
+		bool InitGlobalTimer(); // 初始化全局定时器
 
-    bool StartTimerThread();
-
-private:
-    std::string m_strUserConfig_dirPath;
-
-    std::string m_strUserData_dirPath;//data
-    std::string m_strDB_dirPath;//db
-    std::string m_strLog_dirPath;//log
-    
-    std::string m_strDataCenterDB_filePath;//data_center.db
-
-
-};
+	private:
+        MainFrame* m_pMainFrame;
+    };
+}

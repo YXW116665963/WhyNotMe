@@ -37,14 +37,14 @@ namespace why
 	{
 		uint32_t			uResult;
 
-		// ¹Ø±ÕÖ®Ç°´ò¿ªµÄÊı¾İ¿â
+		// å…³é—­ä¹‹å‰æ‰“å¼€çš„æ•°æ®åº“
 		if (m_db)
 		{
 			sqlite3_close(m_db);
 			m_db = nullptr;
 		}
 
-		// ´´½¨»ò´ò¿ªÊı¾İ¿â
+		// åˆ›å»ºæˆ–æ‰“å¼€æ•°æ®åº“
 		if (SQLITE_OK != sqlite3_open(strFileName.c_str(), &m_db))
 		{
 			m_db = nullptr;

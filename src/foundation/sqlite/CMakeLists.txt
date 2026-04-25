@@ -13,6 +13,6 @@ add_library(${PROJECT_NAME} STATIC ${all_sourcefile})
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "foundation")
 set_target_properties(${PROJECT_NAME}
 		PROPERTIES RUNTIME_OUTPUT_DIRECTORY ""
-		ARCHIVE_OUTPUT_DIRECTORY ${lib_dir}
-		LIBRARY_OUTPUT_DIRECTORY ${lib_dir}
+		ARCHIVE_OUTPUT_DIRECTORY ${lib_dir_path}
+		LIBRARY_OUTPUT_DIRECTORY ${lib_dir_path}
 		)

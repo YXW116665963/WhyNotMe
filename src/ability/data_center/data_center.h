@@ -31,7 +31,7 @@ namespace why
 		IObjectDataValue* GetObjectDataValue(const char* pDomain, const char* pName) override;
 		void UnregisterData(const char* pDomain, const char* pName) override;
 
-		//<! 当pName=""时，表示全注册pDomain
+		//<! 褰損Name=""鏃讹紝琛ㄧず鍏ㄦ敞鍐宲Domain
 		void Subscribe(const char* pDomain, const char* pName, IDataObserver* pObserver) override;
 		void SubscribeEx(const char* pDomain, const char* pName, const char* pMember, IDataObserver* pObserver) override;
 		void Unsubscribe(const char* pDomain, const char* pName, IDataObserver* pObserver) override;

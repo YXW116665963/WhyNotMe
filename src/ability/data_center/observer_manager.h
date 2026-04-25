@@ -20,57 +20,57 @@ namespace why
 		~ObserverManager();
 
 		/**
-		* @brief ¶©ÔÄÊı¾İ¡£Êı¾İ¶©ÔÄ£º½«»Øµ÷´æ´¢ÔÚ{ObserversPool}m_observers;
-		* @param strDomain Êı¾İµÄ·ÖÀàÃû³Æ
-		* @param strName Êı¾İµÄÃû³Æ
-		* @param strMember ×ÓÔªËØµÄÃû³Æ(½ö¶ÔobjectÀàĞÍµÄÊı¾İÆğĞ§)
-		* @param pObserver ¹Û²ìÕß¶ÔÏóµÄ½Ó¿Ú
+		* @brief è®¢é˜…æ•°æ®ã€‚æ•°æ®è®¢é˜…ï¼šå°†å›è°ƒå­˜å‚¨åœ¨{ObserversPool}m_observers;
+		* @param strDomain æ•°æ®çš„åˆ†ç±»åç§°
+		* @param strName æ•°æ®çš„åç§°
+		* @param strMember å­å…ƒç´ çš„åç§°(ä»…å¯¹objectç±»å‹çš„æ•°æ®èµ·æ•ˆ)
+		* @param pObserver è§‚å¯Ÿè€…å¯¹è±¡çš„æ¥å£
 		* @return void
 		* @warning
-		* - ±»¶©ÔÄÊ½µÄÊı¾İÔÚ¶©ÔÄÊ±¿ÉÒÔ»¹Î´±»×¢²á
-		* - µ±Êı¾İ±»×¢²áµÄÊ±ºò£¬Èç¹ûÊı¾İÓĞ±»¶©ÔÄ£¬»á×Ô¶¯´¥·¢Ò»´Î¹Û²ìÕß»Øµ÷µÄµ÷ÓÃ
-		* - ¶©ÔÄÕß±ØĞë±£Ö¤Ìá¹©µÄ¹Û²ìÕß¶ÔÏóÔÚ±»È¡Ïû¶©ÔÄÖ®Ç°¶¼ÊÇ¿ÉÓÃµÄ¡£
+		* - è¢«è®¢é˜…å¼çš„æ•°æ®åœ¨è®¢é˜…æ—¶å¯ä»¥è¿˜æœªè¢«æ³¨å†Œ
+		* - å½“æ•°æ®è¢«æ³¨å†Œçš„æ—¶å€™ï¼Œå¦‚æœæ•°æ®æœ‰è¢«è®¢é˜…ï¼Œä¼šè‡ªåŠ¨è§¦å‘ä¸€æ¬¡è§‚å¯Ÿè€…å›è°ƒçš„è°ƒç”¨
+		* - è®¢é˜…è€…å¿…é¡»ä¿è¯æä¾›çš„è§‚å¯Ÿè€…å¯¹è±¡åœ¨è¢«å–æ¶ˆè®¢é˜…ä¹‹å‰éƒ½æ˜¯å¯ç”¨çš„ã€‚
 		*/
 		void Subscribe(const std::string& strDomain, const std::string& strName, const std::string& strMember, IDataObserver* pObserver);
 
 		/**
-		* @brief È¡Ïû¶ÔÊı¾İµÄ¶©ÔÄ
-		* @param strDomain Êı¾İµÄ·ÖÀàÃû³Æ
-		* @param strName Êı¾İµÄÃû³Æ
-		* @param pObserver ¹Û²ìÕß¶ÔÏóµÄ½Ó¿Ú
+		* @brief å–æ¶ˆå¯¹æ•°æ®çš„è®¢é˜…
+		* @param strDomain æ•°æ®çš„åˆ†ç±»åç§°
+		* @param strName æ•°æ®çš„åç§°
+		* @param pObserver è§‚å¯Ÿè€…å¯¹è±¡çš„æ¥å£
 		* @return void
 		*/
 		void Unsubscribe(const std::string& strDomain, const std::string& strName, IDataObserver* pObserver);
 
 		/**
-		* @brief ±äÁ¿ÒÑ¾­×¼±¸ºÃ
-		* @param strDomain Êı¾İµÄ·ÖÀàÃû³Æ
-		* @param strName Êı¾İµÄÃû³Æ
-		* @param pNamedData ÒÑ¾­×¼±¸ºÃµÄÊı¾İ
+		* @brief å˜é‡å·²ç»å‡†å¤‡å¥½
+		* @param strDomain æ•°æ®çš„åˆ†ç±»åç§°
+		* @param strName æ•°æ®çš„åç§°
+		* @param pNamedData å·²ç»å‡†å¤‡å¥½çš„æ•°æ®
 		* @return void
 		*/
 		void OnValueReady(const std::string& strDomain, const std::string& strName, INamedData* pNamedData);
 
 		/**
-		* @brief ±äÁ¿µÃÖµ·¢Éú¸Ä±ä
-		* @param strDomain Êı¾İµÄ·ÖÀàÃû³Æ
-		* @param strName Êı¾İµÄÃû³Æ
-		* @param pNamedData ·¢Éú±ä»¯µÄÊı¾İ
+		* @brief å˜é‡å¾—å€¼å‘ç”Ÿæ”¹å˜
+		* @param strDomain æ•°æ®çš„åˆ†ç±»åç§°
+		* @param strName æ•°æ®çš„åç§°
+		* @param pNamedData å‘ç”Ÿå˜åŒ–çš„æ•°æ®
 		* @return void
 		*/
 		void OnValueChanged(const std::string& strDomain, const std::string& strName, const std::string& strMember, INamedData* pNamedData);
 
 		/**
-		* @brief ±äÁ¿µÃÖµ·¢Éú¸Ä±ä
-		* @param strDomain Êı¾İµÄ·ÖÀàÃû³Æ
-		* @param strName Êı¾İµÄÃû³Æ
-		* @param pNamedData ·¢Éú±ä»¯µÄÊı¾İ
-		* @param pObserver ¹Û²ìÕß¶ÔÏóµÄ½Ó¿Ú
+		* @brief å˜é‡å¾—å€¼å‘ç”Ÿæ”¹å˜
+		* @param strDomain æ•°æ®çš„åˆ†ç±»åç§°
+		* @param strName æ•°æ®çš„åç§°
+		* @param pNamedData å‘ç”Ÿå˜åŒ–çš„æ•°æ®
+		* @param pObserver è§‚å¯Ÿè€…å¯¹è±¡çš„æ¥å£
 		* @return void
 		*/
 		void OnValueChangedEx(const std::string& strDomain, const std::string& strName, const std::string& strMember, INamedData* pNamedData, IDataObserver* pObserver);
 		/**
-		* @brief Í£Ö¹ËùÓĞÊÂ¼ş
+		* @brief åœæ­¢æ‰€æœ‰äº‹ä»¶
 		*/
 		void Stop();
 	private:
@@ -104,15 +104,15 @@ namespace why
 	private:
 		DataDB* m_pDataDB;
 		mutable std::shared_mutex		m_lock;
-		// Êı¾İ¶©ÔÄ£º´æ´¢µã3¡£
-		// Öµ¸Ä±äÊ±²éÕÒ¶ÔÓ¦µÄ»Øµ÷²¢Ö´ĞĞ
+		// æ•°æ®è®¢é˜…ï¼šå­˜å‚¨ç‚¹3ã€‚
+		// å€¼æ”¹å˜æ—¶æŸ¥æ‰¾å¯¹åº”çš„å›è°ƒå¹¶æ‰§è¡Œ
 		ObserversPool					m_observers;
 		IProcedureCall*					m_pProcedureCall{ nullptr };
 
 		std::mutex						m_eventLock;
 		uint32_t						m_uCurrentID{ 0 };
-		// Êı¾İ¶©ÔÄ£º´æ´¢µã2¡£
-		// ÔÚÃ¿Ò»´ÎchangeÖĞ¶¼»á¼ÓÈë(EventMap)m_eventsÖĞ£¬È»ºóÖ´ĞĞÖ®Ç°ÔÙ´Óm_eventsÀïÉ¾µô
+		// æ•°æ®è®¢é˜…ï¼šå­˜å‚¨ç‚¹2ã€‚
+		// åœ¨æ¯ä¸€æ¬¡changeä¸­éƒ½ä¼šåŠ å…¥(EventMap)m_eventsä¸­ï¼Œç„¶åæ‰§è¡Œä¹‹å‰å†ä»m_eventsé‡Œåˆ æ‰
 		EventMap						m_events;
 		bool							m_running{ true };
 	};

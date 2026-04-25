@@ -29,13 +29,13 @@ namespace why
 		typedef std::list<PrivateEvent>	WaitQueue;
 
 	public:
-		// ²åÈëÈÎÎñµ½m_waitQueue£¬²¢Í¬²½Ö´ĞĞm_waitQueueµÄËùÓĞÈÎÎñ
+		// æ’å…¥ä»»åŠ¡åˆ°m_waitQueueï¼Œå¹¶åŒæ­¥æ‰§è¡Œm_waitQueueçš„æ‰€æœ‰ä»»åŠ¡
 		virtual void DoItOnMainThread(const DoFunction &doFunction);
 
-		// ²åÈë¶¨Ê±ÈÎÎñµ½m_waitTimeQueue£¬²åÈë·Ç¶¨Ê±ÈÎÎñµ½m_waitQueue£¬²¢Òì²½Ö´ĞĞm_waitQueueµÄËùÓĞÈÎÎñ£¨Ò²¾ÍÊÇ²»ÓÃµÈ´ı£©
+		// æ’å…¥å®šæ—¶ä»»åŠ¡åˆ°m_waitTimeQueueï¼Œæ’å…¥éå®šæ—¶ä»»åŠ¡åˆ°m_waitQueueï¼Œå¹¶å¼‚æ­¥æ‰§è¡Œm_waitQueueçš„æ‰€æœ‰ä»»åŠ¡ï¼ˆä¹Ÿå°±æ˜¯ä¸ç”¨ç­‰å¾…ï¼‰
 		virtual void DoItOnMainThreadAsync(const DoFunction &doFunction, void *pFunThis, uint64_t uTimeMilli = 0);
 
-		// ²åÈëÈÎÎñµ½m_cycleTimeMap£¬Èç¹ûÒªÇóÂíÉÏÖ´ĞĞ£¨run_nowµÈÓÚtrue£©m_waitQueueÒ²Òª²åÈë¸ÃÈÎÎñ¡£
+		// æ’å…¥ä»»åŠ¡åˆ°m_cycleTimeMapï¼Œå¦‚æœè¦æ±‚é©¬ä¸Šæ‰§è¡Œï¼ˆrun_nowç­‰äºtrueï¼‰m_waitQueueä¹Ÿè¦æ’å…¥è¯¥ä»»åŠ¡ã€‚
 		virtual int DoCycleTimer(const DoFunction &doFunction, void* pFunThis, uint64_t time_milli, bool run_now = false);
 
 		virtual void ClearCycleTimer(int &id);
@@ -46,7 +46,7 @@ namespace why
 		void Destroy() override;
 
 	public:
-		// ÊÂ¼ş·Ö·¢Æ÷£¨why£©£ºÍ¨ÖªÖ÷Ïß³ÌÖ´ĞĞµÄº¯ÊıÈÎÎñ¾ÍÊÇGLFWdonthinkeventfun
+		// äº‹ä»¶åˆ†å‘å™¨ï¼ˆwhyï¼‰ï¼šé€šçŸ¥ä¸»çº¿ç¨‹æ‰§è¡Œçš„å‡½æ•°ä»»åŠ¡å°±æ˜¯GLFWdonthinkeventfun
 		void GLFWdonthinkeventfun(unsigned int wParam, long lParam);
 
 		static EventDispatcher *GetInstance();
@@ -57,7 +57,7 @@ namespace why
 
 		void Init();
 
-		// ÊÂ¼ş·Ö·¢Æ÷£¨why£©£ºÅÉ·¢ÔÚ¶¨Ê±Æ÷ÈÎÎñ¶ÓÁĞm_waitTimeQueueºÍm_cycleTimeMapÖĞ·ûºÏÊ±¼ä¼ä¸ôÒªÇóµÄÈÎÎñµ½µÈ´ı¶ÓÁĞm_waitQueue
+		// äº‹ä»¶åˆ†å‘å™¨ï¼ˆwhyï¼‰ï¼šæ´¾å‘åœ¨å®šæ—¶å™¨ä»»åŠ¡é˜Ÿåˆ—m_waitTimeQueueå’Œm_cycleTimeMapä¸­ç¬¦åˆæ—¶é—´é—´éš”è¦æ±‚çš„ä»»åŠ¡åˆ°ç­‰å¾…é˜Ÿåˆ—m_waitQueue
 		int RunTimer();
 
 		bool GetOneWaitEvent(PrivateEvent &event);
@@ -67,9 +67,9 @@ namespace why
 	private:
 		std::mutex						m_lockWait;
 
-		// ËùÓĞÊµ¼ÊÒªÖ´ĞĞµÄÈÎÎñ¶¼»á±»²åÈëµ½¸Ã¶ÓÁĞ£¬ÒòÎªGLFWdonthinkeventfunÖ»Ö´ĞĞ¸Ã¶ÓÁĞµÄÈÎÎñ
+		// æ‰€æœ‰å®é™…è¦æ‰§è¡Œçš„ä»»åŠ¡éƒ½ä¼šè¢«æ’å…¥åˆ°è¯¥é˜Ÿåˆ—ï¼Œå› ä¸ºGLFWdonthinkeventfunåªæ‰§è¡Œè¯¥é˜Ÿåˆ—çš„ä»»åŠ¡
 		WaitQueue						m_waitQueue;
-		// À´Ô´£ºÖ»»áÔÚDoItOnMainThreadAsyncÖĞ±»²åÈë¶¨Ê±ÈÎÎñ
+		// æ¥æºï¼šåªä¼šåœ¨DoItOnMainThreadAsyncä¸­è¢«æ’å…¥å®šæ—¶ä»»åŠ¡
 		WaitQueue						m_waitTimeQueue;
 
 		std::map<int, PrivateEvent>     m_cycleTimeMap;

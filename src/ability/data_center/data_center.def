@@ -1,0 +1,8 @@
+LIBRARY	"data_center"
+
+EXPORTS
+CreateDataCenter;
+RegisterDataFromFile;
+CloneData;
+ImportDataFromFile;
+ExportDataToFile;

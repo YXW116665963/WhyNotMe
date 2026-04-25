@@ -12,10 +12,10 @@ source_group_by_dir(all_sourcefile ${src_path})
 
 # inc
 ##foundation
-include_directories(${common_inc})
-include_directories(${platform_inc})
+include_directories(${common_inc_dir_path})
+include_directories(${platform_inc_dir_path})
 ##
-include_directories(${middleware_inc})
+include_directories(${middleware_inc_dir_path})
 
 ## app
 include_directories(${app_dir}/view)
@@ -23,19 +23,19 @@ include_directories(${app_dir}/panel)
 include_directories(${app_dir}/service)
 ##
 ## 3rd inc
-include_directories(${xml_inc})
-include_directories(${glog_inc})
-include_directories(${wxwidgets_inc})
+include_directories(${rapidxml_inc_dir_path})
+include_directories(${glog_inc_dir_path})
+include_directories(${wxwidgets_inc_dir_path})
 ##
 #
 
 # 包含库目录
 ## 3rd lib dir
-link_directories(${glog_lib_dir})
-link_directories(${wxwidgets_lib_dir})
+link_directories(${glog_lib_dir_path})
+link_directories(${wxwidgets_lib_dir_path})
 ##
 #
-link_directories(${lib_dir})
+link_directories(${lib_dir_path})
 
 add_executable(${proj_name} ${all_sourcefile})
 
@@ -66,17 +66,12 @@ if(OS_NAME STREQUAL "windows")
 add_custom_command(TARGET ${proj_name} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_if_different
         "${glog_bin_path}/${glog_bin}"
-        "${bin_dir}/${CMAKE_CFG_INTDIR}")
+        "${bin_dir_path}/${CMAKE_CFG_INTDIR}")
 
 add_custom_command(TARGET ${proj_name} POST_BUILD
 	COMMAND ${CMAKE_COMMAND} -E copy_if_different
-	"${wxwidgets_lib_path}/${wxbaselib}"
-	"${bin_dir}/${CMAKE_CFG_INTDIR}")
-
-add_custom_command(TARGET ${proj_name} POST_BUILD
-	COMMAND ${CMAKE_COMMAND} -E copy_if_different
-	"${wxwidgets_lib_path}/${wxmswlib}"
-	"${bin_dir}/${CMAKE_CFG_INTDIR}")
+	"${wxwidgets_lib_dir_path}/${wxwidgets_dll_name}"
+	"${bin_dir_path}/${CMAKE_CFG_INTDIR}")
 endif()
 
 # 项目上层文件夹昵称

@@ -15,8 +15,5 @@ if (COMPILER_SUPPORTS_CXX20)
 else()
 	message(STATUS "The compiler ${CMAKE_CXX_COMPILER} has no C++20 support.Please use a different C++ compiler.")
 endif()
-if (MSVC)
-	#add_compile_options("/source-charset:utf-8")
-endif()
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DUNICODE /D_UNICODE")

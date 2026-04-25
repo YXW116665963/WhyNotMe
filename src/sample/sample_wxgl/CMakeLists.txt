@@ -12,10 +12,10 @@ source_group_by_dir(all_sourcefile ${src_path})
 
 # inc
 ##foundation
-include_directories(${common_inc})
-include_directories(${platform_inc})
+include_directories(${common_inc_dir_path})
+include_directories(${platform_inc_dir_path})
 ##
-include_directories(${middleware_inc})
+include_directories(${middleware_inc_dir_path})
 
 ## app
 include_directories(${app_dir}/view)
@@ -23,20 +23,20 @@ include_directories(${app_dir}/panel)
 include_directories(${app_dir}/service)
 ##
 ## 3rd inc
-include_directories(${xml_inc})
-include_directories(${glog_inc})
-include_directories(${wxwidgets_inc})
-include_directories(${json_inc})
-include_directories(${glad_inc})
+include_directories(${rapidxml_inc_dir_path})
+include_directories(${glog_inc_dir_path})
+include_directories(${wxwidgets_inc_dir_path})
+include_directories(${rapidjson_inc_dir_path})
+include_directories(${glad_inc_dir_path})
 include_directories(${glm_inc})
 ##
 #
 
 # 包含库目录
 ## 3rd lib dir
-link_directories(${glog_lib_dir})
-link_directories(${wxwidgets_lib_dir})
-link_directories(${lib_dir})
+link_directories(${glog_lib_dir_path})
+link_directories(${wxwidgets_lib_dir_path})
+link_directories(${lib_dir_path})
 link_directories(${glfw_lib_dir})
 ##
 #
@@ -82,11 +82,11 @@ if(OS_NAME STREQUAL "windows")
 		add_custom_command(TARGET ${target} POST_BUILD
 			COMMAND ${CMAKE_COMMAND} -E copy_if_different
 				"${dll_dir}/${dll_name}"
-				"${bin_dir}/${CMAKE_CFG_INTDIR}")
+				"${bin_dir_path}/${CMAKE_CFG_INTDIR}")
 	endmacro(copy_dll)
 
-	copy_dll(${proj_name} ${glog_lib_dir} ${glog_dll_name})
-	copy_dll(${proj_name} ${wxwidgets_lib_dir} ${wxwidgets_dll_name})
+	copy_dll(${proj_name} ${glog_lib_dir_path} ${glog_dll_name})
+	copy_dll(${proj_name} ${wxwidgets_lib_dir_path} ${wxwidgets_dll_name})
 	copy_dll(${proj_name} ${glfw_lib_dir} ${glfw_dll_name})
 endif()
 

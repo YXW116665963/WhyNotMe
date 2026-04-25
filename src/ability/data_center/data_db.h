@@ -9,7 +9,7 @@ namespace why
 {
 	/**
 	*@class DataDB
-	*@brief ·â×°ÃüÃûÊı¾İÊı¾İ¿â²Ù×÷
+	*@brief å°è£…å‘½åæ•°æ®æ•°æ®åº“æ“ä½œ
 	*/
 	class DataDB
 	{
@@ -18,172 +18,172 @@ namespace why
 		~DataDB();
 
 		/**
-		* @brief ¿ªÆôÅäÖÃÊı¾İ¿â
-		* @param strFileName ÅäÖÃÊı¾İ¿âµÄÎÄ¼şÃû
+		* @brief å¼€å¯é…ç½®æ•°æ®åº“
+		* @param strFileName é…ç½®æ•°æ®åº“çš„æ–‡ä»¶å
 		* @return
-		* - true Æô¶¯³É¹¦
-		* - false Æô¶¯Ê§°Ü
+		* - true å¯åŠ¨æˆåŠŸ
+		* - false å¯åŠ¨å¤±è´¥
 		*/
 		bool Startup(const std::string& strFileName);
 
 		/**
-		* @brief ¹Ø±ÕÅäÖÃÊı¾İ¿â
+		* @brief å…³é—­é…ç½®æ•°æ®åº“
 		* @return void
 		*/
 		void Shutdown();
 
 		/**
-		* @brief Êı¾İ¿âÊÇ·ñÒÑ¾­±»ÕıÈ·³õÊ¼»¯
+		* @brief æ•°æ®åº“æ˜¯å¦å·²ç»è¢«æ­£ç¡®åˆå§‹åŒ–
 		* @return
-		* - true ÒÑ¾­³õÊ¼»¯
-		* - false Î´³õÊ¼»¯
+		* - true å·²ç»åˆå§‹åŒ–
+		* - false æœªåˆå§‹åŒ–
 		*/
 		bool IsStartup();
 
 		/**
-		* @brief Êı¾İ¿âÖĞÌí¼ÓÒ»¸öÃüÃûÊı¾İ
-		* @param pData ÃüÃûÊı¾İ½Ó¿Ú
+		* @brief æ•°æ®åº“ä¸­æ·»åŠ ä¸€ä¸ªå‘½åæ•°æ®
+		* @param pData å‘½åæ•°æ®æ¥å£
 		* @return
-		* - true Ìí¼Ó³É¹¦
-		* - false Ìí¼ÓÊ§°Ü
-		* @warning ×¢Òâ´Ë´¦½ö½öÊÇÌí¼ÓÒ»¸öÊı¾İ¼ÇÂ¼£¨¼°°üº¬·ÖÀà¡¢Ãû³Æ¡¢ÀàĞÍ£¬²»±£´æÊı¾İµÃÖµ£©
+		* - true æ·»åŠ æˆåŠŸ
+		* - false æ·»åŠ å¤±è´¥
+		* @warning æ³¨æ„æ­¤å¤„ä»…ä»…æ˜¯æ·»åŠ ä¸€ä¸ªæ•°æ®è®°å½•ï¼ˆåŠåŒ…å«åˆ†ç±»ã€åç§°ã€ç±»å‹ï¼Œä¸ä¿å­˜æ•°æ®å¾—å€¼ï¼‰
 		*/
 		bool InsertData(INamedData* pData);
 
 		/**
-		* @brief ´ÓÊı¾İ¿â¼ÓÔØÃüÃûÊı¾İµÃÖµ
-		* @param pData ÃüÃûÊı¾İ½Ó¿Ú
+		* @brief ä»æ•°æ®åº“åŠ è½½å‘½åæ•°æ®å¾—å€¼
+		* @param pData å‘½åæ•°æ®æ¥å£
 		* @return
-		* - true ¼ÓÔØ³É¹¦
-		* - false ¼ÓÔØÊ§°Ü
+		* - true åŠ è½½æˆåŠŸ
+		* - false åŠ è½½å¤±è´¥
 		*/
 		bool ReadData(INamedData* pData);
 
 		/**
-		* @brief ÃüÃûÊı¾İµÄÖµ
-		* @param pData ÃüÃûÊı¾İ½Ó¿Ú
+		* @brief å‘½åæ•°æ®çš„å€¼
+		* @param pData å‘½åæ•°æ®æ¥å£
 		* @return void
 		*/
 		void WriteData(INamedData* pData);
 
 	private:
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadData(INamedData* pData, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ(ÕûĞÎ)
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param eType Êı¾İµÄÀàĞÍ
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®(æ•´å½¢)
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param eType æ•°æ®çš„ç±»å‹
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadIntData(INamedData* pData, ValueType eType, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ(¸¡µãĞÍ)
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®(æµ®ç‚¹å‹)
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadFloatData(INamedData* pData, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ(×Ö·û´®ĞÍ)
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®(å­—ç¬¦ä¸²å‹)
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadStringData(INamedData* pData, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ(¶ÔÏóÀàĞÍ)
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®(å¯¹è±¡ç±»å‹)
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadObjectData(INamedData* pData, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ×°ÔØÃüÃûÊı¾İ(Êı×éĞÍ)
-		* @param pData ÃüÃûÊı¾İµÄ½Ó¿Ú
-		* @param eType Êı¾İµÄÀàĞÍ
-		* @param pStmt SQLite3 Êı¾İµÄÑ¡Ôñ¼¯ÓÎ±ê
+		* @brief è£…è½½å‘½åæ•°æ®(æ•°ç»„å‹)
+		* @param pData å‘½åæ•°æ®çš„æ¥å£
+		* @param eType æ•°æ®çš„ç±»å‹
+		* @param pStmt SQLite3 æ•°æ®çš„é€‰æ‹©é›†æ¸¸æ ‡
 		* @return void
 		*/
 		void LoadArrayData(INamedData* pData, ValueType eType, uint32_t uSize, sqlite3_stmt* pStmt);
 
 		/**
-		* @brief ¸üĞÂÃüÃûÊı¾İµÄÖµ£¨ÕûÊı£©
-		* @param strDomain Êı¾İ·ÖÀàÃû³Æ
-		* @param strName Êı¾İÃû³Æ
-		* @param uData ÃüÃûÊı¾İµÄÖµ
+		* @brief æ›´æ–°å‘½åæ•°æ®çš„å€¼ï¼ˆæ•´æ•°ï¼‰
+		* @param strDomain æ•°æ®åˆ†ç±»åç§°
+		* @param strName æ•°æ®åç§°
+		* @param uData å‘½åæ•°æ®çš„å€¼
 		* @return void
 		*/
 		void UpdateData(const std::string& strDomain, const std::string& strName, uint64_t uData);
 
 		/**
-		* @brief ¸üĞÂÃüÃûÊı¾İµÄÖµ£¨¸¡µãÊı£©
-		* @param strDomain Êı¾İ·ÖÀàÃû³Æ
-		* @param strName Êı¾İÃû³Æ
-		* @param fData ÃüÃûÊı¾İµÄÖµ
+		* @brief æ›´æ–°å‘½åæ•°æ®çš„å€¼ï¼ˆæµ®ç‚¹æ•°ï¼‰
+		* @param strDomain æ•°æ®åˆ†ç±»åç§°
+		* @param strName æ•°æ®åç§°
+		* @param fData å‘½åæ•°æ®çš„å€¼
 		* @return void
 		*/
 		void UpdateData(const std::string& strDomain, const std::string& strName, float64_t fData);
 
 		/**
-		* @brief ¸üĞÂÃüÃûÊı¾İµÄÖµ£¨×Ö·û´®£©
-		* @param strDomain Êı¾İ·ÖÀàÃû³Æ
-		* @param strName Êı¾İÃû³Æ
-		* @param strText ÃüÃûÊı¾İµÄÖµ
+		* @brief æ›´æ–°å‘½åæ•°æ®çš„å€¼ï¼ˆå­—ç¬¦ä¸²ï¼‰
+		* @param strDomain æ•°æ®åˆ†ç±»åç§°
+		* @param strName æ•°æ®åç§°
+		* @param strText å‘½åæ•°æ®çš„å€¼
 		* @return void
 		*/
 		void UpdateData(const std::string& strDomain, const std::string& strName, const std::string& strText);
 
 		/**
-		* @brief ¸üĞÂÃüÃûÊı¾İµÄÖµ£¨¶ş½øÖÆÁ÷£©
-		* @param strDomain Êı¾İ·ÖÀàÃû³Æ
-		* @param strName Êı¾İÃû³Æ
-		* @param lpFormat Êı¾İ¸ñÊ½»¯ÎÄ±¾
-		* @param uType ÃüÃûÊı¾İµÄÖµµÄÀàĞÍ
-		* @param pData ÃüÃûÊı¾İµÄÖµµÄÊ×µØÖ·
-		* @param pData »º³åÇøÖĞÓĞĞ§Êı¾İµÄ³¤¶È£¨µ¥Î»£º×Ö½Ú£©
+		* @brief æ›´æ–°å‘½åæ•°æ®çš„å€¼ï¼ˆäºŒè¿›åˆ¶æµï¼‰
+		* @param strDomain æ•°æ®åˆ†ç±»åç§°
+		* @param strName æ•°æ®åç§°
+		* @param lpFormat æ•°æ®æ ¼å¼åŒ–æ–‡æœ¬
+		* @param uType å‘½åæ•°æ®çš„å€¼çš„ç±»å‹
+		* @param pData å‘½åæ•°æ®çš„å€¼çš„é¦–åœ°å€
+		* @param pData ç¼“å†²åŒºä¸­æœ‰æ•ˆæ•°æ®çš„é•¿åº¦ï¼ˆå•ä½ï¼šå­—èŠ‚ï¼‰
 		* @return void
 		*/
 		void UpdateData(const std::string& strDomain, const std::string& strName, const int8_t* pData, uint32_t uLen);
 
 		/**
-		* @brief ²éÕÒÖ¸¶¨ÃüÃûÊı¾İ
-		* @param strDomain Êı¾İ·ÖÀàÃû³Æ
-		* @param strName Êı¾İÃû³Æ
+		* @brief æŸ¥æ‰¾æŒ‡å®šå‘½åæ•°æ®
+		* @param strDomain æ•°æ®åˆ†ç±»åç§°
+		* @param strName æ•°æ®åç§°
 		* @return
-		* - true ÃüÃûÊı¾İÒÑ¾­´æÔÚ
-		* - false ÃüÃûÊı¾İ²»´æÔÚ
+		* - true å‘½åæ•°æ®å·²ç»å­˜åœ¨
+		* - false å‘½åæ•°æ®ä¸å­˜åœ¨
 		*/
 		bool Find(const std::string& strDomain, const std::string& strName);
 
 		/**
-		* @brief »ñÈ¡ÃüÃûÊı¾İµÃÖµµÃÀàĞÍ
-		* @param pData ÃüÃûÊı¾İµÃ½Ó¿Ú
-		* @return ÖµµÃÀàĞÍ
-		* @warning ¶ÔÓÚ·ÇÊı×éÀàĞÍ£¬ÖµµÃÀàĞÍÎªÃüÃûÊı¾İµÃÀàĞÍ£¬¶ÔÓÚÊı×éÀàĞÍ£¬ÖµµÃÀàĞÍÎªÊı×é³ÉÔ±µÃÀàĞÍ
-		* È¡Öµ·¶Î§ÎªValueTypeÃ¶¾Ù£¬´Ë´¦·µ»ØÕûĞÍ£¬ÊÇÎªÁË·½±ãĞ´ÈëÊı¾İ¿â
+		* @brief è·å–å‘½åæ•°æ®å¾—å€¼å¾—ç±»å‹
+		* @param pData å‘½åæ•°æ®å¾—æ¥å£
+		* @return å€¼å¾—ç±»å‹
+		* @warning å¯¹äºéæ•°ç»„ç±»å‹ï¼Œå€¼å¾—ç±»å‹ä¸ºå‘½åæ•°æ®å¾—ç±»å‹ï¼Œå¯¹äºæ•°ç»„ç±»å‹ï¼Œå€¼å¾—ç±»å‹ä¸ºæ•°ç»„æˆå‘˜å¾—ç±»å‹
+		* å–å€¼èŒƒå›´ä¸ºValueTypeæšä¸¾ï¼Œæ­¤å¤„è¿”å›æ•´å‹ï¼Œæ˜¯ä¸ºäº†æ–¹ä¾¿å†™å…¥æ•°æ®åº“
 		*/
 		int32_t GetNameDataType(INamedData* pData);
 
 		/**
-		* @brief »ñÈ¡ÃüÃûÊı¾İµÃÖµµÃÊıÁ¿
-		* @param pData ÃüÃûÊı¾İµÃ½Ó¿Ú
-		* @return ÖµµÃÊıÁ¿
-		* @warning ¶ÔÓÚ·ÇÊı×éÀàĞÍ£¬ÖµÎª1£¬¶ÔÓÚÊı×éÀàĞÍ£¬ÖµµÃÀàĞÍÎªÊı×é³ÉÔ±µÃÊıÁ¿
+		* @brief è·å–å‘½åæ•°æ®å¾—å€¼å¾—æ•°é‡
+		* @param pData å‘½åæ•°æ®å¾—æ¥å£
+		* @return å€¼å¾—æ•°é‡
+		* @warning å¯¹äºéæ•°ç»„ç±»å‹ï¼Œå€¼ä¸º1ï¼Œå¯¹äºæ•°ç»„ç±»å‹ï¼Œå€¼å¾—ç±»å‹ä¸ºæ•°ç»„æˆå‘˜å¾—æ•°é‡
 		*/
 		uint32_t GetNameDataSize(INamedData* pData);
 
 	public:
-		sqlite3* m_db;				//!< ±£´æÃüÃûÊı¾İµÄÊı¾İ¿â¶ÔÏó	
+		sqlite3* m_db;				//!< ä¿å­˜å‘½åæ•°æ®çš„æ•°æ®åº“å¯¹è±¡	
 	};
 }

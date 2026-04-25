@@ -158,17 +158,20 @@ namespace why
 
 				if (bLoad && (nullptr != m_pDataDB) && m_pDataDB->IsStartup())
 				{
-					if (m_pDataDB->InsertData(namedDataPtr.get()))
-						m_pDataDB->WriteData(namedDataPtr.get());
-					else
-						m_pDataDB->ReadData(namedDataPtr.get());
+					// 注册时应该强制写值，而不是已有时读取已有值
+					//if (m_pDataDB->InsertData(namedDataPtr.get()))
+					//	m_pDataDB->WriteData(namedDataPtr.get());
+					//else
+					//	m_pDataDB->ReadData(namedDataPtr.get());
+
+					m_pDataDB->WriteData(namedDataPtr.get());
 				}
 				pChangedData = namedDataPtr.get();
 				itFindDomain->second.insert(std::make_pair(strName, std::move(namedDataPtr)));
 			}
 			else
 			{
-				//�ظ�ע�� crash
+				//重复注册 crash
 				assert(itFindDomain->second.end() != itFindData);
 				return false;
 			}
@@ -183,7 +186,7 @@ namespace why
 		if ((nullptr == pDomain) || (0 == strlen(pDomain)))
 			return false;
 
-		auto								itFindDomain = m_datas.find(pDomain);
+		auto itFindDomain = m_datas.find(pDomain);
 
 		if (m_datas.end() == itFindDomain)
 		{

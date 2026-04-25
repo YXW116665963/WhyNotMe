@@ -26,7 +26,7 @@ namespace why
 		bool Export(const char* pDomain, const char* pDataFile);
 
 	private:
-		//<! ´Ë´¦ÊÇµ¼ÈëÎÄ¼þÊ±µÄ×¢²á¡£ÓÉÓÚÔÊÐíµ¼Èë²»Í¬ÎÄ¼þ£¬µÚ¶þ´Î¸Ä±äÖµ¼´¿É
+		//<! æ­¤å¤„æ˜¯å¯¼å…¥æ–‡ä»¶æ—¶çš„æ³¨å†Œã€‚ç”±äºŽå…è®¸å¯¼å…¥ä¸åŒæ–‡ä»¶ï¼Œç¬¬äºŒæ¬¡æ”¹å˜å€¼å³å¯
 		void RegisterData(const std::string& strDomain, const std::string& strName, ValueType eType, uint32_t uSize, const std::string& strDefault, bool bPersistence);
 		void AddChildData(const std::string& strName, ValueType eType, uint32_t uSize, const std::string& strDefault);
 

@@ -32,7 +32,6 @@ private:
     // the GL context we use for all our mono rendering windows
     TestGLContext* m_glContext;
 
-    wxGLContextAttrs cxtAttrs;
 };
 
 // Define a new frame type

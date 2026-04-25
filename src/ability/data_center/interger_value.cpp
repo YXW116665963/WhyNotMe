@@ -105,7 +105,7 @@ namespace why
 			}
 		}
 
-		// Êý¾Ý¶©ÔÄ£ºÖµ¸Ä±äºó£¬Ê¹ÓÃ»Øµ÷¡£
+		// æ•°æ®è®¢é˜…ï¼šå€¼æ”¹å˜åŽï¼Œä½¿ç”¨å›žè°ƒã€‚
 		if (bChanged && (nullptr != m_pValueWatcher))
 			m_pValueWatcher->OnValueChanged(this);
 

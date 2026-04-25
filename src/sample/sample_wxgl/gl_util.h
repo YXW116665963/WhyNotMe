@@ -1,6 +1,4 @@
 #pragma once
-
-//#include <windows.h>
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdio.h>
@@ -8,7 +6,7 @@
 #include <math.h>
 #include <string>
 
-// ÏòÁ¿ÊıÑ§¼ÆËã
+// å‘é‡æ•°å­¦è®¡ç®—
 #include "glm/glm.hpp"
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -18,7 +16,6 @@ class GLHandler
 public:
 	GLHandler();
 	~GLHandler() {};
-
 
 	void GLPrepare();
 	void GLWhileDo();
@@ -34,11 +31,8 @@ private:
 	glm::mat4 projection;
 };
 
-
-
-
-// ´´½¨×ÅÉ«Æ÷³ÌĞò
+// åˆ›å»ºç€è‰²å™¨ç¨‹åº
 unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fragmentShaderSource);
 
-// ³õÊ¼»¯ GLFW ºÍ OpenGL
+// åˆå§‹åŒ– GLFW å’Œ OpenGL
 bool InitOpenGL(const int WIDTH, const int HEIGHT);

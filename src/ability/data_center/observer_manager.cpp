@@ -185,8 +185,8 @@ namespace why
 							}
 						}
 
-						// £¿£ºÎªÉ¶Òª²éÕÒ¿Õ×Ö·û´®µÄ³ÉÔ±£¿
-						// why£ºÎªÁË±éÀú¶ÔÏóÀàÐÍÊ¹ÓÃ£¬itFindDataAllÊÇlistÀàÐÍ£¬ÓÃÀ´´æ´¢¿ÉÄÜµÄ¶à¸ö»Øµ÷
+						// ï¼Ÿï¼šä¸ºå•¥è¦æŸ¥æ‰¾ç©ºå­—ç¬¦ä¸²çš„æˆå‘˜ï¼Ÿ
+						// whyï¼šä¸ºäº†éåŽ†å¯¹è±¡ç±»åž‹ä½¿ç”¨ï¼ŒitFindDataAllæ˜¯listç±»åž‹ï¼Œç”¨æ¥å­˜å‚¨å¯èƒ½çš„å¤šä¸ªå›žè°ƒ
 						auto itFindDataAll = itFindDomain->second.find("");
 						if (itFindDomain->second.end() != itFindDataAll)
 						{
@@ -199,7 +199,7 @@ namespace why
 					}
 				}
 
-				// ´¥·¢»Øµ÷
+				// è§¦å‘å›žè°ƒ
 				for (auto pObserver : observerVector)
 					pObserver->OnDataChanged(eventData.m_pNamedData);
 

@@ -12,7 +12,6 @@ namespace why
 	void SetDataCenter(IDataCenter* pDataCenter);
 	void SetPicturePath(const char *pPicturePath, const char* pResourceTargetPath, const char* pDeviceModel, const char* pLanguageSuffix);
 	void SetResourceSearchPath(const std::vector<std::string>& strSearchPath);
-	bool SearchResourceFullPath(const std::string& strResourcePath, const std::string& strFileName, std::string& strLoadResourcePath);
 	bool GetAttributeColor(CXmlNode* pNode, const char* pName, wxColour& colorValue);
 	bool GetAttributePoint(CXmlNode* pNode, const char* pName, wxPoint& ptPoint);
 	bool GetAttributeRect(CXmlNode* pNode, wxRect& rcRect);

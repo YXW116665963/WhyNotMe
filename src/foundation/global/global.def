@@ -1,0 +1,5 @@
+LIBRARY	"global"
+
+EXPORTS
+GetGlobalVar;
+GetGlobalPointer;

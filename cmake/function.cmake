@@ -33,15 +33,23 @@ endmacro(source_group_by_dir)
 # dll和pdb也会被配置到bin文件！！！
 macro(CONFIG_OUTPUT_PATHS TARGETNAME)
   set_target_properties(${TARGETNAME}
-    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${bin_dir}
-    ARCHIVE_OUTPUT_DIRECTORY ${lib_dir}
-    LIBRARY_OUTPUT_DIRECTORY ${lib_dir}
+    PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${bin_dir_path}
+    ARCHIVE_OUTPUT_DIRECTORY ${lib_dir_path}
+    LIBRARY_OUTPUT_DIRECTORY ${lib_dir_path}
   )
 endmacro(CONFIG_OUTPUT_PATHS)
 
 macro(STRING_APPEND var str)
     set(${var} ${${var}}${str})
-endmacro()
+endmacro(STRING_APPEND)
+
+macro(COPY_FILE_TO_BIN target file_path)
+	add_custom_command(TARGET ${target} POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_if_different
+			"${file_path}"
+			"${bin_dir_path}/${CMAKE_CFG_INTDIR}")
+endmacro(COPY_FILE_TO_BIN)
+
 
 # function(configure_exe proj)
 	# CONFIG_OUTPUT_PATHS(${proj})

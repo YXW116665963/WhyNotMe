@@ -4,25 +4,25 @@
 namespace why
 {
 	/**
-	* @brief Öµ¹Û²ìÆ÷
+	* @brief å€¼è§‚å¯Ÿå™¨
 	*/
 	class IValueWatcher
 	{
 	public:
 		/**
-		* @brief ÔİÍ£´¦ÀíÖµ±ä»¯Í¨Öª
+		* @brief æš‚åœå¤„ç†å€¼å˜åŒ–é€šçŸ¥
 		* @return void
 		*/
 		virtual void Pause() = 0;
 
 		/**
-		* @brief »Ö¸´´¦ÀíÖµ±ä»¯Í¨Öª
+		* @brief æ¢å¤å¤„ç†å€¼å˜åŒ–é€šçŸ¥
 		* @return void
 		*/
 		virtual void Resume() = 0;
 
 		/**
-		* @brief Öµ·¢Éú±ä»¯
+		* @brief å€¼å‘ç”Ÿå˜åŒ–
 		* @return
 		*/
 		virtual void OnValueChanged(IDataValue* pDataValue) = 0;

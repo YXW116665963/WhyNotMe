@@ -357,7 +357,7 @@ namespace why
 	private:
 		IValueWatcher* m_pValueWatcher{ nullptr };
 		mutable std::shared_mutex		m_lock;
-		ValueType						m_eType;			//!< ´Ë´¦µÄÀàÐÍÎªÊý×é³ÉÔ±µÄÀàÐÍ
+		ValueType						m_eType;			//!< æ­¤å¤„çš„ç±»åž‹ä¸ºæ•°ç»„æˆå‘˜çš„ç±»åž‹
 		std::vector<T>					m_datas;
 		uint32_t						m_uSize{ 0 };
 		T                               m_defaultValue;
