@@ -82,7 +82,7 @@ namespace why
 			return;
 		TransformRect(rcRect, wndCoordinate);
 
-		strText = g_pLocalizationMgr->ToLocalString(strText);
+		//strText = g_pLocalizationMgr->ToLocalString(strText);
 		pControl = CreateControl(eType, pParent, wxID_ANY, rcRect, strName, strStyle);
 		
 		if (nullptr != pControl)
@@ -128,7 +128,7 @@ namespace why
 		const char*			lpName = nullptr;
 		ControlType			eControlType = ControlType::e_empty_ctrl;
 
-		assert(nullptr != g_pLocalizationMgr);
+		//assert(nullptr != g_pLocalizationMgr);
 		for (CXmlNode* pCur = pNode->first_node(); nullptr != pCur; pCur = pCur->next_sibling())
 		{
 			lpName = pCur->name();
@@ -259,8 +259,8 @@ namespace why
 		TransformRect(rcText, wndCoordinate);
 		GetAttributeText(pNode, "id", strId);
 
-		assert(nullptr != g_pLocalizationMgr);
-		strText = g_pLocalizationMgr->ToLocalString(strText);
+		//assert(nullptr != g_pLocalizationMgr);
+		//strText = g_pLocalizationMgr->ToLocalString(strText);
 		if (GetTextAttributeStyle(pNode, "style", uStyle))
 		{
 			pPanelGraphic->AddText(strResName, crColor, wxString::FromUTF8(strText), rcText, strId, uStyle);
@@ -311,7 +311,11 @@ namespace why
 
 	bool LoadPanel(wxWindow* pParent, DataExchange* pDataExchange, const std::string& strFileName, PanelGraphic* pPanelGraphic)
 	{
-		std::string	strFullFileName = GetStringValue(envVar::g_Domain, envVar::strUIXml_dirPath) + strFileName;
+		PathAppender pathAppender;
+		std::string	strFullFileName = pathAppender.
+			SetSourcePath(GetStringValue(envVar::g_Domain, envVar::strUIXml_dirPath)).
+			AppendChildPath(strFileName).
+			GetPath();
 
 		{
 			std::string						strXMLFileName = UTF8ToLocal(strFullFileName);

@@ -16,18 +16,17 @@ namespace why
 	MainFrame::MainFrame(wxFrame* frame, wxWindowID id, const wxString& title,
 		const wxPoint& pos, const wxSize& size, long style)
 		: wxFrame(frame, id, title, pos, size, style)
+		, m_lastSize(size)
 	{
 		SetIcon(wxICON(wxpoem));
 		SetBackgroundColour(wxColor(240, 240, 240));
 		this->Bind(wxEVT_CLOSE_WINDOW, &MainFrame::OnCloseWindow, this);
 		this->Bind(wxEVT_TIMER, &MainFrame::OnTimer, this);
 
-		//SetDefaultEditBackground("edit_bk", "edit_readonly_bk");
+		Bind(wxEVT_SIZE, &MainFrame::OnSize, this);
 
 		m_pTimer = new wxTimer(this, wxID_ANY);
 		m_pTimer->Start(1000, wxTIMER_CONTINUOUS);
-
-		//GetEventDispatcher()->DoItOnMainThreadAsync()
 
 		LoadMainFrame();
 	}
@@ -51,6 +50,24 @@ namespace why
 	void MainFrame::OnTimer(wxTimerEvent& event)
 	{
 
+	}
+
+	void MainFrame::OnSize(wxSizeEvent& event)
+	{
+		wxSize currentSize = GetSize();
+		int currWidth = currentSize.GetWidth();
+		int currHeight = currentSize.GetHeight();
+
+		int lastWidth = m_lastSize.GetWidth();
+		int lastHeight = m_lastSize.GetHeight();
+		void ChildPanel::Expand(const wxPoint & ptPos, wxWindow * pWindow, bool bExpandH, bool bExpandV);
+
+		bool bExpandH = (currWidth != lastWidth ? true : false);
+		bool bExpandV = (currHeight != lastHeight ? true : false);
+
+		
+
+		event.Skip();
 	}
 
 	void MainFrame::LoadMainFrame()
@@ -102,16 +119,27 @@ namespace why
 			LOG_INFO << "invalidate xml file:" << strFrameXml_filePath;
 			return;
 		}
+		pFrame = pRoot->first_node("Frame");
+		if (nullptr == pFrame)
+		{
+			LOG_INFO << "xml file not found frame node";
+			return;
+		}
 
-		nWidth = AttributeAsInt(pFrame, "width", 1280);
-		nHeight = AttributeAsInt(pFrame, "height", 1024);
-		this->SetSize(nWidth, nHeight);
-		rcClient = GetClientRect();
+
+
+		//wxSize DIPSize = FromDIP(size);
+		//this->SetSize(size);
+		//nWidth = AttributeAsInt(pFrame, "width", 1280);
+		//nHeight = AttributeAsInt(pFrame, "height", 1024);
+		//wxSize size = wxSize(nWidth, nHeight);
+		//this->SetClientSize(size);
+
+
+		this->Maximize();
 
 		SINGLETON_PTR(WindowManager)->SetMainFrame(this);
 
-		SINGLETON_PTR(WindowManager)->OpenWindow("main_catalog_0_0");
-	}
-
-	
+		/*SINGLETON_PTR(WindowManager)->OpenWindow("main_catalog_0_0");*/
+	}	
 }

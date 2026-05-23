@@ -14,7 +14,9 @@ namespace why
 
 		bool Draw(wxDC &dc, const wxRect &rcRect) override;
 		bool Draw(wxGraphicsContext* pGraphic, const wxRect& rcRect) override;
-		void Destroy() override { delete this; }
+		void Destroy() override { 
+			delete this; 
+		}
 
 	private:
 		typedef std::unique_ptr<wxBrush> BrushPtr;

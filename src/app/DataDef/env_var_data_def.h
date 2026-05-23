@@ -6,13 +6,13 @@ namespace why
 	namespace envVar
 	{
 		extern const char* g_Domain;							//!< 环境变量域
-		extern const char* strDeployment_dirPath;					//!< 可执行exe所在的目录
-
+		extern const char* strAuthorName;						//!< 作者名
+		extern const char* strAppName;							//!< 程序名
 	}
 
-	// 数据定义
 	namespace envVar
 	{
+		extern const char* strDeployment_dirPath;				//!< 构建目录
 		extern const char* strDataDef_dirPath;					//!< 数据定义目录
 	}
 
@@ -38,7 +38,6 @@ namespace why
 		extern const char* strUserConfig_dirPath;				//!< 用户数据目录
 		extern const char* strLog_dirPath;						//!< 运行日志目录
 		extern const char* strUserRecipe_dirPath;				//!< 用户配方目录
-		extern const char* strDataDef_dirPath;					//!< 数据定义目录
 	}
 
 

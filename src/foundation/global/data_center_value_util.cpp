@@ -1,3 +1,4 @@
+#define GLOBAL_POINTER_EXPORT
 #include "data_center_value_util.h"
 
 namespace why

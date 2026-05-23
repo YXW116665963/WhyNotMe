@@ -26,6 +26,11 @@ namespace why
 			WindowInfo newWindow;
 			newWindow.m_strWindowName = strWindowName;
 
+			wxPoint framePoint = m_pMainFrame->GetPosition();
+			wxSize frameSize = m_pMainFrame->GetClientSize();
+
+			newWindow.m_pPanel = itFind->second->CreatePanel(m_pMainFrame, framePoint, frameSize);
+
 			m_curWindowInfo = newWindow;
 			m_curWindowInfo.m_pPanel->InitializePanel();
 			m_curWindowInfo.m_pPanel->Show();
@@ -46,5 +51,8 @@ namespace why
 
 			LOG_INFO << "DestroyWindowInfo name:" << windowInfo.m_strWindowName;
 			}, this);
+	}
+	void WindowManager::OnSize()
+	{
 	}
 }

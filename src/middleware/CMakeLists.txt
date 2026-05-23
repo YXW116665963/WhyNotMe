@@ -47,12 +47,14 @@ target_link_libraries(${PROJECT_NAME}
 	${common_lib_name}
 	${global_lib_name}
 	${platform_lib_name}
+	${data_def_lib_name}	
 )
 
 add_dependencies(${PROJECT_NAME} 
 	common 
 	platform 
 	global
+	data_def
 ) 
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "middleware")

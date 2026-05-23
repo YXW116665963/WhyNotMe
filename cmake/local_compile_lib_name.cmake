@@ -12,4 +12,5 @@ set(platform_lib_name "platform.${LIB_EXT_NAME}")
 set(sqlite_lib_name "sqlite.${LIB_EXT_NAME}")
 set(glad_lib_name "glad.${LIB_EXT_NAME}")
 set(global_lib_name "global.${LIB_EXT_NAME}")
+set(data_def_lib_name "data_def.${LIB_EXT_NAME}")
 

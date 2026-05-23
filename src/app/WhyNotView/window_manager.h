@@ -43,6 +43,9 @@ namespace why
 
         void OpenWindow(const std::string& strWindowName);
 		void CloseWindow(const WindowInfo& windowInfo);
+
+        // 响应窗口大小变化@why.todo
+        void OnSize();
     private:
 
         WindowInfo m_curWindowInfo;

@@ -112,7 +112,7 @@ namespace why
 
 	void ChildPanel::OnEraseBackground(wxEraseEvent& event)
 	{
-
+		
 	}
 
 	void ChildPanel::OnDrawPanelBackground(wxPaintEvent& event)
@@ -202,6 +202,7 @@ namespace why
 			pDlgItem->SetLabel(wxString::FromUTF8(strText));
 	}
 
+	//@why.todo:应该是mainframe补充一个expand方法来层层通知重绘
 	void ChildPanel::Expand(const wxPoint& ptPos, wxWindow* pWindow, bool bExpandH, bool bExpandV)
 	{
 		if (bExpandH || bExpandV)

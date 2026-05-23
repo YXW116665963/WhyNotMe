@@ -12,13 +12,13 @@ typedef std::function<void(why::IDataCenter*)> DataCenterDeleter;
 typedef std::unique_ptr<why::IDataCenter, DataCenterDeleter> DataCenterPtr;
 
 
-//extern ¹Ø¼ü×ÖÓÃÓÚ¸æËß±àÒëÆ÷£¬Ä³¸ö±äÁ¿ÊÇÍâ²¿¶¨ÒåµÄ£¬ÒâÎ¶×ÅËüµÄ¶¨ÒåÔÚÆäËûµØ·½¡£extern Ö»Ó¦³öÏÖÔÚÍ·ÎÄ¼şÖĞ£¬ÒÔ±ãÆäËûÔ´ÎÄ¼şÄÜ¹»Ê¹ÓÃ¸Ã±äÁ¿¡£
+//extern å…³é”®å­—ç”¨äºå‘Šè¯‰ç¼–è¯‘å™¨ï¼ŒæŸä¸ªå˜é‡æ˜¯å¤–éƒ¨å®šä¹‰çš„ï¼Œæ„å‘³ç€å®ƒçš„å®šä¹‰åœ¨å…¶ä»–åœ°æ–¹ã€‚extern åªåº”å‡ºç°åœ¨å¤´æ–‡ä»¶ä¸­ï¼Œä»¥ä¾¿å…¶ä»–æºæ–‡ä»¶èƒ½å¤Ÿä½¿ç”¨è¯¥å˜é‡ã€‚
 extern DataCenterPtr m_dataCenterPtr;
-//Í¨³£Çé¿öÏÂ£¬ÔÚÍ·ÎÄ¼şÖĞ¶¨Òå±äÁ¿»áµ¼ÖÂ¶à¸öÔ´ÎÄ¼şÁ´½ÓÊ±µÄÖØ¸´¶¨Òå´íÎó¡£
-//ÔÚC++17ÖĞ£¬ÒıÈëÁË inline ±äÁ¿µÄ¸ÅÄî£¬ËüÔÊĞíÔÚÍ·ÎÄ¼şÖĞ¶¨Òå±äÁ¿¶ø²»»áÔì³ÉÖØ¸´¶¨ÒåµÄÁ´½Ó´íÎó¡£
-// Ê¹ÓÃ inline ¹Ø¼ü×Ö¶¨ÒåµÄ±äÁ¿¿ÉÒÔÔÚ¶à¸ö·­Òëµ¥ÔªÖĞ¹²Ïí£¬µ«ËüÃÇÖ»»áÔÚÁ´½ÓÊ±ºÏ²¢ÎªÒ»¸öÊµÀı¡£
+//é€šå¸¸æƒ…å†µä¸‹ï¼Œåœ¨å¤´æ–‡ä»¶ä¸­å®šä¹‰å˜é‡ä¼šå¯¼è‡´å¤šä¸ªæºæ–‡ä»¶é“¾æ¥æ—¶çš„é‡å¤å®šä¹‰é”™è¯¯ã€‚
+//åœ¨C++17ä¸­ï¼Œå¼•å…¥äº† inline å˜é‡çš„æ¦‚å¿µï¼Œå®ƒå…è®¸åœ¨å¤´æ–‡ä»¶ä¸­å®šä¹‰å˜é‡è€Œä¸ä¼šé€ æˆé‡å¤å®šä¹‰çš„é“¾æ¥é”™è¯¯ã€‚
+// ä½¿ç”¨ inline å…³é”®å­—å®šä¹‰çš„å˜é‡å¯ä»¥åœ¨å¤šä¸ªç¿»è¯‘å•å…ƒä¸­å…±äº«ï¼Œä½†å®ƒä»¬åªä¼šåœ¨é“¾æ¥æ—¶åˆå¹¶ä¸ºä¸€ä¸ªå®ä¾‹ã€‚
 
-//constexpr ±äÁ¿Ò²¿ÉÒÔÔÚÍ·ÎÄ¼şÖĞ¶¨Òå£¬ÒòÎªËüÃÇÔÚ±àÒëÊ±ÊÇ³£Á¿£¬²¢ÇÒÃ¿¸ö·­Òëµ¥Ôª¶¼»áÓĞ×Ô¼ºµÄ¸±±¾£¬Òò´Ë²»»áµ¼ÖÂÖØ¸´¶¨ÒåÎÊÌâ¡£
+//constexpr å˜é‡ä¹Ÿå¯ä»¥åœ¨å¤´æ–‡ä»¶ä¸­å®šä¹‰ï¼Œå› ä¸ºå®ƒä»¬åœ¨ç¼–è¯‘æ—¶æ˜¯å¸¸é‡ï¼Œå¹¶ä¸”æ¯ä¸ªç¿»è¯‘å•å…ƒéƒ½ä¼šæœ‰è‡ªå·±çš„å‰¯æœ¬ï¼Œå› æ­¤ä¸ä¼šå¯¼è‡´é‡å¤å®šä¹‰é—®é¢˜ã€‚
 
 
 //struct GlobalPointer
@@ -39,15 +39,15 @@ namespace test_
 
 		bool InitDataCenter();
 
-		// Êı¾İÅäÖÃÎÄ¼ş×¢²áµ½DB
+		// æ•°æ®é…ç½®æ–‡ä»¶æ³¨å†Œåˆ°DB
 		bool ImportDataFromFile(why::IDataCenter* pDataCenter, const char* pDataFile, const char* pDomain, const char* pDB = "");
 		bool LoadOneData(std::vector<std::string>& data);
 		void RegisterData(const std::string& strDomain, const std::string& strName, why::ValueType eType, const std::string& strDefault, bool bPersistence);
 		bool LoadAllData(std::vector<std::vector<std::string>>& dataList);
 	private:
-		std::string m_strConfigPath;			//ÓÃ»§Êı¾İ»º´æÎÄ¼ş¾ø¶ÔÂ·¾¶
-		std::string	m_strTestDirAbsPath;		//testÊı¾İÎÄ¼ş¼Ğ¾ø¶ÔÂ·¾¶
-		std::string	m_strDBFileAbsPath;			//.dbÎÄ¼ş¾ø¶ÔÂ·¾¶
+		std::string m_strConfigPath;			//ç”¨æˆ·æ•°æ®ç¼“å­˜æ–‡ä»¶ç»å¯¹è·¯å¾„
+		std::string	m_strTestDirAbsPath;		//testæ•°æ®æ–‡ä»¶å¤¹ç»å¯¹è·¯å¾„
+		std::string	m_strDBFileAbsPath;			//.dbæ–‡ä»¶ç»å¯¹è·¯å¾„
 
 
 		why::IDataCenter* m_pDataCenter{ nullptr };

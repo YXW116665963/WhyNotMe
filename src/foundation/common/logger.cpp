@@ -12,7 +12,14 @@ namespace why
 			google::SetStderrLogging(google::GLOG_FATAL);
 			google::SetLogFilenameExtension(".log");
 			std::string strLocalLogPath = UTF8ToLocal(strLogPath);
-			google::SetLogDestination(google::GLOG_INFO, StringFormat("%s%s_", strLocalLogPath.c_str(), strLogName.c_str()).c_str());
+
+			PathAppender pathAppender;
+			std::string strGlogDestination = pathAppender.
+				SetSourcePath(strLocalLogPath).
+				AppendChildPath(strLogName).
+				GetPath();
+
+			google::SetLogDestination(google::GLOG_INFO, strGlogDestination.c_str());
 			FLAGS_colorlogtostderr = true;
 			FLAGS_logbufsecs = 0;
 			FLAGS_max_log_size = 50;

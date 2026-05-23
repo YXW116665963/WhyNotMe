@@ -55,6 +55,7 @@ target_link_libraries(${proj_name}
 	${glog_lib_name} 
 	${wxwidgets_lib_name} 
 	${platform_lib_name}
+	${data_def_lib_name}	
 )
 
 # 配置exe为窗口程序，而非控制台程序
@@ -63,6 +64,7 @@ target_link_options(${proj_name} PRIVATE /SUBSYSTEM:WINDOWS)
 # 配置构建依赖
 add_dependencies(${proj_name} 
 	global
+	data_def
 	data_center 
 	middleware 
 	common 

@@ -18,6 +18,9 @@ set(middleware_dir_path ${CMAKE_HOME_DIRECTORY}/src/middleware)
 set(whynotview_app_dir_path ${CMAKE_HOME_DIRECTORY}/src/app/WhyNotView)
 
 # src include
+# app
+set(data_def_inc_dir_path ${CMAKE_HOME_DIRECTORY}/src/app/DataDef)
+
 
 ##ability
 set(data_center_inc_dir_path ${ability_dir_path}/data_center/include)
@@ -28,7 +31,7 @@ set(sqlite_inc_dir_path ${foundation_dir_path}/sqlite)
 set(common_inc_dir_path ${foundation_dir_path}/common)
 set(platform_inc_dir_path ${foundation_dir_path}/platform/include)
 set(global_inc_dir_path ${foundation_dir_path}/global)
-set(data_def_inc_dir_path ${foundation_dir_path}/global/dataDef)
+
 ##middleware
 set(middleware_inc_dir_path
 	${middleware_dir_path}

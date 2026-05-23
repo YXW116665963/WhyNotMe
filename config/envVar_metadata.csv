@@ -1,4 +1,6 @@
 domain,name,subname,type,count,value,db,desc,def
+envVar,author_name,,string,1,,TRUE,作者名称,,,strAuthorName,,
+envVar,app_name,,string,1,,TRUE,程序名称,,,strAppName,,
 envVar,deployment_dirPath,,string,1,,TRUE,可执行exe所在的目录,,,strDeployment_dirPath,,
 envVar,user_recipe_dirPath,,string,1,,TRUE,用户配方目录,,,strUserRecipe_dirPath,,
 envVar,data_def_dirPath,,string,1,,TRUE,数据配置目录,,,strDataDef_dirPath,,

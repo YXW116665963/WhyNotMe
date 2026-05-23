@@ -215,8 +215,8 @@ namespace why
 					{
 						if (GetAttributeText(pCur, "text", strText))
 						{
-							assert(nullptr != g_pLocalizationMgr);
-							strText = g_pLocalizationMgr->ToLocalString(strText);
+							//assert(nullptr != g_pLocalizationMgr);
+							//strText = g_pLocalizationMgr->ToLocalString(strText);
 							pComboBox->Append(wxString::FromUTF8(strText.c_str()));
 							nCount++;
 						}
@@ -264,8 +264,8 @@ namespace why
 					{
 						if (GetAttributeText(pCur, "text", strText))
 						{
-							assert(nullptr != g_pLocalizationMgr);
-							strText = g_pLocalizationMgr->ToLocalString(strText);
+							//assert(nullptr != g_pLocalizationMgr);
+							//strText = g_pLocalizationMgr->ToLocalString(strText);
 							pListBox->Append(wxString::FromUTF8(strText.c_str()));
 							nCount++;
 						}
@@ -315,8 +315,8 @@ namespace why
 					{
 						if (GetAttributeText(pCur, "text", strText))
 						{
-							assert(nullptr != g_pLocalizationMgr);
-							strText = g_pLocalizationMgr->ToLocalString(strText);
+							//assert(nullptr != g_pLocalizationMgr);
+							//strText = g_pLocalizationMgr->ToLocalString(strText);
 
 							uWide = AttributeAsUInt(pCur, "wide", 80);
 							wxDataViewColumn* column = new wxDataViewColumn(wxString::FromUTF8(strText), new wxDataViewTextRenderer(""), uCount, uWide);
@@ -395,8 +395,8 @@ namespace why
 			{
 				FontPtr			fontPtr = Singleton<ResourceMgr>::Instance()->GetFont(strFont.c_str());
 
-				assert(nullptr != g_pLocalizationMgr);
-				strText = g_pLocalizationMgr->ToLocalString(strText);
+				//assert(nullptr != g_pLocalizationMgr);
+				//strText = g_pLocalizationMgr->ToLocalString(strText);
 
 				if (GetTextAttributeStyle(pNode, "style", uStyle)) {
 					customWidgets.AddTextElement(strName, fontPtr, crColor, wxString::FromUTF8(strText), rcRect, uStyle);
@@ -596,8 +596,8 @@ namespace why
 						uUserData = AttributeAsUInt(pCur, "value", 0);
 						if (GetAttributeText(pCur, "text", strText))
 						{
-							assert(nullptr != g_pLocalizationMgr);
-							strText = g_pLocalizationMgr->ToLocalString(strText);
+							//assert(nullptr != g_pLocalizationMgr);
+							//strText = g_pLocalizationMgr->ToLocalString(strText);
 							pCustomComboBox->Append(wxString::FromUTF8(strText.c_str()), uUserData);
 							nCount++;	
 						}
@@ -746,8 +746,8 @@ namespace why
 			{
 				FontPtr			fontPtr = Singleton<ResourceMgr>::Instance()->GetFont(strFont.c_str());
 
-				assert(nullptr != g_pLocalizationMgr);
-				strText = g_pLocalizationMgr->ToLocalString(strText);
+				//assert(nullptr != g_pLocalizationMgr);
+				//strText = g_pLocalizationMgr->ToLocalString(strText);
 				ScaleRect(rcRect, wndCoordinate);
 				pButton->AddTextElement(strName, fontPtr, crColor, wxString::FromUTF8(strText), rcRect);
 			}

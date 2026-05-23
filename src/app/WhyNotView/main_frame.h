@@ -19,6 +19,7 @@ namespace why
         void OnCloseWindow(wxCloseEvent& event);
         void OnTimer(wxTimerEvent& event);
 
+        void OnSize(wxSizeEvent& event);
     public:
 
     private:
@@ -26,6 +27,7 @@ namespace why
         void LoadFrame(const std::string& strFrameXml_filePath);
     private:
         wxTimer* m_pTimer{ nullptr };
+        wxSize m_lastSize;
     };
 }
 

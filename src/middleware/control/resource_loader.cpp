@@ -9,7 +9,7 @@
 #include "logger.h"
 #include "rapidxml.hpp"
 #include <wx/filename.h>
-#include "global_var.h"
+#include "global_pointer.h"
 namespace why
 {
 	IDataCenter* g_pMiddlewareDataCenter{ nullptr };
@@ -33,7 +33,15 @@ namespace why
 			std::string				strKey = pFileName;			
 			PicturePoolIt			itFind = g_picturePool.end();
 
-			std::string	strFullPathFileName = GetStringValue(envVar::g_Domain, envVar::strUIPicture_dirPath) + pFileName;
+			//LOG_INFO << "g_globalPointer ad：" << &g_globalPointer;
+			//LOG_INFO << "testInline:" << testInline << " testInline ad:" << &testInline;
+
+			PathAppender pathAppender;
+			std::string	strFullPathFileName = pathAppender.
+				SetSourcePath(GetStringValue(envVar::g_Domain, envVar::strUIPicture_dirPath)).
+				AppendChildPath(pFileName).
+				GetPath();
+
 
 			itFind = g_picturePool.find(strKey);
 			if (itFind == g_picturePool.end())
@@ -651,7 +659,7 @@ namespace why
 	{
 		CXmlNode				*pCur;
 		const char				*lpName;
-		std::string					strName;
+		std::string				strName;
 		
 		for (pCur = pNode->first_node(); NULL != pCur; pCur = pCur->next_sibling())
 		{

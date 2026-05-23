@@ -5,14 +5,17 @@ namespace why
 	namespace envVar
 	{
 		const char* g_Domain = "envVar";
-		const char* strDeployment_dirPath = "deployment_dirPath";
+
+		const char* strAuthorName = "author_name";
+		const char* strAppName = "app_name";
+		
 	}
 
 	// dataDef
 	namespace envVar
 	{
-		const char* strDataDef_dirPath = "data_def_dirPath";
-
+		const char* strDeployment_dirPath = "deployment_dirPath";
+		const char* strDataDef_dirPath = "data_def_dirPath";		
 	}
 
 	// 用户

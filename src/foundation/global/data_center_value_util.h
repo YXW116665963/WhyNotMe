@@ -4,8 +4,8 @@
 #include "standard.h"
 
 #include "data_value_interface.h"
-#include "global_pointer.h"
 #include <string>
+#include "global_pointer.h"
 
 
 //#include "running_log.h"

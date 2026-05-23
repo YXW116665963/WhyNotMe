@@ -9,8 +9,12 @@
 #include "data_center_interface.h"
 #include "data_observer_helper.h"
 #include "util.h"
-#include "global_var.h"
 #include "global_pointer.h"
+#include "window_manager.h"
+#include "singleton.h"
+// 程序入口点
+wxIMPLEMENT_APP(why::WhyNotViewApp);
+
 namespace why
 {
     namespace
@@ -30,24 +34,6 @@ namespace why
         return 0;
     }
 
-    bool WhyNotViewApp::LoadwhyBladeData()
-    {
-        std::string sBldFilePath = g_globalVar.m_strUserData_dirPath;
-        sBldFilePath += std::filesystem::path::preferred_separator;
-        sBldFilePath += "BladeData_metadata.csv";
-
-        if (!ImportDataFromFile(g_globalPointer.m_dataCenterPtr.get(),
-            sBldFilePath.c_str(),
-            "bld_edit",
-            ""))
-        {
-            return false;
-        }
-
-
-        return true;
-    }
-
 
     // 应用程序初始化
     bool WhyNotViewApp::OnInit()
@@ -57,8 +43,13 @@ namespace why
         // 单独初始化数据库相关的env
         InitDataCenter();
         InitEnvVar();
-        InitGlobalTimer();        
+        InitGlobalTimer();
+        // 禁用 wxWidgets 自动 DPI 缩放
+        SetProcessDPIAware();  //
+        // 使得wx能够解析除bitmap以外的图片格式
+        wxInitAllImageHandlers();
         LoadUIResource();
+
 
         m_pMainFrame = new MainFrame(NULL,
             wxID_ANY,
@@ -67,27 +58,42 @@ namespace why
             { 1280, 1024 },
             //wxMINIMIZE_BOX：右上最小化
             //wxCLOSE_BOX：右上关闭
-			//wxFULL_REPAINT_ON_RESIZE：调整窗口大小时重绘整个窗口
-            wxCAPTION | wxMINIMIZE_BOX | wxCLOSE_BOX | wxFULL_REPAINT_ON_RESIZE
+            //wxFULL_REPAINT_ON_RESIZE：调整窗口大小时重绘整个窗口
+            //wxRESIZE_BORDER :支持调整窗口大小
+            wxCAPTION | wxRESIZE_BORDER | wxMAXIMIZE_BOX | wxMINIMIZE_BOX | wxCLOSE_BOX | wxFULL_REPAINT_ON_RESIZE
         );
+        //wxPoint point = wxDefaultPosition;
+        //wxSize frameSize = m_pMainFrame->GetSize();
+        //wxSize frameClientSize = m_pMainFrame->GetClientSize();
+
 
         m_pMainFrame->Show(true);
+
+        SINGLETON_PTR(WindowManager)->OpenWindow("main_catalog_0_0");
 
         return true;
     }
 
-    // 程序入口点
-    wxIMPLEMENT_APP(WhyNotViewApp);
+
 
     WhyNotViewApp::WhyNotViewApp()
     {
-        g_globalVar.m_strAppName = "whynotview";
+
     }
 
     void WhyNotViewApp::InitEnvVar()
     {
         SetMainThread();
         PathAppender pathAppender;
+
+        //
+
+        g_globalPointer.m_dataCenterPtr->
+            RegisterStringData(envVar::g_Domain, envVar::strAuthorName, m_strAuthorName.c_str(), DataStyle::ePersistence);
+        g_globalPointer.m_dataCenterPtr->
+            RegisterStringData(envVar::g_Domain, envVar::strAppName, m_strAppName.c_str(), DataStyle::ePersistence);
+
+
         // 数据def文本文件
         std::string strDataDef_dirPath = pathAppender.SetSourcePath(GetStringValue(envVar::g_Domain, envVar::strUserConfig_dirPath))
 			.AppendChildPath("data")
@@ -156,12 +162,12 @@ namespace why
     {
         PathAppender pathAppender;
         std::string strLog_dirPath = pathAppender.SetSourcePath(wxStandardPaths::Get().GetUserConfigDir().utf8_string())
-            .AppendChildPath(g_globalVar.m_strAuthor)
-            .AppendChildPath(g_globalVar.m_strAppName)
+            .AppendChildPath(m_strAuthorName)
+            .AppendChildPath(m_strAppName)
             .AppendChildPath("log")
             .GetPath();
 
-        g_loggerPtr.reset(new Logger(strLog_dirPath, g_globalVar.m_strAppName, g_nLogLevel));
+        g_loggerPtr.reset(new Logger(strLog_dirPath, m_strAppName, g_nLogLevel));
         if (!CreateDirectories(strLog_dirPath))
         {
             LOG_ERROR << "create " << strLog_dirPath << " failed!!!";
@@ -175,10 +181,11 @@ namespace why
     {		
         PathAppender pathAppender;
 		// exe和数据中心路径
-        std::string strUserConfig_dirPath = pathAppender.SetSourcePath(wxStandardPaths::Get().GetUserConfigDir().utf8_string())
-            .AppendChildPath(g_globalVar.m_strAuthor)
-            .AppendChildPath(g_globalVar.m_strAppName)
-            .GetPath();
+        std::string strUserConfig_dirPath = pathAppender.
+            SetSourcePath(wxStandardPaths::Get().GetUserConfigDir().utf8_string()).
+            AppendChildPath(m_strAuthorName).
+            AppendChildPath(m_strAppName).
+            GetPath();
 
         // 数据库目录和数据中心路径
         std::string strDataBase_dirPath = pathAppender.SetSourcePath(strUserConfig_dirPath)

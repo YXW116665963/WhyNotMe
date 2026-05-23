@@ -1,3 +1,4 @@
+#pragma once
 #include "child_panel.h"
 
 namespace why

@@ -684,7 +684,8 @@ namespace why
 				pBindWnd->m_bChecked = true;
 				if (0 != uWarningCode)
 				{
-					std::string			strPrefix = g_pLocalizationMgr->ToLocalString(pBindWnd->m_strDisplay);
+					//std::string			strPrefix = g_pLocalizationMgr->ToLocalString(pBindWnd->m_strDisplay);
+					std::string			strPrefix = pBindWnd->m_strDisplay;
 
 					if (g_fnDataExceedLimitNotify)
 						g_fnDataExceedLimitNotify(uWarningCode, strPrefix, pBindWnd->m_strCurrentValue, strLimitValue);
