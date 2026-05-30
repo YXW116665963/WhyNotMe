@@ -1,7 +1,7 @@
 #include "event_dispatcher.h"
 
 #include "logger.h"
-#include "window_manager.h"
+#include "frame_manager.h"
 
 #include "main_catalog.h"
 namespace why

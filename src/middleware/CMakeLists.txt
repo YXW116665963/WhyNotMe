@@ -55,6 +55,7 @@ add_dependencies(${PROJECT_NAME}
 	platform 
 	global
 	data_def
+	data_center
 ) 
 
 set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER "middleware")

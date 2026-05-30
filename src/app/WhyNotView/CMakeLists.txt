@@ -24,7 +24,7 @@ include_directories(${data_center_inc_dir_path})
 
 ## app
 include_directories(${whynotview_app_dir_path})
-include_directories(${whynotview_app_dir_path}/window)
+include_directories(${whynotview_app_dir_path}/panel)
 
 ##
 ## 3rd inc

@@ -4,7 +4,7 @@
 namespace why
 {
 	MainCatalog::MainCatalog(wxWindow* parent, const wxPoint& pos, const wxSize& size)
-		: ChildPanel("main_catalog_0_0.xml", parent, pos, size)
+		: ChildPanel("MainCatalog.xml", parent, pos, size)
 	{
 
 	}

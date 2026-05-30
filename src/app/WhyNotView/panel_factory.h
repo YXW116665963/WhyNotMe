@@ -3,15 +3,15 @@
 
 namespace why
 {
-    class IFrameFactory 
+    class IPanelFactory 
     {
     public:
-        virtual ~IFrameFactory() = default;
+        virtual ~IPanelFactory() = default;
         virtual ChildPanel* CreatePanel(wxWindow* parent, const wxPoint& pos, const wxSize& size) const = 0;
     };
 
 	template<typename T>
-	class FrameFactory : public IFrameFactory
+	class PanelFactory : public IPanelFactory
 	{
 	public:
 		ChildPanel* CreatePanel(wxWindow* parent, const wxPoint& pos, const wxSize& size) const override

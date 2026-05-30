@@ -4,7 +4,7 @@
 #include "child_panel.h"
 #include <string>
 #include <list>
-#include "window_factory.h"
+#include "panel_factory.h"
 #include "main_frame.h"
 
 // 指定Frame模块的控件绑定响应函数
@@ -50,7 +50,7 @@ namespace why
 
         WindowInfo m_curWindowInfo;
 
-        typedef std::map<std::string, IFrameFactory*> WindowFactoryMap;
+        typedef std::map<std::string, IPanelFactory*> WindowFactoryMap;
 		WindowFactoryMap m_mapWindowFactory;
 
     private:

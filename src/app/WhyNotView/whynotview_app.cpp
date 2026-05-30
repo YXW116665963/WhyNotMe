@@ -60,7 +60,7 @@ namespace why
             //wxCLOSE_BOX：右上关闭
             //wxFULL_REPAINT_ON_RESIZE：调整窗口大小时重绘整个窗口
             //wxRESIZE_BORDER :支持调整窗口大小
-            wxCAPTION | wxRESIZE_BORDER | wxMAXIMIZE_BOX | wxMINIMIZE_BOX | wxCLOSE_BOX | wxFULL_REPAINT_ON_RESIZE
+            wxCAPTION | wxMINIMIZE_BOX | wxCLOSE_BOX | wxFULL_REPAINT_ON_RESIZE
         );
         //wxPoint point = wxDefaultPosition;
         //wxSize frameSize = m_pMainFrame->GetSize();
@@ -139,7 +139,6 @@ namespace why
         // UI Resource.xml:字体背景等资源
         std::string strUIResourceXml_filePath = pathAppender.SetSourcePath(strDeployment_dirPath)
             .AppendChildPath("Resource")
-            .AppendChildPath("XMLFiles")
             .AppendChildPath("Resource.xml")
             .GetPath();
         g_globalPointer.m_dataCenterPtr->

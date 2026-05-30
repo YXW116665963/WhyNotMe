@@ -60,7 +60,6 @@ namespace why
 
 		int lastWidth = m_lastSize.GetWidth();
 		int lastHeight = m_lastSize.GetHeight();
-		void ChildPanel::Expand(const wxPoint & ptPos, wxWindow * pWindow, bool bExpandH, bool bExpandV);
 
 		bool bExpandH = (currWidth != lastWidth ? true : false);
 		bool bExpandV = (currHeight != lastHeight ? true : false);
@@ -129,14 +128,11 @@ namespace why
 
 
 		//wxSize DIPSize = FromDIP(size);
-		//this->SetSize(size);
-		//nWidth = AttributeAsInt(pFrame, "width", 1280);
-		//nHeight = AttributeAsInt(pFrame, "height", 1024);
-		//wxSize size = wxSize(nWidth, nHeight);
-		//this->SetClientSize(size);
-
-
-		this->Maximize();
+		
+		nWidth = AttributeAsInt(pFrame, "width", 1280);
+		nHeight = AttributeAsInt(pFrame, "height", 1024);
+		wxSize size = wxSize(nWidth, nHeight);
+		this->SetClientSize(size);
 
 		SINGLETON_PTR(WindowManager)->SetMainFrame(this);
 
