@@ -1,9 +1,11 @@
+#pragma once
 #include "rapidxml.hpp"  
 #include "rapidxml_utils.hpp"  
 #include "rapidxml_print.hpp" 
 #include "rapidxml_ext.hpp"  //只多了这一行
 #include "standard.h"
-
+#include "util.h"
+#include "text_util.h"
 typedef rapidxml::xml_attribute<char> CXmlAttribute;
 typedef rapidxml::xml_node<char> CXmlNode;
 typedef rapidxml::xml_document<char> CXmlDocument;
@@ -91,5 +93,58 @@ namespace why
 	* - flase 不存在
 	*/
 	bool HasAttribute(CXmlNode* pNode, const char* pName);
+
+
+
+
+	/**
+	* @author	why
+	* @brief	以指定类型获取XML数据
+	* @param	pNode 节点对象
+	* @param	pName 节点中的属性名称
+	* @return
+	* -	true	存在
+	* -	flase	不存在
+	*/
+	template <typename T>
+	inline bool GetAttributeData(CXmlNode* pNode, const char* pName, std::vector<T>& res)
+	{
+		CXmlAttribute* pAttribute = nullptr;
+		const char* lpValue = nullptr;
+
+		assert(pNode); assert(pName);
+		
+
+		pAttribute = pNode->first_attribute(pName);
+		if (nullptr == pAttribute)
+			return false;
+
+		lpValue = pAttribute->value();
+		if ((nullptr != lpValue) && (0 != strlen(lpValue)))
+		{
+			std::vector<std::string>			stringArray;
+			int32_t								nSize;
+
+			StringSplit(std::string(lpValue), ',', stringArray);
+			nSize = (int32_t)stringArray.size();
+			
+			for (auto str : stringArray)
+			{
+				T value;
+				/*
+				* 模板实参推导（Template Argument Deduction）
+					简单说：
+					函数参数能确定 T → 就不用写 <T>
+				*/
+				if (!StringTo<T>(str, value))
+				{
+					return;
+				}
+				
+				res.push_back(value);
+			}
+		}
+		return true;
+	}
 }
 

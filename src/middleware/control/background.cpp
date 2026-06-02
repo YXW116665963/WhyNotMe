@@ -169,7 +169,7 @@ namespace why
 		Draw(memoryDC, { 0, 0, (int32_t)uWidth, (int32_t)uHeight });
 		memoryDC.SelectObject(wxNullBitmap);
 		m_cacheBufs.insert(std::make_pair(szBuffer, cacheBitmap));
-
+		
 		//LOG_INFO << "Generate Cahce buffer[" << this << "] width:" << uWidth << ", height:" << uHeight;
 		return true;
 	}
@@ -294,11 +294,13 @@ namespace why
 	{
 		wxRect			rcDraw = { rcRect.x, rcRect.y, m_szLeftTop.x, m_szLeftTop.y };
 		
+		// 计算交集，如果不相交认为错误
 		rcDes = rcDraw.Intersect(rcRect);
 		if (rcDes.IsEmpty())
 		{
 			return false;
 		}
+		// 并且尺寸要限制在交集之内
 		else
 		{
 			rcSrc = { m_rcRect.x, m_rcRect.y, m_szLeftTop.x, m_szLeftTop.y };

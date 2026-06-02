@@ -196,4 +196,39 @@ namespace why
 
 		return dest.u;
 	}
+
+	/**
+	* @author	why
+	* @brief	将字符串转换为指定类型的值
+	* @param	str			指定字符串
+	* @param	outValue	转换值
+	* @return
+	* -	true	成功
+	* -	flase	失败
+	*/
+	template <typename T>
+	bool StringTo(const std::string& str, T& outValue)
+	{
+		std::istringstream iss(str);
+		iss >> outValue;
+		// 转换成功且完整读取
+		return iss.good() || iss.eof();
+	}
+	/**
+	* @author	why
+	* @brief	模板特化
+	*			string不需要转换，直接赋值
+	*			特化后该函数为普通函数，定义在头文件被多次包含必报警，inline可以避免该问题
+	* @param	str			指定字符串
+	* @param	outValue	转换值
+	* @return
+	* -	true	成功
+	* -	flase	失败
+	*/
+	template <>
+	inline bool StringTo<std::string>(const std::string& str, std::string& outValue)
+	{
+		outValue = str;
+		return true;
+	}
 }

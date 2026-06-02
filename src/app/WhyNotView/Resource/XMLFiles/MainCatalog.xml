@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<WHYUI origin="0,114">
+<WHYUI origin="0,0" size="1920,1200">
 	<Graphic>
         <Background name ="pure_grey" x="0" y="114" width="1072" height="700"/>
-		<Background name ="group_box" x="8" y="126" width="1056" height="681"/>
+		<Background name ="group_box" x="8" y="126" width="1900" height="1100"/>
 		<Picture name="blue_flag" x="32" y="142" width="16" height="28"/>
 		<Text name="Yahei_26_700" text="主菜单 (0.0)" color="#000000" x="64" y="138" width="130" height="35"/>
 		<Background name ="edit_bk" x="545" y="539" width="385" height="48"/>
@@ -81,4 +81,4 @@
 		<Font name="Arial_20_400" color="0,0,0"/>
 		<Bind Domain="EnvVar" Name="CutFileName"/>
 	</Label>
-</JCAUI>
+</WHYUI>

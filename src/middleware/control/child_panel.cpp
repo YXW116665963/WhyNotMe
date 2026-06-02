@@ -25,9 +25,12 @@ namespace why
 
 		LoadPanel(this, m_dataExchangePtr.get(), strResFile, &m_graphic);
 		this->SetLabel(strResFile);
+
+		// 绑定静态资源绘制
 		if (0 != m_graphic.ElementCount())
 		{
 			Bind(wxEVT_PAINT, &ChildPanel::OnDrawPanelBackground, this);
+			// wxEVT_ERASE_BACKGROUND：窗口滚动、被遮挡后重新露出、大小改变等触发，一般在wxEVT_PAINT之前
 			Bind(wxEVT_ERASE_BACKGROUND, &ChildPanel::OnEraseBackground, this);
 		}
 		else

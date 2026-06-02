@@ -153,6 +153,7 @@ namespace why
 			}
 			else
 			{
+				// 加载除Graphic以外的控件
 				LoadCommonControl(pParent, wndCoordinate, pDataExchange, pPanelGraphic, pCur, eControlType);
 			}
 		}
@@ -347,6 +348,7 @@ namespace why
 				return false;
 			}
 
+
 			GetAttributePoint(pRoot, "origin", wndCoordinate.m_ptOrigin);
 
 			wndCoordinate.m_szOrigin = pParent->GetSize();
@@ -372,6 +374,7 @@ namespace why
 			if (nullptr != pPanelGraphic)
 			{
 				pGraphic = pRoot->first_node("Graphic");
+				// 只是将image备份到pPanelGraphic，绘制在paint响应中
 				if (nullptr != pGraphic)
 					LoadPanelGraphic(wndCoordinate, pGraphic, pPanelGraphic);
 			}

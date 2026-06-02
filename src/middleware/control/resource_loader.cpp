@@ -146,8 +146,8 @@ namespace why
 
 		return CreatePictureFromFile(pAttribute->value());
 	}
-
-	bool LoadStretchSize(CXmlNode* pNode, wxSize& rcLeftTop, wxSize& rcTopBottom)
+	
+	bool LoadStretchSize(CXmlNode* pNode, wxSize& rcLeftTop, wxSize& rcRightBottom)
 	{
 		CXmlAttribute		*pAttribute = nullptr;
 
@@ -165,15 +165,15 @@ namespace why
 
 		pAttribute = pNode->first_attribute("right");
 		if (nullptr == pAttribute)
-			rcTopBottom.x = 0;
+			rcRightBottom.x = 0;
 		else
-			rcTopBottom.x = atoi(pAttribute->value());
+			rcRightBottom.x = atoi(pAttribute->value());
 
 		pAttribute = pNode->first_attribute("bottom");
 		if (nullptr == pAttribute)
-			rcTopBottom.y = 0;
+			rcRightBottom.y = 0;
 		else
-			rcTopBottom.y = atoi(pAttribute->value());
+			rcRightBottom.y = atoi(pAttribute->value());
 
 		return true;
 	}
@@ -385,6 +385,8 @@ namespace why
 		PictureBackground *pPictureBK= new PictureBackground(picturePtr, rcRect, szLeftTop, szRightBottom);
 		backgroundPtr.reset(pPictureBK);
 
+
+		// 先创建原始尺寸，在创建扩展尺寸位图
 		CXmlNode *pCache = pNode->first_node("Cache");
 		if (pCache)
 		{

@@ -1,6 +1,5 @@
 #include "xml_util.h"
 #include "text_util.h"
-#include "util.h"
 #include <cstring>  // 或 #include <strings.h> 在某些系统上
 namespace why
 {

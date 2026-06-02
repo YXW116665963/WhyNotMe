@@ -11,6 +11,14 @@
 
 namespace why
 {
+
+	/**
+	* @author	jca
+	* @brief	PanelGraphic ->
+	*			IPanelGraphicElement ->
+	*			IBackGroundGraphic ->
+	*			IBackGround¡¢IPicture¡¢ILine¡¢IText
+	*/
 	class PanelGraphic
 	{
 	public:

@@ -5,10 +5,11 @@ namespace why
 	class MainCatalog : public ChildPanel
 	{
 	public:
-		MainCatalog(wxWindow* parent, const wxPoint& pos, const wxSize& size);
+		MainCatalog(wxWindow* pParent);
 		~MainCatalog();
 
 	private:
+
 
 	};
 }

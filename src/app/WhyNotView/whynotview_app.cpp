@@ -10,7 +10,7 @@
 #include "data_observer_helper.h"
 #include "util.h"
 #include "global_pointer.h"
-#include "window_manager.h"
+#include "frame_manager.h"
 #include "singleton.h"
 // 程序入口点
 wxIMPLEMENT_APP(why::WhyNotViewApp);
@@ -53,9 +53,9 @@ namespace why
 
         m_pMainFrame = new MainFrame(NULL,
             wxID_ANY,
-            wxT("WHY"),
+            m_strAppName,
             wxDefaultPosition,
-            { 1280, 1024 },
+            { 0, 0 },
             //wxMINIMIZE_BOX：右上最小化
             //wxCLOSE_BOX：右上关闭
             //wxFULL_REPAINT_ON_RESIZE：调整窗口大小时重绘整个窗口
@@ -67,9 +67,10 @@ namespace why
         //wxSize frameClientSize = m_pMainFrame->GetClientSize();
 
 
+
         m_pMainFrame->Show(true);
 
-        SINGLETON_PTR(WindowManager)->OpenWindow("main_catalog_0_0");
+        SINGLETON_PTR(FrameManager)->OpenWindow("main_catalog_0_0");
 
         return true;
     }

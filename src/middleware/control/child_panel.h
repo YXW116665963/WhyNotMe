@@ -98,6 +98,9 @@ namespace why
 
 	private:
         DataExchangePtr				m_dataExchangePtr;
+
+
+
         PanelGraphic				m_graphic;
 		wxBitmap					m_bufferBitmap;
 		wxSize						m_szBitmap;

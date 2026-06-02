@@ -10,9 +10,24 @@
 #include "env_var_data_def.h"
 #include "logger.h"
 #include <filesystem>
-#include "window_manager.h"
+#include "frame_manager.h"
 namespace why
 {
+	// 菜单枚举量
+	enum MenuID
+	{
+		ID_FILE_OPEN = wxID_HIGHEST + 1,
+
+		ID_DRAW_,
+
+		ID_CONTROL_,
+
+		ID_SETTING_,
+
+		ID_HELP_,
+	};
+
+
 	MainFrame::MainFrame(wxFrame* frame, wxWindowID id, const wxString& title,
 		const wxPoint& pos, const wxSize& size, long style)
 		: wxFrame(frame, id, title, pos, size, style)
@@ -28,7 +43,48 @@ namespace why
 		m_pTimer = new wxTimer(this, wxID_ANY);
 		m_pTimer->Start(1000, wxTIMER_CONTINUOUS);
 
+
+
+		const int ID_MENU_OPEN = wxID_HIGHEST + 1;
+		// 1. 创建菜单
+		wxMenu* fileMenu = new wxMenu();
+		fileMenu->Append(ID_MENU_OPEN, "打开文件");
+		fileMenu->Append(ID_MENU_OPEN + 2, "保存文件");
+
+		
+
+		wxMenu* formatMenu = new wxMenu();
+		formatMenu->Append(ID_MENU_OPEN+4, "格式化 JSON");
+		formatMenu->Append(ID_MENU_OPEN+5, "格式化 XML");
+		fileMenu->AppendSubMenu(formatMenu, "格式");
+		
+
+
+
+		wxMenu* fileMenu2 = new wxMenu;
+		fileMenu2->Append(ID_MENU_OPEN + 1, "打开文件2");
+
+
+		wxMenuBar* menuBar = new wxMenuBar;
+		menuBar->Append(fileMenu, "文件");
+		menuBar->Append(fileMenu2, "文件2");
+		SetMenuBar(menuBar);
+
+		//
+		Bind(wxEVT_MENU, &MainFrame::OnMenuOpen, this, ID_MENU_OPEN);
+
 		LoadMainFrame();
+	}
+
+	// 3. 处理函数实现
+	void MainFrame::OnMenuOpen(wxCommandEvent& event)
+	{
+		wxMessageBox("OnMenuOpen！");
+	}
+
+	void MainFrame::OnMenuOpen2(wxCommandEvent& event)
+	{
+		wxMessageBox("OnMenuOpen2！");
 	}
 
 	MainFrame::~MainFrame()
@@ -126,16 +182,23 @@ namespace why
 		}
 
 
-
 		//wxSize DIPSize = FromDIP(size);
 		
-		nWidth = AttributeAsInt(pFrame, "width", 1280);
-		nHeight = AttributeAsInt(pFrame, "height", 1024);
-		wxSize size = wxSize(nWidth, nHeight);
+		nWidth = AttributeAsInt(pFrame, "width", 1920);
+		nHeight = AttributeAsInt(pFrame, "height", 1200);
+		wxSize size = wxSize(1920, 1200);
 		this->SetClientSize(size);
 
-		SINGLETON_PTR(WindowManager)->SetMainFrame(this);
+		SINGLETON_PTR(FrameManager)->SetMainFrame(this);
 
-		/*SINGLETON_PTR(WindowManager)->OpenWindow("main_catalog_0_0");*/
-	}	
+		/*SINGLETON_PTR(FrameManager)->OpenWindow("main_catalog_0_0");*/
+	}
+	void MainFrame::CreateMenu()
+	{
+
+
+		//Bind(wxEVT_MENU, &你的类::处理函数, this, 菜单ID);
+
+	}
+
 }

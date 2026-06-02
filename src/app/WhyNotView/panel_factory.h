@@ -7,16 +7,25 @@ namespace why
     {
     public:
         virtual ~IPanelFactory() = default;
-        virtual ChildPanel* CreatePanel(wxWindow* parent, const wxPoint& pos, const wxSize& size) const = 0;
+        virtual std::vector<ChildPanel*> CreatePanels(wxWindow* pParent) = 0;
     };
 
-	template<typename T>
+	template <typename... Args>
 	class PanelFactory : public IPanelFactory
 	{
 	public:
-		ChildPanel* CreatePanel(wxWindow* parent, const wxPoint& pos, const wxSize& size) const override
+        std::vector<ChildPanel*> CreatePanels(wxWindow* pParent) override
+        {
+            std::vector<ChildPanel*> m_vecPanels;
+            (CreatePanel<Args>(pParent,m_vecPanels), ...);
+            return m_vecPanels;
+        }
+
+    private:
+        template <typename T>
+		void CreatePanel(wxWindow* pParent, std::vector<ChildPanel*>& vecPanels)
 		{
-			return new T(parent, pos, size);
+			vecPanels.push_back(new T(pParent));
 		}
 	};
 }

@@ -20,6 +20,8 @@ namespace why
 	PicturePtr GetAttributePicture(CXmlNode *pNode, const char *pName);
 
 	PicturePtr LoadPicture(CXmlNode *pNode);
+
+
 	BackgroundPtr LoadPictureBackground(CXmlNode *pNode);
 	BackgroundPtr LoadFadeBackground(CXmlNode *pNode);
 	BackgroundPtr LoadSolidBackground(CXmlNode *pNode);

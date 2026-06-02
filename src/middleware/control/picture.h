@@ -8,6 +8,14 @@
 
 namespace why
 {
+
+	/**
+	* @author	jca
+	* @brief	抽象图片类型，该类存储wxImage。
+	*			文件/资源 
+	*			→ wxImage（存数据）
+	*			→ wxBitmap（用于绘制）
+	*/
 	class Picture
 	{
 	public:

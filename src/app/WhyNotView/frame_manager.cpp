@@ -6,35 +6,36 @@
 #include "main_catalog.h"
 namespace why
 {
-	WindowManager::WindowManager()
+	FrameManager::FrameManager()
 	{
-		m_mapWindowFactory = {
-			{"main_catalog_0_0", new FrameFactory<MainCatalog>()},
+		// 窗口名小写，板块名大写
+		m_mapPanelFactory = {
+			{"main_catalog_0_0", new PanelFactory<MainCatalog>()},
 		};
 	}
 
-	WindowManager::~WindowManager()
+	FrameManager::~FrameManager()
 	{
 		
 	}
 
-	void WindowManager::OpenWindow(const std::string& strWindowName)
+	void FrameManager::OpenWindow(const std::string& strWindowName)
 	{
-		auto itFind = m_mapWindowFactory.find(strWindowName);
-		if (m_mapWindowFactory.end() != itFind)
+		auto itFind = m_mapPanelFactory.find(strWindowName);
+		if (m_mapPanelFactory.end() != itFind)
 		{
-			WindowInfo newWindow;
-			newWindow.m_strWindowName = strWindowName;
-
 			wxPoint framePoint = m_pMainFrame->GetPosition();
 			wxSize frameSize = m_pMainFrame->GetClientSize();
 
-			newWindow.m_pPanel = itFind->second->CreatePanel(m_pMainFrame, framePoint, frameSize);
+			m_curWindowInfo.m_vecPanels = itFind->second->CreatePanels(m_pMainFrame);
+			m_curWindowInfo.m_strWindowName = strWindowName;
 
-			m_curWindowInfo = newWindow;
-			m_curWindowInfo.m_pPanel->InitializePanel();
-			m_curWindowInfo.m_pPanel->Show();
-			m_curWindowInfo.m_pPanel->EnablePanelEx(!m_curWindowInfo.m_bReadOnly);
+			for (auto pPanel : m_curWindowInfo.m_vecPanels)
+			{
+				pPanel->InitializePanel();
+				pPanel->Show();
+				pPanel->EnablePanelEx(!m_curWindowInfo.m_bReadOnly);
+			}
 			LOG_INFO << "OpenWindow: " << strWindowName;
 		}
 		else
@@ -43,16 +44,20 @@ namespace why
 		}
 	}
 
-	void WindowManager::CloseWindow(const WindowInfo& windowInfo)
+	void FrameManager::CloseWindow(const WindowInfo& windowInfo)
 	{
 		GetEventDispatcher()->DoItOnMainThreadAsync([windowInfo]() {
-			if (windowInfo.m_pPanel)
-				windowInfo.m_pPanel->Close();
 
+			for (auto pPanel : windowInfo.m_vecPanels)
+			{
+				if (pPanel)
+					pPanel->Close();
+			}
 			LOG_INFO << "DestroyWindowInfo name:" << windowInfo.m_strWindowName;
 			}, this);
 	}
-	void WindowManager::OnSize()
+
+	void FrameManager::OnSize()
 	{
 	}
 }
