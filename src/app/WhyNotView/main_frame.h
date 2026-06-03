@@ -25,19 +25,22 @@ namespace why
         
 
     private:
-        // 菜单条目结构体：存储一个菜单项的所有信息
-        struct MenuItem
-        {
-            int id;                                             // 菜单ID
-            const char* text;                                   // 菜单显示文字
-            void (MainFrame::* handler)(wxCommandEvent&);       // 处理函数指针
-        };
+        void InitMenu();
 
-        void OnMenuOpen(wxCommandEvent& event);
-        void OnMenuOpen2(wxCommandEvent& event);
-        void CreateMenu();
+
+        //File
+        void OnMenuOpenFile(wxCommandEvent& event);
+        void OnMenuOpenSave(wxCommandEvent& event);
+    private:        
+
+
+
+
+
     private:
         wxTimer* m_pTimer{ nullptr };
         wxSize m_lastSize;
+
+
     };
 }

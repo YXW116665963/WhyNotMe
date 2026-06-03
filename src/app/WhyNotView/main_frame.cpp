@@ -16,7 +16,11 @@ namespace why
 	// 菜单枚举量
 	enum MenuID
 	{
-		ID_FILE_OPEN = wxID_HIGHEST + 1,
+		//File
+		ID_FILE_OPEN = wxID_HIGHEST + 100,
+		ID_FILE_SAVE = wxID_HIGHEST + 101,
+
+
 
 		ID_DRAW_,
 
@@ -26,6 +30,42 @@ namespace why
 
 		ID_HELP_,
 	};
+
+
+	void MainFrame::InitMenu()
+	{		
+		wxMenuBar* menuBar = new wxMenuBar;		
+		const int ID_MENU_OPEN = wxID_HIGHEST + 1;
+		//File
+		wxMenu* fileMenu = new wxMenu;
+
+		fileMenu->Append(ID_FILE_OPEN, "打开文件");
+		Bind(wxEVT_MENU, &MainFrame::OnMenuOpenFile, this, ID_FILE_OPEN);
+
+		fileMenu->Append(ID_FILE_SAVE, "保存文件");
+		Bind(wxEVT_MENU, &MainFrame::OnMenuOpenFile, this, ID_FILE_SAVE);
+		//File-格式
+		wxMenu* formatMenu = new wxMenu();
+		formatMenu->Append(ID_MENU_OPEN + 4, "格式化 JSON");
+		formatMenu->Append(ID_MENU_OPEN + 5, "格式化 XML");
+		fileMenu->AppendSubMenu(formatMenu, "格式");
+		menuBar->Append(fileMenu, "File");
+
+		wxMenu* drawMenu = new wxMenu;
+		menuBar->Append(drawMenu, "Draw");
+
+		wxMenu* controlMenu = new wxMenu;
+		menuBar->Append(controlMenu, "Control");
+
+		wxMenu* settingMenu = new wxMenu;
+		menuBar->Append(settingMenu, "Setting");
+
+		wxMenu* helpMenu = new wxMenu;
+		menuBar->Append(helpMenu, "Help");
+
+		SetMenuBar(menuBar);
+	}
+
 
 
 	MainFrame::MainFrame(wxFrame* frame, wxWindowID id, const wxString& title,
@@ -44,48 +84,22 @@ namespace why
 		m_pTimer->Start(1000, wxTIMER_CONTINUOUS);
 
 
+		InitMenu();
 
-		const int ID_MENU_OPEN = wxID_HIGHEST + 1;
-		// 1. 创建菜单
-		wxMenu* fileMenu = new wxMenu();
-		fileMenu->Append(ID_MENU_OPEN, "打开文件");
-		fileMenu->Append(ID_MENU_OPEN + 2, "保存文件");
-
-		
-
-		wxMenu* formatMenu = new wxMenu();
-		formatMenu->Append(ID_MENU_OPEN+4, "格式化 JSON");
-		formatMenu->Append(ID_MENU_OPEN+5, "格式化 XML");
-		fileMenu->AppendSubMenu(formatMenu, "格式");
-		
-
-
-
-		wxMenu* fileMenu2 = new wxMenu;
-		fileMenu2->Append(ID_MENU_OPEN + 1, "打开文件2");
-
-
-		wxMenuBar* menuBar = new wxMenuBar;
-		menuBar->Append(fileMenu, "文件");
-		menuBar->Append(fileMenu2, "文件2");
-		SetMenuBar(menuBar);
-
-		//
-		Bind(wxEVT_MENU, &MainFrame::OnMenuOpen, this, ID_MENU_OPEN);
 
 		LoadMainFrame();
 	}
 
-	// 3. 处理函数实现
-	void MainFrame::OnMenuOpen(wxCommandEvent& event)
+	void MainFrame::OnMenuOpenFile(wxCommandEvent& event)
 	{
-		wxMessageBox("OnMenuOpen！");
+		wxMessageBox("OnMenuOpenFile！");
 	}
 
-	void MainFrame::OnMenuOpen2(wxCommandEvent& event)
+	void OnMenuOpenSave(wxCommandEvent& event)
 	{
-		wxMessageBox("OnMenuOpen2！");
+		wxMessageBox("OnMenuOpenSave！");
 	}
+
 
 	MainFrame::~MainFrame()
 	{
@@ -193,12 +207,4 @@ namespace why
 
 		/*SINGLETON_PTR(FrameManager)->OpenWindow("main_catalog_0_0");*/
 	}
-	void MainFrame::CreateMenu()
-	{
-
-
-		//Bind(wxEVT_MENU, &你的类::处理函数, this, 菜单ID);
-
-	}
-
 }
