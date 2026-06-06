@@ -4,13 +4,15 @@
 #include "frame_manager.h"
 
 #include "main_catalog.h"
+#include "gl_panel.h"
 namespace why
 {
 	FrameManager::FrameManager()
 	{
 		// 窗口名小写，板块名大写
 		m_mapPanelFactory = {
-			{"main_catalog_0_0", new PanelFactory<MainCatalog>()},
+			{"main_catalog_0_0", new PanelFactory<MainCatalog>()},//test
+			{"gl_window",new PanelFactory<GLPanel>()}
 		};
 	}
 
@@ -24,8 +26,10 @@ namespace why
 		auto itFind = m_mapPanelFactory.find(strWindowName);
 		if (m_mapPanelFactory.end() != itFind)
 		{
-			wxPoint framePoint = m_pMainFrame->GetPosition();
-			wxSize frameSize = m_pMainFrame->GetClientSize();
+			if (m_curWindowInfo.m_strWindowName != "")
+			{
+				CloseWindow(m_curWindowInfo);
+			}
 
 			m_curWindowInfo.m_vecPanels = itFind->second->CreatePanels(m_pMainFrame);
 			m_curWindowInfo.m_strWindowName = strWindowName;
@@ -55,6 +59,11 @@ namespace why
 			}
 			LOG_INFO << "DestroyWindowInfo name:" << windowInfo.m_strWindowName;
 			}, this);
+	}
+
+	void FrameManager::RepaintCurWindow()
+	{
+		OpenWindow(m_curWindowInfo.m_strWindowName);
 	}
 
 	void FrameManager::OnSize()

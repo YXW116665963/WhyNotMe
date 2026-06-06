@@ -31,6 +31,8 @@ include_directories(${whynotview_app_dir_path}/panel)
 include_directories(${rapidxml_inc_dir_path})
 include_directories(${glog_inc_dir_path})
 include_directories(${wxwidgets_inc_dir_path})
+include_directories(${glad_inc_dir_path})
+include_directories(${glm_inc_dir_path})
 ##
 #
 
@@ -55,7 +57,8 @@ target_link_libraries(${proj_name}
 	${glog_lib_name} 
 	${wxwidgets_lib_name} 
 	${platform_lib_name}
-	${data_def_lib_name}	
+	${data_def_lib_name}
+	${glad_lib_name}	
 )
 
 # 配置exe为窗口程序，而非控制台程序
@@ -70,6 +73,7 @@ add_dependencies(${proj_name}
 	common 
 	platform 
 	sqlite
+	glad
 )
 
 # 配置输出路径

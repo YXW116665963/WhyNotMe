@@ -23,7 +23,16 @@ typedef double float64_t;
 #define gmtime_r(_Time, _Tm) gmtime_s(_Tm, _Time)
 #pragma comment(lib, "wsock32.lib")
 
-#define RGBA(r,g,b,a)          (RGB(r, g, b) | (((uint32_t)(uint8_t)(a))<<24))
+
+//  该宏与widgets冲突，宏名会和函数名冲突，最好避免使用宏
+//  #define RGBA(r,g,b,a)          (RGB(r, g, b) | (((uint32_t)(uint8_t)(a))<<24))
+//  换成 C++ 内联函数（安全、不冲突、有作用域）
+inline uint32_t RGBA(uint8_t r, uint8_t g, uint8_t b, uint8_t a)
+{
+    return RGB(r, g, b) | ((static_cast<uint32_t>(a)) << 24);
+}
+
+
 
 #ifdef _UNICODE
 typedef std::wstring tstring;

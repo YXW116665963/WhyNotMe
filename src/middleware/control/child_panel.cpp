@@ -1,3 +1,6 @@
+#include "env_var_data_def.h"
+#include "data_center_value_util.h"
+#include "xml_util.h"
 #include "child_panel.h"
 #include "ui_loader.h"
 #include "resource_manager.h"
@@ -22,6 +25,8 @@ namespace why
 			m_dataExchangePtr.reset(new DataExchange(g_pMiddlewareDataCenter));
 			Bind(wxEVT_CLOSE_WINDOW, &ChildPanel::OnCloseWindow, this);
 		}
+
+		LoadRenderRect(strResFile);
 
 		LoadPanel(this, m_dataExchangePtr.get(), strResFile, &m_graphic);
 		this->SetLabel(strResFile);
@@ -111,6 +116,77 @@ namespace why
 				m_bufferBitmap = wxBitmap(szClient.x, szClient.y);
 			}
 		}
+	}
+
+	void ChildPanel::LoadRenderRect(std::string strFileName)
+	{
+		PathAppender pathAppender;
+		std::string	strFullFileName = pathAppender.
+			SetSourcePath(GetStringValue(envVar::g_Domain, envVar::strUIXml_dirPath)).
+			AppendChildPath(strFileName).
+			GetPath();
+
+		{
+			std::string						strXMLFileName = UTF8ToLocal(strFullFileName);
+			rapidxml::file<char>			fdoc(strXMLFileName.c_str());
+			rapidxml::xml_document<char>	doc;
+			CXmlNode* pRoot = nullptr;
+			CXmlNode* pRect = nullptr;
+			wxPoint							szSize{ 0,0 };
+			WndCoordinate					wndCoordinate;
+
+			try
+			{
+				doc.parse<0>(fdoc.data());
+			}
+			catch (const rapidxml::parse_error& ex)
+			{
+				LOG_ERROR << "invalidate xml file:" << strFileName << ",where:" << ex.where<char>();
+				throw ex;
+			}
+			catch (const std::exception& e)
+			{
+				LOG_ERROR << "invalidate xml file:" << strFileName;
+				throw e;
+			}
+			pRoot = doc.first_node();
+			if (nullptr == pRoot)
+			{
+				LOG_INFO << "invalidate xml file:" << strFileName;
+				return;
+			}
+
+			pRect = pRoot->first_node("RenderRects");
+			
+			for (CXmlNode* pCur = pRect->first_node(); nullptr != pCur; pCur = pCur->next_sibling())
+			{
+				std::string strLpName = pCur->name();
+
+				if (strLpName == "RenderRect")
+				{
+					std::string				strRectName = "";
+					wxRect					rcRect;
+
+					if (!GetAttributeText(pCur, "name", strRectName))
+						return;
+					if (!GetAttributeRect(pCur, rcRect))
+						return;
+
+					m_mapRenderRect.insert(std::make_pair(strRectName, rcRect));
+				}
+			}
+		}
+	}
+
+	bool ChildPanel::GetRenderRect(std::string strRectName, wxRect& rect)
+	{
+		if (m_mapRenderRect.find(strRectName) != m_mapRenderRect.end())
+		{
+			rect = m_mapRenderRect[strRectName];
+			return true;
+		}
+		LOG_ERROR << "find render_rect" << strRectName << "faild!";
+		return false;
 	}
 
 	void ChildPanel::OnEraseBackground(wxEraseEvent& event)

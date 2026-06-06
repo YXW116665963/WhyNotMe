@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WHYUI origin="0,0" size="1920,1200">
+	<Graphic>
+        <Background name ="pure_grey" x="0" y="0" width="1920" height="1200"/>
+		<Background name ="group_box" x="10" y="12" width="1900" height="1176"/>
+    </Graphic>
+	
+	<RenderRects>
+		<RenderRect name = "gl_rect" x="12" y="14" width="1896" height="1172"/>	
+	</RenderRects>
+	
+</WHYUI>

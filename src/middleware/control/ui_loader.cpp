@@ -153,7 +153,7 @@ namespace why
 			}
 			else
 			{
-				// ¼ÓÔØ³ıGraphicÒÔÍâµÄ¿Ø¼ş
+				// åŠ è½½é™¤Graphicä»¥å¤–çš„æ§ä»¶
 				LoadCommonControl(pParent, wndCoordinate, pDataExchange, pPanelGraphic, pCur, eControlType);
 			}
 		}
@@ -374,7 +374,7 @@ namespace why
 			if (nullptr != pPanelGraphic)
 			{
 				pGraphic = pRoot->first_node("Graphic");
-				// Ö»ÊÇ½«image±¸·İµ½pPanelGraphic£¬»æÖÆÔÚpaintÏìÓ¦ÖĞ
+				// åªæ˜¯å°†imageå¤‡ä»½åˆ°pPanelGraphicï¼Œç»˜åˆ¶åœ¨paintå“åº”ä¸­
 				if (nullptr != pGraphic)
 					LoadPanelGraphic(wndCoordinate, pGraphic, pPanelGraphic);
 			}

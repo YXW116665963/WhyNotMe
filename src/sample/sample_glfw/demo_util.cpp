@@ -3,15 +3,15 @@
     #define GLFW_EXPOSE_NATIVE_WIN32
     #include <GLFW/glfw3native.h>
 #endif
-// ´´½¨×ÅÉ«Æ÷³ÌĞò
+// åˆ›å»ºç€è‰²å™¨ç¨‹åº
 unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fragmentShaderSource)
 {
-    // ´´½¨¶¥µã×ÅÉ«Æ÷
+    // åˆ›å»ºé¡¶ç‚¹ç€è‰²å™¨
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
     glCompileShader(vertexShader);
 
-    // ¼ì²é¶¥µã×ÅÉ«Æ÷±àÒë´íÎó
+    // æ£€æŸ¥é¡¶ç‚¹ç€è‰²å™¨ç¼–è¯‘é”™è¯¯
     int success;
     char infoLog[512];
     glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
@@ -21,12 +21,12 @@ unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fra
         std::cerr << "ERROR::SHADER::VERTEX::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // ´´½¨Æ¬¶Î×ÅÉ«Æ÷
+    // åˆ›å»ºç‰‡æ®µç€è‰²å™¨
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
 
-    // ¼ì²éÆ¬¶Î×ÅÉ«Æ÷±àÒë´íÎó
+    // æ£€æŸ¥ç‰‡æ®µç€è‰²å™¨ç¼–è¯‘é”™è¯¯
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
     if (!success)
     {
@@ -34,13 +34,13 @@ unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fra
         std::cerr << "ERROR::SHADER::FRAGMENT::COMPILATION_FAILED\n" << infoLog << std::endl;
     }
 
-    // ´´½¨×ÅÉ«Æ÷³ÌĞò
+    // åˆ›å»ºç€è‰²å™¨ç¨‹åº
     unsigned int shaderProgram = glCreateProgram();
     glAttachShader(shaderProgram, vertexShader);
     glAttachShader(shaderProgram, fragmentShader);
     glLinkProgram(shaderProgram);
 
-    // ¼ì²é×ÅÉ«Æ÷³ÌĞòÁ´½Ó´íÎó
+    // æ£€æŸ¥ç€è‰²å™¨ç¨‹åºé“¾æ¥é”™è¯¯
     glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
     if (!success)
     {
@@ -48,15 +48,15 @@ unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fra
         std::cerr << "ERROR::SHADER::PROGRAM::LINKING_FAILED\n" << infoLog << std::endl;
     }
 
-    // É¾³ı×ÅÉ«Æ÷¶ÔÏó
-    // Ö»Òª×ÅÉ«Æ÷ÒÑ¾­±»ÕıÈ·µØÁ´½Óµ½×ÅÉ«Æ÷³ÌĞòÖĞ£¬É¾³ıËüÃÇ²»»áÓ°Ïì³ÌĞòµÄÕı³£ÔËĞĞ¡£
+    // åˆ é™¤ç€è‰²å™¨å¯¹è±¡
+    // åªè¦ç€è‰²å™¨å·²ç»è¢«æ­£ç¡®åœ°é“¾æ¥åˆ°ç€è‰²å™¨ç¨‹åºä¸­ï¼Œåˆ é™¤å®ƒä»¬ä¸ä¼šå½±å“ç¨‹åºçš„æ­£å¸¸è¿è¡Œã€‚
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
     return shaderProgram;
 }
 
-// ÔÚ glfw ´°¿Ú±êÌâÏÔÊ¾ÖĞÎÄ
+// åœ¨ glfw çª—å£æ ‡é¢˜æ˜¾ç¤ºä¸­æ–‡
 void SetWindowTitleUTF8(GLFWwindow* window, const char* title)
 {
     int wlen = MultiByteToWideChar(CP_ACP, 0, title, -1, NULL, 0);
@@ -73,21 +73,21 @@ void SetWindowTitleUTF8(GLFWwindow* window, const char* title)
     delete[] utf8str;
 }
 
-// ³õÊ¼»¯ GLFW ºÍ OpenGL
+// åˆå§‹åŒ– GLFW å’Œ OpenGL
 bool InitOpenGL(const int WIDTH, const int HEIGHT)
 {
-    // ³õÊ¼»¯ GLFW
+    // åˆå§‹åŒ– GLFW
     if (!glfwInit())
     {
         return false;
     }
 
-    // ÉèÖÃ GLFW °æ±¾
+    // è®¾ç½® GLFW ç‰ˆæœ¬
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    // ´´½¨´°¿Ú
+    // åˆ›å»ºçª—å£
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "OpenGL_demo", NULL, NULL);
 	HWND hwnd = glfwGetWin32Window(window);
 
@@ -98,20 +98,20 @@ bool InitOpenGL(const int WIDTH, const int HEIGHT)
     }
     SetWindowTitleUTF8(window, "OpenGL_demo");
 
-    // ÉèÖÃµ±Ç°´°¿ÚÎª»î¶¯´°¿Ú
+    // è®¾ç½®å½“å‰çª—å£ä¸ºæ´»åŠ¨çª—å£
     glfwMakeContextCurrent(window);
 
-    // ³õÊ¼»¯ GLAD
+    // åˆå§‹åŒ– GLAD
     if (!gladLoadGL(glfwGetProcAddress))
     {
         std::cerr << "Failed to initialize GLAD" << std::endl;
         return false;
     }
 
-    // ÉèÖÃÊÓ¿Ú
+    // è®¾ç½®è§†å£
     glViewport(0, 0, WIDTH, HEIGHT);
 
-    // ÆôÓÃÉî¶È²âÊÔ
+    // å¯ç”¨æ·±åº¦æµ‹è¯•
     glEnable(GL_DEPTH_TEST);
 
     return true;
@@ -119,51 +119,51 @@ bool InitOpenGL(const int WIDTH, const int HEIGHT)
 
 bool ShouldRedraw(int fps)
 {
-    // Ä¬ÈÏÖ¡ÂÊ
+    // é»˜è®¤å¸§ç‡
     if (fps <= 0)
     {
 		fps = 60; 
     }
 
-	static double lastTime = 0.0;           // ÉÏ´Î»æÖÆÊ±¼ä
+	static double lastTime = 0.0;           // ä¸Šæ¬¡ç»˜åˆ¶æ—¶é—´
 
-    double currentTime = glfwGetTime();     // »ñÈ¡µ±Ç°Ê±¼ä
-	double interval = 1.0 / fps;            // ¼ÆËãÃ¿Ö¡µÄÊ±¼ä¼ä¸ô
+    double currentTime = glfwGetTime();     // è·å–å½“å‰æ—¶é—´
+	double interval = 1.0 / fps;            // è®¡ç®—æ¯å¸§çš„æ—¶é—´é—´éš”
 
-    // ¼ÆËãÊ±¼ä²î
+    // è®¡ç®—æ—¶é—´å·®
     if (currentTime - lastTime >= interval) 
     {
-        lastTime = currentTime;             // ¸üĞÂ×îºó»æÖÆÊ±¼ä
-        return true;                        // ·µ»ØĞèÒªÖØ»æ
+        lastTime = currentTime;             // æ›´æ–°æœ€åç»˜åˆ¶æ—¶é—´
+        return true;                        // è¿”å›éœ€è¦é‡ç»˜
     }
 
-    return false;                           // ²»ĞèÒªÖØ»æ
+    return false;                           // ä¸éœ€è¦é‡ç»˜
 }
 
 
 /*
-    // Ö¡ÂÊ¿ØÖÆ
+    // å¸§ç‡æ§åˆ¶
     double timePrevious = glfwGetTime();
     double timeLast = 0.0;
     int fps = 0;
-    double standard_frame_rate = 60; // Ä¿±êÖ¡ÂÊ
-    double frameTimeLimit = 1.0 / standard_frame_rate;  // ³õÊ¼ÌøÖ¡Ê±¼ä
+    double standard_frame_rate = 60; // ç›®æ ‡å¸§ç‡
+    double frameTimeLimit = 1.0 / standard_frame_rate;  // åˆå§‹è·³å¸§æ—¶é—´
     float fltFactor = 0.0f;
     double timeFramePrevious = glfwGetTime();
     double timeFrameLast = 0.0;
 */
 
 
-// Ö¡ÂÊ¿ØÖÆº¯Êı
-// fps: µ±Ç°Ö¡ÂÊ
-// frameTimeLimit£º µ±Ç°ÌøÖ¡Ê±¼ä
+// å¸§ç‡æ§åˆ¶å‡½æ•°
+// fps: å½“å‰å¸§ç‡
+// frameTimeLimitï¼š å½“å‰è·³å¸§æ—¶é—´
 double AdjustFrameRate(int& fps, double& frameTimeLimit, double standard_frame_rate, double& timeFrameLast, double& timeFramePrevious) {
-    // ¼ÆËãÊ±¼ä¼ä¸ô
+    // è®¡ç®—æ—¶é—´é—´éš”
     timeFramePrevious = glfwGetTime();
     if ((timeFramePrevious - timeFrameLast) >= 1.0f) {
         timeFrameLast = timeFramePrevious;
 
-        // ¸ù¾İµ±Ç°Ö¡ÂÊµ÷ÕûÌøÖ¡Ê±¼ä£¬ÈÃÖ¡ÂÊÇ÷½ü standard_frame_rate
+        // æ ¹æ®å½“å‰å¸§ç‡è°ƒæ•´è·³å¸§æ—¶é—´ï¼Œè®©å¸§ç‡è¶‹è¿‘ standard_frame_rate
         float fltFactor = 0.0f;
         if (fps > standard_frame_rate) {
             if (fps > (standard_frame_rate * 2)) {
@@ -194,7 +194,7 @@ double AdjustFrameRate(int& fps, double& frameTimeLimit, double standard_frame_r
         }
         fps = 0;
 
-        // ·ÀÖ¹ÌøÖ¡Ê±¼ä¹ıĞ¡
+        // é˜²æ­¢è·³å¸§æ—¶é—´è¿‡å°
         if (frameTimeLimit < 0.000001) {
             frameTimeLimit = 0.1;
         }

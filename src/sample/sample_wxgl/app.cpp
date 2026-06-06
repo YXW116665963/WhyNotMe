@@ -131,9 +131,6 @@ void TestGLCanvas::OnPaint(wxPaintEvent& WXUNUSED(event))
     //- draw
     m_glHandler.GLWhileDo();
 
-
-    // Render the graphics and swap the buffers.
-    canvas.DrawRotatedCube(m_xangle, m_yangle);
     SwapBuffers();
 }
 
@@ -156,7 +153,7 @@ wxString glGetwxString(GLenum name)
 // ----------------------------------------------------------------------------
 
 wxBEGIN_EVENT_TABLE(MyFrame, wxFrame)
-EVT_MENU(wxID_NEW, MyFrame::OnNewWindow)
+//EVT_MENU(wxID_NEW, MyFrame::OnNewWindow)
 EVT_MENU(wxID_CLOSE, MyFrame::OnClose)
 wxEND_EVENT_TABLE()
 
@@ -193,9 +190,4 @@ void MyFrame::OnClose(wxCommandEvent& WXUNUSED(event))
 {
     // true is to force the frame to close
     Close(true);
-}
-
-void MyFrame::OnNewWindow(wxCommandEvent& WXUNUSED(event))
-{
-    new MyFrame();
 }

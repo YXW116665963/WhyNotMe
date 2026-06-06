@@ -16,6 +16,9 @@ namespace why
 	// 菜单枚举量
 	enum MenuID
 	{
+		//测试界面功能
+		ID_TEST_REPAINT_PAGE = wxID_HIGHEST + 1,
+
 		//File
 		ID_FILE_OPEN = wxID_HIGHEST + 100,
 		ID_FILE_SAVE = wxID_HIGHEST + 101,
@@ -35,19 +38,18 @@ namespace why
 	void MainFrame::InitMenu()
 	{		
 		wxMenuBar* menuBar = new wxMenuBar;		
-		const int ID_MENU_OPEN = wxID_HIGHEST + 1;
 		//File
 		wxMenu* fileMenu = new wxMenu;
-
+		
 		fileMenu->Append(ID_FILE_OPEN, "打开文件");
 		Bind(wxEVT_MENU, &MainFrame::OnMenuOpenFile, this, ID_FILE_OPEN);
 
 		fileMenu->Append(ID_FILE_SAVE, "保存文件");
-		Bind(wxEVT_MENU, &MainFrame::OnMenuOpenFile, this, ID_FILE_SAVE);
+		Bind(wxEVT_MENU, &MainFrame::OnMenuSaveFile, this, ID_FILE_SAVE);
 		//File-格式
 		wxMenu* formatMenu = new wxMenu();
-		formatMenu->Append(ID_MENU_OPEN + 4, "格式化 JSON");
-		formatMenu->Append(ID_MENU_OPEN + 5, "格式化 XML");
+		formatMenu->Append(wxID_HIGHEST + 4, "格式化 JSON");
+		formatMenu->Append(wxID_HIGHEST + 5, "格式化 XML");
 		fileMenu->AppendSubMenu(formatMenu, "格式");
 		menuBar->Append(fileMenu, "File");
 
@@ -62,6 +64,15 @@ namespace why
 
 		wxMenu* helpMenu = new wxMenu;
 		menuBar->Append(helpMenu, "Help");
+
+		//Test
+		wxMenu* testMenu = new wxMenu;
+
+		testMenu->Append(ID_TEST_REPAINT_PAGE, "界面重绘");
+		Bind(wxEVT_MENU, &MainFrame::OnMenuRepaintPage, this, ID_TEST_REPAINT_PAGE);
+
+		menuBar->Append(testMenu, "Test");
+
 
 		SetMenuBar(menuBar);
 	}
@@ -95,9 +106,14 @@ namespace why
 		wxMessageBox("OnMenuOpenFile！");
 	}
 
-	void OnMenuOpenSave(wxCommandEvent& event)
+	void MainFrame::OnMenuSaveFile(wxCommandEvent& event)
 	{
-		wxMessageBox("OnMenuOpenSave！");
+		wxMessageBox("OnMenuSaveFile！");
+	}
+
+	void MainFrame::OnMenuRepaintPage(wxCommandEvent& event)
+	{
+		SINGLETON_PTR(FrameManager)->RepaintCurWindow();
 	}
 
 

@@ -17,7 +17,7 @@ namespace why
 	* @brief	PanelGraphic ->
 	*			IPanelGraphicElement ->
 	*			IBackGroundGraphic ->
-	*			IBackGround¡¢IPicture¡¢ILine¡¢IText
+	*			IBackGroundã€IPictureã€ILineã€IText
 	*/
 	class PanelGraphic
 	{

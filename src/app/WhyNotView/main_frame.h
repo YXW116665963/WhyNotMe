@@ -30,7 +30,11 @@ namespace why
 
         //File
         void OnMenuOpenFile(wxCommandEvent& event);
-        void OnMenuOpenSave(wxCommandEvent& event);
+        void OnMenuSaveFile(wxCommandEvent& event);
+
+        //Test
+        void OnMenuRepaintPage(wxCommandEvent& event);
+
     private:        
 
 

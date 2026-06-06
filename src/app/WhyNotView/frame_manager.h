@@ -44,6 +44,12 @@ namespace why
         void OpenWindow(const std::string& strWindowName);
 		void CloseWindow(const WindowInfo& windowInfo);
 
+
+
+        // only for test
+        void RepaintCurWindow();
+
+
         // 响应窗口大小变化@why.todo
         void OnSize();
     private:

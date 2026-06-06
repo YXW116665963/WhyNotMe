@@ -70,7 +70,7 @@ namespace why
 
         m_pMainFrame->Show(true);
 
-        SINGLETON_PTR(FrameManager)->OpenWindow("main_catalog_0_0");
+        SINGLETON_PTR(FrameManager)->OpenWindow("gl_window");
 
         return true;
     }

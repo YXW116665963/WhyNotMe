@@ -5,20 +5,36 @@
 const int WIDTH = 500;
 const int HEIGHT = 500;
 
-// 着色器代码
-const char* vertexShaderSource = "#version 330 core\n"
-"layout (location = 0) in vec3 aPos;\n"
-"uniform mat4 model;\n"
-"uniform mat4 view;\n"
-"uniform mat4 projection;\n"
+
+//这两段字符是写给显卡 GPU 执行的小程序，叫做 GLSL（OpenGL Shading Language）。
+
+
+/*
+    C++ 传顶点
+       ↓
+    顶点着色器：计算3D位置
+       ↓
+    光栅化：生成像素
+       ↓
+    片段着色器：给每个像素上色
+       ↓
+    显示到屏幕
+*/
+
+// 顶点着色器（Vertex Shader）
+const char* vertexShaderSource = "#version 330 core\n"              //告诉显卡：我用的是 OpenGL 3.3 核心版本语法，必须写在第一行
+"layout (location = 0) in vec3 aPos;\n"                             //输入：从 C++ 传过来的 顶点坐标（x,y,z）aPos
+"uniform mat4 model;\n"                                             //模型矩阵：控制物体 平移 / 旋转 / 缩放
+"uniform mat4 view;\n"                                              //观察矩阵：控制 相机位置、看哪里
+"uniform mat4 projection;\n"                                        //投影矩阵：做 3D 透视效果（近大远小）
 "void main() {\n"
-"   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"
+"   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"   //计算出这个顶点最终在屏幕上的位置
 "}\0";
-// 立方体的颜色
+// 片段着色器（Fragment Shader）
 const char* fragmentShaderSource = "#version 330 core\n"
-"out vec4 FragColor;\n"
+"out vec4 FragColor;\n"                                             //输出：最终像素颜色
 "void main() {\n"
-"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 橙色
+"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 橙色            //格式：(R, G, B, A) → 红、绿、蓝、透明度
 "}\0";
 
 // 绘制三角形
@@ -44,11 +60,10 @@ GLHandler::GLHandler()
 
 void GLHandler::GLPrepare()
 {
-    // 初始化 OpenGL
-    if (!InitOpenGL(WIDTH, HEIGHT))
-    {
-        return;
-    }
+    // 启用深度测试
+    glEnable(GL_DEPTH_TEST);
+    // 设置视口
+    glViewport(0, 0, WIDTH, HEIGHT);
 
     // 创建着色器程序
     shaderProgram = CreateShaderProgram(vertexShaderSource, fragmentShaderSource);
@@ -120,9 +135,9 @@ void GLHandler::GLWhileDo()
     GLuint projectionLoc = glGetUniformLocation(shaderProgram, "projection");
     glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
-
-    // 绘制物体
-    Demo_DrawTriangles(shaderProgram, VAO);
+    glBindVertexArray(VAO);
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glBindVertexArray(0);
 }
 
 void GLHandler::GLEnd()
@@ -184,19 +199,4 @@ unsigned int CreateShaderProgram(const char* vertexShaderSource, const char* fra
     glDeleteShader(fragmentShader);
 
     return shaderProgram;
-}
-
-// 初始化 GLFW 和 OpenGL
-bool InitOpenGL(const int WIDTH, const int HEIGHT)
-{
-    // 启用深度测试
-    glEnable(GL_DEPTH_TEST);
-
-
-    // 设置视口
-    glViewport(0, 0, WIDTH, HEIGHT);
-
-
-
-    return true;
 }

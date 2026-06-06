@@ -104,5 +104,11 @@ namespace why
         PanelGraphic				m_graphic;
 		wxBitmap					m_bufferBitmap;
 		wxSize						m_szBitmap;
+
+	private:
+		void LoadRenderRect(std::string strFileName);
+		std::map<std::string, wxRect> m_mapRenderRect;
+	public:
+		bool GetRenderRect(std::string strRectName,wxRect& rect);
     };
 }
