@@ -73,6 +73,20 @@ namespace why
 	*/
 	bool IsFile(const std::string& filePath);
 
+	/**
+	* @author	why
+	* @brief	直接读取文件字符
+	* @param	strFilePath 文件路径
+	* @parame	strRes		文件文本内容
+	* @return
+	* @ - true 加载成功
+	* @ - false 加载失败
+	*/
+	bool LoadTextFile(const std::string& strFilePath, std::string& strRes);
+
+
+
+
     /**
     * @brief 加载文本文件(*.txt)
     * @param strFileName 待加载得文件名称

@@ -76,6 +76,23 @@ namespace why
 		return std::filesystem::is_regular_file(path);
 	}
 
+	bool LoadTextFile(const std::string& strFilePath, std::string& strRes)
+	{
+		// 以文本模式打开
+		std::ifstream file(strFilePath);
+
+		if (!file.is_open()) {
+			return false; // 打开失败
+		}
+
+		strRes = std::string(
+			std::istreambuf_iterator<char>(file),
+			std::istreambuf_iterator<char>());
+
+		// 把整个文件读进 string
+		return true;
+	}
+
 	bool LoadTextFile(const std::string& strFileName, std::vector<std::string>& lineList)
 	{
 		std::ifstream			textFile;

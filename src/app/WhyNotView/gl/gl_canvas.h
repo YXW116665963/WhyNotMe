@@ -16,6 +16,9 @@ namespace why
 	private:
 		void OnPaint(wxPaintEvent& event);
 		void InitGL();
+
+
+
 		void Render();
 	private:
 		//保存你所有 OpenGL 状态、资源、绘制环境的对象

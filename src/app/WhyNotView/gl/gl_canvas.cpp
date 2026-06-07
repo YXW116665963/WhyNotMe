@@ -44,28 +44,43 @@ namespace why
 	// VAO / VBO：只管数据怎么存、怎么读
 	// 着色器：只管数据是什么含义
 	// 顶点着色器（Vertex Shader）
+	//const char* vertexShaderSource =
+	//	//告诉显卡：我用的是 OpenGL 3.3 核心版本语法，必须写在第一行
+	//	"#version 330 core\n"
+	//	//layout(location = 0) in vec3 aPos;     // 0 号 = 位置
+	//	//layout(location = 0) in vec3 aNormal;  // 0 号 = 法线 
+	//	//输入：从 C++ 传过来的 顶点坐标（x,y,z）aPos
+	//	"layout (location = 0) in vec3 aPos;\n"
+	//	//模型矩阵：控制物体 平移 / 旋转 / 缩放
+	//	"uniform mat4 model;\n"
+	//	//观察矩阵：控制 相机位置、看哪里
+	//	"uniform mat4 view;\n"
+	//	//投影矩阵：做 3D 透视效果（近大远小）
+	//	"uniform mat4 projection;\n"
+	//	"void main() {\n"
+	//	"   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"   //计算出这个顶点最终在屏幕上的位置
+	//	"}\0";
+	//// 片段着色器（Fragment Shader）
+	//const char* fragmentShaderSource = "#version 330 core\n"
+	//	"out vec4 FragColor;\n"                                             //输出：最终像素颜色
+	//	"void main() {\n"
+	//	"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 橙色            //格式：(R, G, B, A) → 红、绿、蓝、透明度
+	//	"}\0";
+
 	const char* vertexShaderSource =
-		//告诉显卡：我用的是 OpenGL 3.3 核心版本语法，必须写在第一行
-		"#version 330 core\n"
-		//layout(location = 0) in vec3 aPos;     // 0 号 = 位置
-		//layout(location = 0) in vec3 aNormal;  // 0 号 = 法线 
-		//输入：从 C++ 传过来的 顶点坐标（x,y,z）aPos
+		"#version 450 core\n"
 		"layout (location = 0) in vec3 aPos;\n"
-		//模型矩阵：控制物体 平移 / 旋转 / 缩放
-		"uniform mat4 model;\n"
-		//观察矩阵：控制 相机位置、看哪里
-		"uniform mat4 view;\n"
-		//投影矩阵：做 3D 透视效果（近大远小）
-		"uniform mat4 projection;\n"
+		"layout (location = 1) in vec3 aNormal;\n"
 		"void main() {\n"
-		"   gl_Position = projection * view * model * vec4(aPos, 1.0);\n"   //计算出这个顶点最终在屏幕上的位置
+		"   gl_Position = vec4(aPos, 1.0);\n"
 		"}\0";
-	// 片段着色器（Fragment Shader）
-	const char* fragmentShaderSource = "#version 330 core\n"
+	const char* fragmentShaderSource = "#version 450 core\n"
 		"out vec4 FragColor;\n"                                             //输出：最终像素颜色
 		"void main() {\n"
 		"   FragColor = vec4(1.0f, 0.5f, 0.2f, 1.0f);\n" // 橙色            //格式：(R, G, B, A) → 红、绿、蓝、透明度
 		"}\0";
+
+
 
 	void GLCanvas::InitGL()
 	{
@@ -178,13 +193,14 @@ namespace why
 		glm::mat4 projection = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -1.0f, 1.0f);
 
 
-		// 设置模型、视图和投影矩阵        
-		GLuint modelLoc = glGetUniformLocation(m_shaderProgram, "model");
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		GLuint viewLoc = glGetUniformLocation(m_shaderProgram, "view");
-		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
-		GLuint projectionLoc = glGetUniformLocation(m_shaderProgram, "projection");
-		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+		// 设置模型、视图和投影矩阵
+		// glGetUniformLocation：给着色器中对应变量赋值
+		//GLuint modelLoc = glGetUniformLocation(m_shaderProgram, "model");
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//GLuint viewLoc = glGetUniformLocation(m_shaderProgram, "view");
+		//glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		//GLuint projectionLoc = glGetUniformLocation(m_shaderProgram, "projection");
+		//glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
 
 		glBindVertexArray(m_vao);

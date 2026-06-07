@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SHADERS>
+	<Shader prefix = "/">
+        <Background name ="pure_grey" x="0" y="0" width="1920" height="1200"/>
+		<Background name ="group_box" x="10" y="12" width="1900" height="1176"/>
+    </Shader>
+</SHADERS>
