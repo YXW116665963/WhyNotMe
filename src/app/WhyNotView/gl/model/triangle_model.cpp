@@ -54,6 +54,42 @@ namespace why
 		glClear(GL_COLOR_BUFFER_BIT);
 		glUseProgram(uShaderProgramId);
 
+		// 模型、视图和投影矩阵
+		// 模型和视图矩阵要正常变化均需要设置为单位矩阵的初值
+		glm::mat4 model = glm::mat4(1.0f);
+		glm::mat4 view = glm::mat4(1.0f);
+		//glm::mat4 projection = glm::ortho(-1.0f, 1.0f, -1.0f, 1.0f, -1.0f, 1.0f);
+
+
+		/*
+			glm::rotate
+			作用：生成一个旋转矩阵，并应用到输入矩阵上
+		*/
+		// 绕X轴负向55°，等同于头向上仰
+		// vec3(1.0f, 0.0f, 0.0f)表示x轴
+		model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+		/*
+			glm::translate
+			作用：生成一个平移矩阵，并应用到输入矩阵上
+			ps:方向和如何应用到矩阵的计算参看learnOpengl
+		*/
+		// 相机后移3个单位
+		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+
+
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1920 / 1200, 0.1f, 100.0f);
+
+		//// 设置模型、视图和投影矩阵
+		//// glGetUniformLocation：给着色器中对应变量赋值
+		GLuint modelLoc = glGetUniformLocation(uShaderProgramId, "model");
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		GLuint viewLoc = glGetUniformLocation(uShaderProgramId, "view");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		GLuint projectionLoc = glGetUniformLocation(uShaderProgramId, "projection");
+		glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+
 		//图元装配
 		glBindVertexArray(m_uVao);		
 		glDrawArrays(GL_TRIANGLES, 0, 3);
