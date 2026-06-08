@@ -137,6 +137,23 @@ namespace why
         g_globalPointer.m_dataCenterPtr->
             RegisterStringData(envVar::g_Domain, envVar::strUIPicture_dirPath, strUIPicture_dirPath.c_str(), DataStyle::ePersistence);
 
+        // GL 着色器目录
+        std::string strGLShader_dirPath = pathAppender.SetSourcePath(strDeployment_dirPath)
+            .AppendChildPath("Resource")
+            .AppendChildPath("Shaders")
+            .GetPath();
+        g_globalPointer.m_dataCenterPtr->
+            RegisterStringData(envVar::g_Domain, envVar::strGLShader_dirPath, strGLShader_dirPath.c_str(), DataStyle::ePersistence);
+        // GL 着色器xml索引
+        std::string strGLShaderXml_filePath = pathAppender.SetSourcePath(strDeployment_dirPath)
+            .AppendChildPath("Resource")
+            .AppendChildPath("Shaders")
+            .AppendChildPath("shaders.xml")
+            .GetPath();
+        g_globalPointer.m_dataCenterPtr->
+            RegisterStringData(envVar::g_Domain, envVar::strGLShaderXml_filePath, strGLShaderXml_filePath.c_str(), DataStyle::ePersistence);
+
+
         // UI Resource.xml:字体背景等资源
         std::string strUIResourceXml_filePath = pathAppender.SetSourcePath(strDeployment_dirPath)
             .AppendChildPath("Resource")

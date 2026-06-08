@@ -3,14 +3,10 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "wx/glcanvas.h"
-
+#include "gl_util.h"
 namespace why
 {
-	struct ModelInfo
-	{
-		GLuint uVao;
-		GLuint uVbo;
-	};
+
 
 
 	class TriangleModel
@@ -22,7 +18,10 @@ namespace why
 		void Draw(const GLuint& uShaderProgramId);
 
 	private:
-		
+
+		std::vector<ShaderInfo> m_vecShaderInfo;
+
+		std::string strShadersProgramName;
 
 
 		float vertices[18] = {

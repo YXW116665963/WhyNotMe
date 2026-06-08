@@ -5,7 +5,7 @@
 #include "wx/glcanvas.h"
 
 #include "child_panel.h"
-
+#include "triangle_model.h"
 namespace why
 {
 	class GLCanvas : public wxGLCanvas
@@ -15,12 +15,15 @@ namespace why
 		~GLCanvas();
 	private:
 		void OnPaint(wxPaintEvent& event);
-		void InitGL();
+		void Init();
 
-
+		void InitOpenGLFunc();
 
 		void Render();
 	private:
+
+		std::unique_ptr<TriangleModel> m_ptrTriangleModel;
+
 		//保存你所有 OpenGL 状态、资源、绘制环境的对象
 		//你创建的 VAO / VBO / Shader；纹理、缓冲区；状态机（清屏颜色、开启深度测试等
 		wxGLContext* m_pContext;

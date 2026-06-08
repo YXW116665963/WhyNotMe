@@ -37,9 +37,12 @@ namespace why
 	// UI级env
 	namespace envVar
 	{
-		const char* strUIXml_dirPath = "ui_xml_dirPath";
-		const char* strUIPicture_dirPath = "ui_picture_dirPath";
-		const char* strUIResourceXml_filePath = "resource_xml_filePath";
+		const char* strUIXml_dirPath			= "ui_xml_dirPath";
+		const char* strUIPicture_dirPath		= "ui_picture_dirPath";
+		const char* strUIResourceXml_filePath	= "resource_xml_filePath";
+
+		const char* strGLShader_dirPath			= "gl_shader_dirPath";
+		const char* strGLShaderXml_filePath		= "gl_shader_xml_filePath";
 	}
 
 }
