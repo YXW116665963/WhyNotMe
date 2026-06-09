@@ -3,7 +3,6 @@
 #include "file_util.h"
 #include "xml_util.h"
 
-
 namespace why
 {
 	TriangleModel::TriangleModel(ModelInfo& modelInfo)
@@ -13,6 +12,7 @@ namespace why
 	{		
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);// 将顶点数据赋值给VBO		
 		glLineWidth(1);// 设置线宽
+
 
 		//#glVertexAttribPointer
 		// 第一个参数为，索引开始位置
@@ -41,6 +41,8 @@ namespace why
 	{
 
 	}
+
+
 
 	void TriangleModel::Draw(const GLuint& uShaderProgramId)
 	{
@@ -75,10 +77,25 @@ namespace why
 			ps:方向和如何应用到矩阵的计算参看learnOpengl
 		*/
 		// 相机后移3个单位
-		view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+		//view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
 
+		/*
+			定义一个摄像机位置，一个目标位置和一个表示世界空间中的上向量的向量（我们计算右向量使用的那个上向量）。
+			接着GLM就会创建一个LookAt矩阵
+			eye:方向向量，center到摄像机位置的向量
+			center：视点，摄像机看向的点，本例中为坐标原点
+			up:自定义的上向量，本例中为(0.0f, 1.0f, 0.0f)，即Y轴正方向
+		*/
 
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1920 / 1200, 0.1f, 100.0f);
+		float radius = 10.0f;
+		float camX = sin(getTime()) * radius;
+		float camZ = cos(getTime()) * radius;
+
+		view = glm::lookAt(glm::vec3(camX, 0.0, camZ),
+			glm::vec3(0.0f, 0.0f, 0.0f),
+			glm::vec3(0.0f, 1.0f, 0.0f));
+
+		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1800 / 1000, 0.1f, 100.0f);
 
 		//// 设置模型、视图和投影矩阵
 		//// glGetUniformLocation：给着色器中对应变量赋值

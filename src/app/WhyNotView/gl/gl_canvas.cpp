@@ -2,7 +2,7 @@
 #include "gl_canvas.h"
 #include "wx/wx.h"
 #include "logger.h"
-
+#include "viewer_setting.h"
 namespace why
 {
 	GLCanvas::GLCanvas(wxWindow* parent, const wxRect& rect)
@@ -41,8 +41,19 @@ namespace why
 		Render();
 	}
 
+	// 获取主显示器缩放因子，等效 Qt devicePixelRatio
+	double GetGlobalDevicePixelRatio()
+	{
+		wxDisplay primaryDisplay; // 0 = 主屏
+		double res = primaryDisplay.GetScaleFactor();
+		return res;
+	}
+
+
 	void GLCanvas::Init()
 	{
+		ViewerSetting::devicePixelRatio = GetGlobalDevicePixelRatio();
+
 		InitOpenGLFunc();
 		ModelInfo modelInfo(m_vao,m_vbo,0);
 		m_ptrTriangleModel.reset(new TriangleModel(modelInfo));

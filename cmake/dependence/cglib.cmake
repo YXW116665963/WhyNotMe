@@ -1,0 +1,10 @@
+set(cglib_dll_name "CGLib.dll")
+set(cglib_lib_name "CGLib.lib")
+
+set(cglib_dir_path ${dependence_dir_path}/cglib)
+if(OS_NAME STREQUAL "windows")
+	set(cglib_lib_dir_path ${cglib_dir_path}/bin/win64/Release)
+	set(cglib_inc_dir_path ${cglib_dir_path}/include)
+else()
+	#MESSAGE("Not windows platform is not set wxwidgets path")
+endif()

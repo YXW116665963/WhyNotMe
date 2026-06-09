@@ -5,9 +5,20 @@
 #include <vector>
 #include <string>
 #include<sstream>
+#include <chrono>
 
 namespace why
 {
+	inline double getTime()
+	{
+		// 高精度计时器
+		auto now = std::chrono::high_resolution_clock::now();
+		auto duration = now.time_since_epoch();
+		auto sec = duration_cast<std::chrono::microseconds>(duration).count() / 1000000.0;
+		return sec;
+	}
+
+
 	/**
 	* @brief 调整字节顺序
 	* @param data 调整前的字节顺序

@@ -34,6 +34,8 @@ include_directories(${glog_inc_dir_path})
 include_directories(${wxwidgets_inc_dir_path})
 include_directories(${glad_inc_dir_path})
 include_directories(${glm_inc_dir_path})
+include_directories(${cglib_inc_dir_path})#useless
+include_directories(${stb_image_inc_dir_path})
 ##
 #
 
@@ -41,6 +43,7 @@ include_directories(${glm_inc_dir_path})
 ## 3rd lib dir
 link_directories(${glog_lib_dir_path})
 link_directories(${wxwidgets_lib_dir_path})
+link_directories(${cglib_lib_dir_path})
 
 ##
 link_directories(${lib_dir_path})
@@ -59,7 +62,8 @@ target_link_libraries(${proj_name}
 	${wxwidgets_lib_name} 
 	${platform_lib_name}
 	${data_def_lib_name}
-	${glad_lib_name}	
+	${glad_lib_name}
+	${cglib_lib_name}
 )
 
 # 配置exe为窗口程序，而非控制台程序
@@ -85,7 +89,7 @@ if(OS_NAME STREQUAL "windows")
 	
 COPY_FILE_TO_BIN(${proj_name} ${glog_lib_dir_path}/${glog_dll_name})
 COPY_FILE_TO_BIN(${proj_name} ${wxwidgets_lib_dir_path}/${wxwidgets_dll_name})
-
+COPY_FILE_TO_BIN(${proj_name} ${cglib_lib_dir_path}/${cglib_dll_name})
 endif()
 
 # 拷贝资源文件
