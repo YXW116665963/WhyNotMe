@@ -3,6 +3,7 @@
 #include "wx/wx.h"
 #include "logger.h"
 #include "viewer_setting.h"
+#include "camera.h"
 namespace why
 {
 	GLCanvas::GLCanvas(wxWindow* parent, const wxRect& rect)
@@ -10,6 +11,7 @@ namespace why
 		, m_fCameraPitch(0.0f)
 		, m_fCameraYaw(-90.0f)
 		, m_bFirstMouse(true)
+		, m_fFov(45.0)
 	{
 		//- 类似于glfw的初始化并指定版本等函数
 		wxGLContextAttrs cxtAttrs;
@@ -24,12 +26,24 @@ namespace why
 		SetCurrent(*m_pContext);
 
 		m_cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+		m_cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
+		m_cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
 
 		Init();
 		Bind(wxEVT_PAINT, &GLCanvas::OnPaint, this);
 		Bind(wxEVT_LEFT_DOWN, &GLCanvas::OnLeftDown, this);
 		Bind(wxEVT_LEFT_UP, &GLCanvas::OnLeftUp, this);
 		Bind(wxEVT_MOTION, &GLCanvas::OnMouseMove, this);
+
+		Bind(wxEVT_KEY_DOWN, &GLCanvas::OnKeyDown, this);
+		// 让窗口能接收键盘焦点，否则收不到按键
+		SetFocus();
+		// 允许窗口捕获键盘
+		SetCanFocus(true);
+
+
+		Bind(wxEVT_MOUSEWHEEL, &GLCanvas::OnMouseWheel, this);
+
 	}
 
 	GLCanvas::~GLCanvas()
@@ -135,16 +149,13 @@ namespace why
 			up:自定义的上向量，本例中为(0.0f, 1.0f, 0.0f)，即Y轴正方向
 		*/
 
-		glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);		
-		glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
-
 		glm::vec3 front;
 		front.x = cos(glm::radians(m_fCameraYaw)) * cos(glm::radians(m_fCameraPitch));
 		front.y = sin(glm::radians(m_fCameraPitch));
 		front.z = sin(glm::radians(m_fCameraYaw)) * cos(glm::radians(m_fCameraPitch));
 		m_cameraFront = glm::normalize(front);
-		view = glm::lookAt(cameraPos, cameraPos + m_cameraFront, cameraUp);
-		glm::mat4 projection = glm::perspective(glm::radians(45.0f), (float)1800 / 1000, 0.1f, 100.0f);
+		view = glm::lookAt(m_cameraPos, m_cameraPos + m_cameraFront, m_cameraUp);
+		glm::mat4 projection = glm::perspective(glm::radians(m_fFov), (float)1800 / 1000, 0.1f, 100.0f);
 
 		m_ptrShaderProgram->SetMat4f("model", model);
 		m_ptrShaderProgram->SetMat4f("view", view);
@@ -152,6 +163,44 @@ namespace why
 
 		m_ptrTriangleModel->Draw();
 		SwapBuffers();
+	}
+
+	void GLCanvas::OnKeyDown(wxKeyEvent& event)
+	{
+		int key = event.GetKeyCode();
+		float cameraSpeed = 0.05f; // adjust accordingly
+		switch (key)
+		{
+		case 'W':
+		case 'w':
+			// W 按下逻辑
+			m_cameraPos += cameraSpeed * m_cameraFront;
+			break;
+		case 'S':
+		case 's':
+			// S 按下逻辑
+			m_cameraPos -= cameraSpeed * m_cameraFront;
+			break;
+		case 'A':
+		case 'a':
+			// A 按下逻辑
+			m_cameraPos -= glm::normalize(glm::cross(m_cameraFront, m_cameraUp)) * cameraSpeed;
+			break;
+
+		case 'D':
+		case 'd':
+			// D 按下逻辑
+			m_cameraPos += glm::normalize(glm::cross(m_cameraFront, m_cameraUp)) * cameraSpeed;
+			break;
+		default:
+			event.Skip(); // 其他按键交给系统处理
+			return;
+		}
+
+		Render();
+
+
+		event.Skip(false); // 消费掉WASD按键，不向上传递
 	}
 
 	void GLCanvas::OnLeftDown(wxMouseEvent& event)
@@ -197,5 +246,30 @@ namespace why
 		}
 	}
 
+	void GLCanvas::OnMouseWheel(wxMouseEvent& event)
+	{
+		// 滚轮旋转量：正数向上，负数向下
+		int rot = event.GetWheelRotation();
+		int delta = event.GetWheelDelta();
+		float step = 0.5f; // 每次滚动缩放步长
 
+		if (rot > 0)
+		{
+			// 滚轮向上：放大
+			m_fFov += step;
+		}
+		else
+		{
+			// 滚轮向下：缩小
+			m_fFov -= step;
+		}
+
+
+
+		// 刷新画面（OpenGL绘图/双缓冲重绘）
+		Render();
+
+		// 消费事件，不传递给父窗口
+		event.Skip(false);
+	}
 }

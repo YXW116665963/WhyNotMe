@@ -46,21 +46,27 @@ namespace why
 		*/
 		GLuint m_vao;
 
-
+		void OnKeyDown(wxKeyEvent& event);
 	private:
 		// 鼠标事件处理函数
 		void OnLeftDown(wxMouseEvent& event);
 		void OnLeftUp(wxMouseEvent& event);
 		void OnMouseMove(wxMouseEvent& event);
+		// 滚轮回调
+		void OnMouseWheel(wxMouseEvent& event);
 
-
-		wxPoint m_lastPoint;	//拖拽起点
+		wxPoint m_lastPoint;		//上一帧拖拽起点
 		bool	m_bLeftDown;		//左键是否摁住
 
 		float64_t	m_fCameraPitch;
 		float64_t	m_fCameraYaw;
 
+		float32_t	m_fFov;
+		
 		glm::vec3 m_cameraFront;
+		glm::vec3 m_cameraPos;
+		glm::vec3 m_cameraUp;
+
 		bool	m_bFirstMouse;
 	};
 }
