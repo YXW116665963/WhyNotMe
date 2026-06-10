@@ -13,13 +13,25 @@ typedef rapidxml::xml_document<char> CXmlDocument;
 namespace why
 {
 	/**
-* @brief 依据路径查找xml节点
-* @param doc 保存加载解析好得xml文件得内容
-* @param path xml节点得路径(节点所有父节点含自身得名称以'/'链接而成)
-* @return
-* - nullptr 指定得节点不存在
-* - 其他 返回对应得xml节点得对象
-*/
+	* @author why
+	* @brief 依据路径加载xml的根节点
+	* @param strFilePath xml文件路径
+	* @param doc		 pRoot依赖于doc存在，外部创建一个doc即可
+	* @param pRoot 根节点
+	* @return
+	* - true 读取成功
+	* - false
+	*/
+	bool GetXmlRootNode(const std::string& strFilePath, rapidxml::xml_document<char>& doc,CXmlNode*& pRoot);
+
+	/**
+	* @brief 依据路径查找xml节点
+	* @param doc 保存加载解析好得xml文件得内容
+	* @param path xml节点得路径(节点所有父节点含自身得名称以'/'链接而成)
+	* @return
+	* - nullptr 指定得节点不存在
+	* - 其他 返回对应得xml节点得对象
+	*/
 	CXmlNode* QueryXMLNode(const CXmlDocument& doc, const std::string& path);
 
 	/**
@@ -82,8 +94,6 @@ namespace why
 	*/
 	bool GetAttributeText(CXmlNode* pNode, const char* pName, std::string& strValue);
 
-	
-
 	/**
 	* @brief 指定的属性是否存在
 	* @param pNode 节点对象
@@ -93,9 +103,6 @@ namespace why
 	* - flase 不存在
 	*/
 	bool HasAttribute(CXmlNode* pNode, const char* pName);
-
-
-
 
 	/**
 	* @author	why

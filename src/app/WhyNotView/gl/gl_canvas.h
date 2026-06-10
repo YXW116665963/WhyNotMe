@@ -1,4 +1,5 @@
 #pragma once
+#include "shader.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
@@ -6,6 +7,7 @@
 
 #include "child_panel.h"
 #include "triangle_model.h"
+
 namespace why
 {
 	class GLCanvas : public wxGLCanvas
@@ -21,7 +23,7 @@ namespace why
 
 		void Render();
 	private:
-
+		std::unique_ptr<ShaderProgram> m_ptrShaderProgram;
 		std::unique_ptr<TriangleModel> m_ptrTriangleModel;
 
 		//保存你所有 OpenGL 状态、资源、绘制环境的对象
@@ -43,6 +45,23 @@ namespace why
 		一句话：VAO = 绘画配置文件
 		*/
 		GLuint m_vao;
+
+
+	private:
+		// 鼠标事件处理函数
+		void OnLeftDown(wxMouseEvent& event);
+		void OnLeftUp(wxMouseEvent& event);
+		void OnMouseMove(wxMouseEvent& event);
+
+
+		wxPoint m_lastPoint;	//拖拽起点
+		bool	m_bLeftDown;		//左键是否摁住
+
+		float64_t	m_fCameraPitch;
+		float64_t	m_fCameraYaw;
+
+		glm::vec3 m_cameraFront;
+		bool	m_bFirstMouse;
 	};
 }
 

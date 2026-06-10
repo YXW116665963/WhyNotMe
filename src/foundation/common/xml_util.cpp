@@ -1,8 +1,41 @@
 #include "xml_util.h"
 #include "text_util.h"
+#include "file_util.h"
+#include "logger.h"
 #include <cstring>  // 或 #include <strings.h> 在某些系统上
 namespace why
 {
+	bool GetXmlRootNode(const std::string& strFilePath, rapidxml::xml_document<char>& doc,CXmlNode*& pRoot)
+	{
+		std::string						strXMLFileName = UTF8ToLocal(strFilePath);
+		rapidxml::file<char>			fdoc(strXMLFileName.c_str());
+
+		try
+		{
+			doc.parse<0>(fdoc.data());
+		}
+		catch (const rapidxml::parse_error& ex)
+		{
+			LOG_ERROR << "invalidate xml file:" << strXMLFileName << ",where:" << ex.where<char>();
+			throw ex;
+			return false;
+		}
+		catch (const std::exception& e)
+		{
+			LOG_ERROR << "invalidate xml file:" << strXMLFileName;
+			throw e;
+			return false;
+		}
+		pRoot = doc.first_node();
+		if (nullptr == pRoot)
+		{
+			LOG_INFO << "invalidate xml file:" << strXMLFileName;
+			return false;
+		}
+
+		return true;
+	}
+
 	CXmlNode* QueryXMLNode(const CXmlDocument& doc, const std::string& path)
 	{
 		std::vector<std::string>		items;
