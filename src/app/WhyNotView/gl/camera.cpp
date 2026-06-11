@@ -78,9 +78,6 @@ namespace why
 				m_fZoom -= step;
 			}
 			m_funcRender();
-
-			// 消费事件，不传递给父窗口
-			event.Skip(false);
 		}
 	}
 
@@ -124,7 +121,7 @@ namespace why
 			m_vec3CamPos += glm::normalize(glm::cross(m_vec3CamFront, m_vec3CamUp)) * cameraSpeed;
 			break;
 		default:
-			event.Skip(); // 其他按键交给系统处理
+			return; // 其他按键不渲染
 		}
 
 		m_funcRender();

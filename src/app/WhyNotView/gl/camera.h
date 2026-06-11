@@ -15,15 +15,6 @@ namespace why
     const float SENSITIVITY = 0.1f;
     const float ZOOM        = 45.0f;
 
-    // 键盘wasd方向
-    enum class CameraMovement
-    {
-        eForward,
-        eBackward,
-        eLeft,
-        eRight
-    };
-
     class Camera
     {
     public:
