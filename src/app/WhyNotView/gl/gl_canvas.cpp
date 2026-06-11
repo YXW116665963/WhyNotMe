@@ -75,10 +75,9 @@ namespace why
 		ViewerSetting::devicePixelRatio = GetGlobalDevicePixelRatio();
 		InitOpenGLFunc();
 
+		//m_ptrCamera.reset(new Camera(std::bind(&GLCanvas::Render, this)));
 		ShaderProgram* pShaderProgram;
-
 		std::string strShaderProgramName = "triangle";
-
 		if (CreateShader(strShaderProgramName, pShaderProgram))
 		{
 			m_ptrShaderProgram.reset(pShaderProgram);
@@ -264,9 +263,6 @@ namespace why
 			m_fFov -= step;
 		}
 
-
-
-		// 刷新画面（OpenGL绘图/双缓冲重绘）
 		Render();
 
 		// 消费事件，不传递给父窗口

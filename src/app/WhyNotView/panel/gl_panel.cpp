@@ -1,6 +1,7 @@
 #include "gl_panel.h"
 #include "logger.h"
 #include "gl_canvas.h"
+#include "singleton.h"
 namespace why
 {
 	GLPanel::GLPanel(wxWindow* pParent)

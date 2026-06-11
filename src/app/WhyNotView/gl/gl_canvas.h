@@ -1,4 +1,5 @@
 #pragma once
+#include "glad/glad.h"
 #include "shader.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
@@ -7,7 +8,7 @@
 
 #include "child_panel.h"
 #include "triangle_model.h"
-
+#include "camera.h"
 namespace why
 {
 	class GLCanvas : public wxGLCanvas
@@ -23,8 +24,9 @@ namespace why
 
 		void Render();
 	private:
-		std::unique_ptr<ShaderProgram> m_ptrShaderProgram;
-		std::unique_ptr<TriangleModel> m_ptrTriangleModel;
+		std::unique_ptr<Camera>			m_ptrCamera;
+		std::unique_ptr<ShaderProgram>	m_ptrShaderProgram;
+		std::unique_ptr<TriangleModel>	m_ptrTriangleModel;
 
 		//保存你所有 OpenGL 状态、资源、绘制环境的对象
 		//你创建的 VAO / VBO / Shader；纹理、缓冲区；状态机（清屏颜色、开启深度测试等
