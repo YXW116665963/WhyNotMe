@@ -3,25 +3,30 @@
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
 #include "wx/glcanvas.h"
+#include "shader.h"
 namespace why
 {
-	class TriangleModel
+	class Model
 	{
 	public:
-		TriangleModel(const GLuint& uVao,const GLuint& uVbo);
-		~TriangleModel();
+		Model(const GLuint& uVao,const GLuint& uVbo);
+		~Model();
 
-		void Draw();
+		void DrawTriangle(ShaderProgram* shader);
 
 	private:
 
-		std::string strShadersProgramName;
+		//float vertices[18] = {
+		//	-0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
+		//	0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
+		//	0.0f,  0.5f, 0.0f, 0.f, 0.f, 1.f
+		//};
 
-
+		// 哈市雪花
 		float vertices[18] = {
-			-0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
-			0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
-			0.0f,  0.5f, 0.0f, 0.f, 0.f, 1.f
+			-0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
+			0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
+			0.0f,  0.5f, 1.f, 0.f, 0.f, 1.f
 		};
 
 

@@ -73,7 +73,7 @@ namespace why
 			m_ptrShaderProgram->Load();
 		}
 		
-		m_ptrTriangleModel.reset(new TriangleModel(m_vao, m_vbo));
+		m_ptrTriangleModel.reset(new Model(m_vao, m_vbo));
 	}
 
 	void GLCanvas::InitOpenGLFunc()
@@ -105,7 +105,14 @@ namespace why
 		//glm::rotate作用：生成一个旋转矩阵，并应用到输入矩阵上
 		// 绕X轴负向55°，等同于头向上仰，vec3(1.0f, 0.0f, 0.0f)表示x轴
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+		//model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
+
+		// 模型
+		//参数1：矩阵变换的单位矩阵，相当于“1”
+		//后两个参数指绕着X轴(vec3(1,0,0))旋转90°变化
+		//该矩阵为Y-up到Z-up的变化矩阵
+		model = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(1, 0, 0));
+
 		// 视图
 		glm::mat4 view = m_ptrCamera->GetViewMat();
 		float32_t fZoom = m_ptrCamera->GetZoom();
@@ -116,7 +123,7 @@ namespace why
 		m_ptrShaderProgram->SetMat4f("view", view);
 		m_ptrShaderProgram->SetMat4f("projection", projection);
 
-		m_ptrTriangleModel->Draw();
+		m_ptrTriangleModel->DrawTriangle(m_ptrShaderProgram.get());
 		SwapBuffers();
 	}
 

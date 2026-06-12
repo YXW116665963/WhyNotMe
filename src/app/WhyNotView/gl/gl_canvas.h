@@ -7,7 +7,7 @@
 #include "wx/glcanvas.h"
 
 #include "child_panel.h"
-#include "triangle_model.h"
+#include "model.h"
 #include "camera.h"
 namespace why
 {
@@ -26,7 +26,7 @@ namespace why
 	private:
 		std::unique_ptr<Camera>			m_ptrCamera;
 		std::unique_ptr<ShaderProgram>	m_ptrShaderProgram;
-		std::unique_ptr<TriangleModel>	m_ptrTriangleModel;
+		std::unique_ptr<Model>	m_ptrTriangleModel;
 
 		//保存你所有 OpenGL 状态、资源、绘制环境的对象
 		//你创建的 VAO / VBO / Shader；纹理、缓冲区；状态机（清屏颜色、开启深度测试等

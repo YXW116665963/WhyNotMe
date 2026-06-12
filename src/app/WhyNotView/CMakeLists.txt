@@ -26,7 +26,6 @@ include_directories(${data_center_inc_dir_path})
 include_directories(${whynotview_app_dir_path})
 include_directories(${whynotview_app_dir_path}/panel)
 include_directories(${whynotview_app_dir_path}/gl)
-include_directories(${whynotview_app_dir_path}/gl/model)
 ##
 ## 3rd inc
 include_directories(${rapidxml_inc_dir_path})

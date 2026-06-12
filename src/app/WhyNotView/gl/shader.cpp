@@ -221,6 +221,12 @@ namespace why
 		glUniformMatrix4fv(uLoc, 1, GL_FALSE, glm::value_ptr(matrix4));
 	}
 
+	void ShaderProgram::SetVec4f(const std::string& strName, const glm::vec4& vec4)
+	{
+		GLuint uLoc = glGetUniformLocation(m_uShaderProgramId, strName.c_str());
+		glUniform4fv(uLoc, 1, glm::value_ptr(vec4));
+	}
+
 	void ShaderProgram::SetBool(const std::string& strName, const bool& value)
 	{
 		GLuint uLoc = glGetUniformLocation(m_uShaderProgramId, strName.c_str());

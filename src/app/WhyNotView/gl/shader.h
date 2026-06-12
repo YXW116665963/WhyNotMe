@@ -30,6 +30,9 @@ namespace why
         void Use();
     public:
         void SetMat4f(const std::string& strName, const glm::mat4& matrix4);
+        void SetVec4f(const std::string& strName, const glm::vec4& vec4);
+
+
         void SetBool(const std::string& strName, const bool& value);
         void SetInt(const std::string&   strName, const int& value);
         void SetFloat(const std::string& strName, const float& value);
