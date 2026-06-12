@@ -1,4 +1,6 @@
 #pragma once
+#include "glad/glad.h"
+#include "util.h"
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
 #include "glm/gtc/type_ptr.hpp"
@@ -6,6 +8,13 @@
 #include "shader.h"
 namespace why
 {
+	// 纹理信息
+	struct TextureInfo
+	{
+		GLuint				uTextureId;
+		std::string			strPicturePath;
+	};
+
 	class Model
 	{
 	public:
@@ -13,20 +22,28 @@ namespace why
 		~Model();
 
 		void DrawTriangle(ShaderProgram* shader);
-
+		void LoadTexture();
 	private:
-
+		TextureInfo m_textureInfo;
+		
 		//float vertices[18] = {
 		//	-0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
 		//	0.5f, -0.5f, 0.0f, 0.f, 0.f, 1.f,
 		//	0.0f,  0.5f, 0.0f, 0.f, 0.f, 1.f
 		//};
 
-		// 哈市雪花
-		float vertices[18] = {
-			-0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
-			0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
-			0.0f,  0.5f, 1.f, 0.f, 0.f, 1.f
+		//		 哈市雪花
+		//float vertices[18] = {
+		//	-0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
+		//	0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,
+		//	0.0f,  0.5f, 1.f, 0.f, 0.f, 1.f
+		//};
+
+		// 哈市雪花纹理
+		float vertices[24] = {
+			-0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,     0.0f, 0.0f, // 左下角
+			0.5f, -0.5f, 1.f, 0.f, 0.f, 1.f,      1.0f, 0.0f, // 右下角
+			0.0f,  0.5f, 1.f, 0.f, 0.f, 1.f,      0.5f, 1.0f  // 上中
 		};
 
 

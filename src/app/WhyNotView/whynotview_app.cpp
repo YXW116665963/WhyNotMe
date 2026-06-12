@@ -122,6 +122,13 @@ namespace why
 
         g_globalPointer.m_dataCenterPtr->
             RegisterStringData(envVar::g_Domain, envVar::strDeployment_dirPath, strDeployment_dirPath.c_str(), DataStyle::ePersistence);
+
+        // 所有资源父目录
+        std::string strResource_dirPath = pathAppender.SetSourcePath(strDeployment_dirPath)
+            .AppendChildPath("Resource")
+            .GetPath();
+        g_globalPointer.m_dataCenterPtr->
+            RegisterStringData(envVar::g_Domain, envVar::strResource_dirPath, strResource_dirPath.c_str(), DataStyle::ePersistence);
         // UI XML
         std::string strUIXml_dirPath = pathAppender.SetSourcePath(strDeployment_dirPath)
             .AppendChildPath("Resource")

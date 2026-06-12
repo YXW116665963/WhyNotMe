@@ -74,6 +74,7 @@ namespace why
 		}
 		
 		m_ptrTriangleModel.reset(new Model(m_vao, m_vbo));
+		m_ptrTriangleModel->LoadTexture();
 	}
 
 	void GLCanvas::InitOpenGLFunc()
@@ -109,8 +110,8 @@ namespace why
 
 		// 模型
 		//参数1：矩阵变换的单位矩阵，相当于“1”
-		//后两个参数指绕着X轴(vec3(1,0,0))旋转90°变化
-		//该矩阵为Y-up到Z-up的变化矩阵
+		//后两个参数指绕着X轴(vec3(1,0,0))逆时针旋转90°变化，变化为opengl的右手坐标系
+		//该矩阵为Z-up到Y-up的变化矩阵
 		model = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(1, 0, 0));
 
 		// 视图

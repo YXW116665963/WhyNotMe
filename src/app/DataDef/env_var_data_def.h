@@ -34,14 +34,13 @@ namespace why
 	// rc
 	namespace envVar
 	{
+		extern const char* strResource_dirPath;						//!< 所有资源的父目录
 		extern const char* strUIXml_dirPath;						//!< XML目录
 		extern const char* strUIPicture_dirPath;					//!< 图片目录
 		extern const char* strUIResourceXml_filePath;				//!< 字体背景图片等资源定义
 
 		extern const char* strGLShader_dirPath;						//!< 着色器目录
 		extern const char* strGLShaderXml_filePath;					//!< 着色器xml索引
-
-
 	}
 
 
