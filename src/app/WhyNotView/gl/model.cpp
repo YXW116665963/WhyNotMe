@@ -57,6 +57,47 @@ namespace why
 		glBindVertexArray(0);
 	}
 
+	void Model::DrawTriangle2(ShaderProgram* shader)
+	{
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);// 将顶点数据赋值给VBO		
+		glLineWidth(1);// 设置线宽
+
+		// 设置VAO，也就是设置如何使用VBO的数据
+		// 顶点
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(0);//打开0号通道，即着色器中layout location =0
+
+		// 颜色
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+		glEnableVertexAttribArray(1);// 设置1号通道，但是着色器未设置，实际无效果
+
+		//图元装配
+		glBindVertexArray(m_uVao);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindVertexArray(0);
+	}
+
+	void Model::DrawTriangle3(ShaderProgram* shader)
+	{
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertices3), vertices3, GL_STATIC_DRAW);// 将顶点数据赋值给VBO		
+		glLineWidth(1);// 设置线宽
+
+		// 设置VAO，也就是设置如何使用VBO的数据
+		// 顶点
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+		glEnableVertexAttribArray(0);//打开0号通道，即着色器中layout location =0
+
+		// 颜色
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+		glEnableVertexAttribArray(1);// 设置1号通道，但是着色器未设置，实际无效果
+
+		//图元装配
+		glBindVertexArray(m_uVao);
+		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glBindVertexArray(0);
+	}
+
+
 	void Model::LoadTexture()
 	{
 		PathAppender pathAppender;

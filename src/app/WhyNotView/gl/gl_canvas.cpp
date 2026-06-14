@@ -66,15 +66,20 @@ namespace why
 
 		m_ptrCamera.reset(new Camera(std::bind(&GLCanvas::Render, this)));
 		ShaderProgram* pShaderProgram;
-		std::string strShaderProgramName = "triangle";
-		if (CreateShader(strShaderProgramName, pShaderProgram))
-		{
-			m_ptrShaderProgram.reset(pShaderProgram);
-			m_ptrShaderProgram->Load();
-		}
+
 		
-		m_ptrTriangleModel.reset(new Model(m_vao, m_vbo));
-		m_ptrTriangleModel->LoadTexture();
+		m_ptrShaderProgram.reset(CreateShader("triangle"));
+		m_ptrShaderProgram->Load();
+
+		m_ptrShaderProgram2.reset(CreateShader("triangle2"));
+		m_ptrShaderProgram2->Load();
+
+		m_ptrShaderProgram3.reset(CreateShader("triangle2"));
+		m_ptrShaderProgram3->Load();
+
+
+		m_ptrModel.reset(new Model(m_vao, m_vbo));
+		m_ptrModel->LoadTexture();
 	}
 
 	void GLCanvas::InitOpenGLFunc()
@@ -85,13 +90,13 @@ namespace why
 		wxRect rect = GetRect();		
 		glViewport(rect.x, rect.y, rect.width, rect.height);
 
-		// 创建 VAO 和 VBO
-		glGenVertexArrays(1, &m_vao);
+		// 创建顶点数据VBO的缓存，并绑定ID	
 		glGenBuffers(1, &m_vbo);
-
-		// 绑定刚刚创建的 VAO 和 VBO到opengl上下文
-		glBindVertexArray(m_vao);
 		glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
+		// 创建读取规则VAO的缓存，并绑定ID	
+		glGenVertexArrays(1, &m_vao);
+		glBindVertexArray(m_vao);
+		
 	}
 
 	void GLCanvas::Render()
@@ -100,8 +105,15 @@ namespace why
 		SetCurrent(*m_pContext);
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
-		m_ptrShaderProgram->Use();
 
+		// 视图
+		glm::mat4 view = m_ptrCamera->GetViewMat();
+		float32_t fZoom = m_ptrCamera->GetZoom();
+		// 投影
+		glm::mat4 projection = glm::perspective(glm::radians(fZoom), (float)GetRect().width / GetRect().height, 0.1f, 100.0f);
+		
+		//////////////////////////////
+		m_ptrShaderProgram->Use();
 		// 模型
 		//glm::rotate作用：生成一个旋转矩阵，并应用到输入矩阵上
 		// 绕X轴负向55°，等同于头向上仰，vec3(1.0f, 0.0f, 0.0f)表示x轴
@@ -114,17 +126,28 @@ namespace why
 		//该矩阵为Z-up到Y-up的变化矩阵
 		model = glm::rotate(glm::mat4(1.0f), glm::radians(90.0f), glm::vec3(1, 0, 0));
 
-		// 视图
-		glm::mat4 view = m_ptrCamera->GetViewMat();
-		float32_t fZoom = m_ptrCamera->GetZoom();
-		// 投影
-		glm::mat4 projection = glm::perspective(glm::radians(fZoom), (float)GetRect().width / GetRect().height, 0.1f, 100.0f);
-
 		m_ptrShaderProgram->SetMat4f("model", model);
 		m_ptrShaderProgram->SetMat4f("view", view);
 		m_ptrShaderProgram->SetMat4f("projection", projection);
 
-		m_ptrTriangleModel->DrawTriangle(m_ptrShaderProgram.get());
+		m_ptrModel->DrawTriangle(m_ptrShaderProgram.get());
+
+		//////////////////////////////
+		m_ptrShaderProgram2->Use();
+
+		m_ptrShaderProgram2->SetMat4f("model", model);
+		m_ptrShaderProgram2->SetMat4f("view", view);
+		m_ptrShaderProgram2->SetMat4f("projection", projection);
+		m_ptrModel->DrawTriangle2(m_ptrShaderProgram2.get());
+
+
+		m_ptrShaderProgram3->Use();
+		m_ptrShaderProgram3->SetMat4f("model", model);
+		m_ptrShaderProgram3->SetMat4f("view", view);
+		m_ptrShaderProgram3->SetMat4f("projection", projection);
+		m_ptrModel->DrawTriangle3(m_ptrShaderProgram3.get());
+		
+
 		SwapBuffers();
 	}
 

@@ -4,8 +4,11 @@
 		<Shader file_name="triangle.vert" type="vertex"/>
 		<Shader file_name="triangle.frag" type="fragment"/>		
     </Program>
-	
-	
+
+  <Program name = "triangle2" prefix = "">
+    <Shader file_name="triangle2.vert" type="vertex"/>
+    <Shader file_name="triangle2.frag" type="fragment"/>
+  </Program>
 	
 	
 </PROGRAMS>

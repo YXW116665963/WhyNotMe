@@ -42,5 +42,5 @@ namespace why
         bool                            m_bSuccess;
     };
 
-    bool CreateShader(const std::string& strShaderProgramName, ShaderProgram*& shader);
+    ShaderProgram* CreateShader(const std::string& strShaderProgramName);
 }

@@ -16,7 +16,7 @@ namespace why
 	};
 		;
 
-	bool CreateShader(const std::string& strShaderProgramName, ShaderProgram*& shaderProgram)
+	ShaderProgram* CreateShader(const std::string& strShaderProgramName)
 	{
 		std::string strGLShader_dirPath = GetStringValue(envVar::g_Domain, envVar::strGLShader_dirPath);
 		std::string strGLShaderXml_filePath = GetStringValue(envVar::g_Domain, envVar::strGLShaderXml_filePath);
@@ -32,19 +32,19 @@ namespace why
 		{
 			LOG_ERROR << "invalidate xml file:" << strXMLFileName << ",where:" << ex.where<char>();
 			throw ex;
-			return false;
+			return nullptr;
 		}
 		catch (const std::exception& e)
 		{
 			LOG_ERROR << "invalidate xml file:" << strXMLFileName;
 			throw e;
-			return false;
+			return nullptr;
 		}
 		CXmlNode* pRoot = doc.first_node();
 		if (nullptr == pRoot)
 		{
 			LOG_INFO << "invalidate xml file:" << strXMLFileName;
-			return false;
+			return nullptr;
 		}
 
 
@@ -68,7 +68,7 @@ namespace why
 		if (nullptr == pResProgramNode)
 		{
 			LOG_ERROR << "not find node" << strShaderProgramName << " in shader.xml";
-			return false;
+			return nullptr;
 		}
 
 		// 获取着色器类型和程序
@@ -82,19 +82,19 @@ namespace why
 			if (!GetAttributeText(pCur, "file_name", strShaderFileName))
 			{
 				LOG_ERROR << strShaderProgramName << "has no file_name node!";
-				return false;
+				return nullptr;
 			}
 
 			if (!GetAttributeText(pCur, "type", strShaderType))
 			{
 				LOG_ERROR << strShaderProgramName << "has no type node!";
-				return false;
+				return nullptr;
 			}
 
 			if (g_mapShaderTypeName.find(strShaderType) == g_mapShaderTypeName.end())
 			{
 				LOG_ERROR << strShaderProgramName << "has err type node!";
-				return false;
+				return nullptr;
 			}
 
 			PathAppender pathAppender;
@@ -106,7 +106,7 @@ namespace why
 			std::string strShaderSource;
 			if (!LoadTextFile(strShaderFilePath, strShaderSource))
 			{
-				return false;
+				return nullptr;
 			}
 
 			ShaderInfo shaderInfo;
@@ -116,9 +116,7 @@ namespace why
 			arrShaderSourceInfo.push_back(shaderInfo);
 		}
 
-		shaderProgram = new ShaderProgram(arrShaderSourceInfo);
-
-		return true;
+		return new ShaderProgram(arrShaderSourceInfo);
 	}
 
 
@@ -165,6 +163,13 @@ namespace why
 			glGetShaderiv(shaderSourceInfo.uShaderId, GL_COMPILE_STATUS, &success);
 			if (!success)
 			{
+				int infoLogLength;
+				glGetShaderiv(shaderSourceInfo.uShaderId, GL_INFO_LOG_LENGTH, &infoLogLength);
+				
+				char* infoLog = (char*)alloca(infoLogLength * sizeof(char));
+				
+
+
 				glGetShaderInfoLog(shaderSourceInfo.uShaderId, 512, NULL, infoLog);
 				LOG_ERROR << "SHADER::COMPILATION_FAILED\n" << infoLog << std::endl;
 				LOG_ERROR << shaderSourceInfo.strShaderSource;
